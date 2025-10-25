@@ -1,15 +1,15 @@
 /* client/src/styles/Navbar.css */
 
 .navbar {
-  display: flex; /* Usamos flexbox para alinear elementos */
-  justify-content: space-between; /* Espacia el logo y los enlaces */
-  align-items: center; /* Centra verticalmente los elementos */
-  padding: 1.5rem 3rem; /* Espaciado interno superior/inferior y lateral */
-  background-color: #fff; /* Fondo blanco */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sutil sombra en la parte inferior */
-  position: sticky; /* Permite que el navbar se quede arriba al hacer scroll */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
   top: 0;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000;
 }
 
 .navbar-logo img {
@@ -18,57 +18,114 @@
 }
 
 .navbar-brand .navbar-logo {
-  font-size: 1.8rem; /* Tamaño del texto del logo */
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #38b15a; /* Color verde del logo (Knemco) */
-  text-decoration: none; /* Elimina el subrayado del enlace */
-  letter-spacing: 0.05em; /* Pequeño espaciado entre letras */
-  transition: color 0.3s ease; /* Transición suave para el color */
+  color: #38b15a;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
 }
 
 .navbar-brand .navbar-logo:hover {
-  color: #2e8b4e; /* Un tono más oscuro al pasar el ratón */
+  color: #2e8b4e;
 }
 
 .navbar-nav {
-  display: flex; /* Flexbox para los elementos de navegación */
-  list-style: none; /* Elimina los puntos de la lista */
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
+  transition: transform 0.3s ease-in-out; /* Para animar la apertura/cierre */
 }
 
 .nav-item {
-  margin-left: 2.5rem; /* Espacio entre los elementos de navegación */
+  margin-left: 2.5rem;
 }
 
 .nav-link {
-  color: #888; /* Color de texto gris claro */
-  text-decoration: none; /* Elimina el subrayado */
-  font-size: 1.1rem; /* Tamaño del texto */
-  font-weight: 500; /* Grosor de la fuente */
-  transition: color 0.3s ease; /* Transición suave para el color */
+  color: #888;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #333; /* Color de texto más oscuro al pasar el ratón */
+  color: #333;
+}
+
+/* --- Hamburger Menu Styles --- */
+.hamburger-menu {
+  display: none; /* Oculto por defecto en desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Asegura que esté por encima del menú desplegable */
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Animación del botón de hamburguesa cuando está abierto */
+.hamburger-menu .bar:nth-child(1).open {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu .bar:nth-child(2).open {
+  opacity: 0; /* Barra del medio desaparece */
+}
+
+.hamburger-menu .bar:nth-child(3).open {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* --- Responsive Design --- */
-/* Para pantallas más pequeñas, ocultamos el menú de navegación y preparamos para un icono de hamburguesa */
 @media (max-width: 768px) {
-  .navbar-nav {
-    display: none; /* Oculta el menú de navegación por defecto */
-    /* Aquí iría la lógica para mostrar el menú con un icono de hamburguesa */
-  }
-
   .navbar {
-    padding: 1rem 1.5rem; /* Menos padding en pantallas pequeñas */
+    padding: 1rem 1.5rem;
   }
 
   .navbar-brand .navbar-logo {
-    font-size: 1.5rem; /* Tamaño de logo más pequeño en móviles */
+    font-size: 1.5rem;
   }
 
-  /* Más adelante añadiremos un botón de hamburguesa y un menú que se despliegue */
+  .hamburger-menu {
+    display: block; /* Muestra el botón de hamburguesa en pantallas pequeñas */
+  }
+
+  .navbar-nav {
+    /* Estilos para el menú desplegable en móviles */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    position: absolute; /* Posiciona el menú absolutamente */
+    top: 0;
+    right: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100vh; /* Ocupa toda la altura de la vista */
+    background-color: #fff; /* Fondo blanco para el menú */
+    padding: 6rem 0 0 0; /* Espaciado superior para dejar espacio al logo y hamburguesa */
+    text-align: center;
+    transform: translateX(100%); /* Oculta el menú por defecto (fuera de la pantalla) */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-nav.open {
+    transform: translateX(0); /* Muestra el menú cuando tiene la clase 'open' */
+  }
+
+  .nav-item {
+    margin: 1.5rem 0; /* Espaciado vertical entre los elementos del menú */
+  }
+
+  .nav-link {
+    font-size: 1.5rem; /* Enlaces más grandes para facilitar el clic en móviles */
+    color: #333; /* Color de texto más oscuro para los enlaces del menú móvil */
+  }
 }

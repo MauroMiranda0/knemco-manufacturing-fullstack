@@ -1,35 +1,58 @@
 // client/src/components/Navbar.jsx
-import React from 'react';
-import '../styles/Navbar.css'; // Importamos el CSS específico para el Navbar
+import React, { useState } from 'react'; // Importa useState
 import Logo from '../assets/logo.jpg';
 
+import '../styles/Navbar.css';
 
 const Navbar = () => {
-  // Podemos añadir estado y lógica para el menú responsive aquí más adelante
-  return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <a href="/" className="navbar-logo">
-        <img src={Logo} alt="imagen logo" />
-          <span className='title'>KNEMCO Manufacturing</span>
-        </a>
-      </div>
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a href="#work" className="nav-link">Work</a>
-        </li>
-        <li className="nav-item">
-          <a href="#about" className="nav-link">About</a>
-        </li>
-        <li className="nav-item">
-          <a href="#services" className="nav-link">Services</a>
-        </li>
-        <li className="nav-item">
-          <a href="#contact" className="nav-link">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  );
+    const [isOpen, setIsOpen] = useState(false); // Estado para controlar el menú responsive
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen); // Cambia el estado de abierto/cerrado
+    };
+
+    return (
+        <nav className="navbar">
+            <div className="navbar-brand">
+                <a href="/" className="navbar-logo">
+                    <img src={Logo} alt="imagen logo" />
+                    <span className='title'>KNEMCO Manufacturing</span>
+                </a>
+            </div>
+
+            {/* Botón de hamburguesa */}
+            <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+                <div className={`bar ${isOpen ? 'open' : ''}`}></div>
+            </button>
+
+            {/* La lista de navegación ahora usa una clase condicional */}
+            <ul className={`navbar-nav ${isOpen ? 'open' : ''}`}>
+                <li className="nav-item">
+                    <a href="#work" className="nav-link" onClick={() => setIsOpen(false)}>Work</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</a>
+                </li>
+            </ul>
+        </nav>
+    );
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+

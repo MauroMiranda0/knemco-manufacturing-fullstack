@@ -1,17 +1,17 @@
 // client/src/App.jsx
 import React from 'react';
-import Navbar from './components/Navbar'; // Importa el componente Navbar
-// Importar estilos generales más adelante
+import Navbar from './components/Navbar';
+import Hero from './sections/Hero'; // Importa el componente Hero
 
 function App() {
   return (
     <div>
-      <Navbar /> {/* Renderiza el componente Navbar */}
-      {/* El contenido de tu landing page irá aquí, debajo del Navbar */}
+      <Navbar />
+      <Hero /> {/* Renderiza el componente Hero */}
       <main style={{ padding: '20px', textAlign: 'center' }}>
-        <h1>Bienvenido a KNEMCO</h1>
-        <p>Tu futuro contenido de landing page comenzará aquí.</p>
-        <p>Intenta redimensionar la ventana para ver el comportamiento responsive del Navbar.</p>
+        {/* Contenido de prueba de App.jsx que ahora está debajo del Hero */}
+        <h2>El resto de tu contenido de landing page</h2>
+        <p>Aquí es donde las siguientes secciones irán.</p>
       </main>
     </div>
   );
