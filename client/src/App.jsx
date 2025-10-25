@@ -2,16 +2,17 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero'; // Importa el componente Hero
+import ProductsSection from './sections/ProductsSection'; // Importa la nueva sección
 
 function App() {
   return (
     <div>
       <Navbar />
-      <Hero /> {/* Renderiza el componente Hero */}
+      <Hero />
+      <ProductsSection /> {/* Renderiza la sección de productos */}
       <main style={{ padding: '20px', textAlign: 'center' }}>
-        {/* Contenido de prueba de App.jsx que ahora está debajo del Hero */}
-        <h2>El resto de tu contenido de landing page</h2>
-        <p>Aquí es donde las siguientes secciones irán.</p>
+        {/* Contenido de prueba */}
+        <h3>Aquí irán las futuras secciones.</h3>
       </main>
     </div>
   );

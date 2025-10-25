@@ -1,0 +1,82 @@
+/* client/src/styles/ProductsSection.css */
+
+.products-section {
+  padding: 6rem 3rem;
+  background-color: #fff; /* Fondo blanco */
+  text-align: center; /* Centrar el título */
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+/* Estilos para los botones de filtro (si se añaden más adelante) */
+.filter-buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+    gap: 1rem;
+}
+
+.filter-btn {
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #38b15a;
+    color: #fff;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grilla responsive */
+  gap: 2rem; /* Espacio entre las cards */
+  max-width: 1200px; /* Ancho máximo de la grilla */
+  margin: 0 auto; /* Centrar la grilla */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .products-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Más pequeñas en pantallas medianas */
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .products-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 1rem;
+  }
+}
