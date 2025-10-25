@@ -1,0 +1,74 @@
+/* client/src/styles/Navbar.css */
+
+.navbar {
+  display: flex; /* Usamos flexbox para alinear elementos */
+  justify-content: space-between; /* Espacia el logo y los enlaces */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 1.5rem 3rem; /* Espaciado interno superior/inferior y lateral */
+  background-color: #fff; /* Fondo blanco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sutil sombra en la parte inferior */
+  position: sticky; /* Permite que el navbar se quede arriba al hacer scroll */
+  top: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-brand .navbar-logo {
+  font-size: 1.8rem; /* Tamaño del texto del logo */
+  font-weight: bold;
+  color: #38b15a; /* Color verde del logo (Knemco) */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  letter-spacing: 0.05em; /* Pequeño espaciado entre letras */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.navbar-brand .navbar-logo:hover {
+  color: #2e8b4e; /* Un tono más oscuro al pasar el ratón */
+}
+
+.navbar-nav {
+  display: flex; /* Flexbox para los elementos de navegación */
+  list-style: none; /* Elimina los puntos de la lista */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2.5rem; /* Espacio entre los elementos de navegación */
+}
+
+.nav-link {
+  color: #888; /* Color de texto gris claro */
+  text-decoration: none; /* Elimina el subrayado */
+  font-size: 1.1rem; /* Tamaño del texto */
+  font-weight: 500; /* Grosor de la fuente */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #333; /* Color de texto más oscuro al pasar el ratón */
+}
+
+/* --- Responsive Design --- */
+/* Para pantallas más pequeñas, ocultamos el menú de navegación y preparamos para un icono de hamburguesa */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: none; /* Oculta el menú de navegación por defecto */
+    /* Aquí iría la lógica para mostrar el menú con un icono de hamburguesa */
+  }
+
+  .navbar {
+    padding: 1rem 1.5rem; /* Menos padding en pantallas pequeñas */
+  }
+
+  .navbar-brand .navbar-logo {
+    font-size: 1.5rem; /* Tamaño de logo más pequeño en móviles */
+  }
+
+  /* Más adelante añadiremos un botón de hamburguesa y un menú que se despliegue */
+}
