@@ -1,0 +1,46 @@
+/* client/src/styles/FounderProfile.css */
+
+.founder-profile {
+    text-align: center;
+}
+
+.profile-image-placeholder {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    /* Subtle gradient for depth */
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #38b15a;
+    /* Verde de la marca */
+    margin-bottom: 1.5rem;
+}
+
+.profile-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.profile-quote {
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+    border-left: 3px solid #e0e0e0;
+    padding-left: 1rem;
+    margin: 0;
+    text-align: left;
+}

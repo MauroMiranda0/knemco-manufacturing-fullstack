@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import ServicesSection from './sections/ServicesSection';
 import ProductsSection from './sections/ProductsSection';
-import CTASection from './sections/CTASection'; // Importa la nueva sección CTA
+import CTASection from './sections/CTASection';
+import AboutSection from './sections/AboutSection'; // Importa la nueva sección
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <Hero />
       <ServicesSection />
       <ProductsSection />
-      <CTASection /> {/* Añade la nueva sección */}
-      {/* Aquí irán las secciones restantes: Fundadores, Footer */}
+      <CTASection />
+      <AboutSection /> {/* Añade la nueva sección */}
+      {/* Solo nos queda el Footer! */}
     </div>
   );
 }
