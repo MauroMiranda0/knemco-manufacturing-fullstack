@@ -9,23 +9,15 @@ const Hero = () => {
     <section className="hero-section">
       <div className="hero-content">
         <h1 className="hero-title">
-          Explore the stories behind our <br /> locally manufactured products
+          Your Ideas, <br /> Made in Grande Prairie.
         </h1>
         <p className="hero-description">
-          From custom mechanical parts to designer home goods, discover how Knemco is revolutionizing
-          local manufacturing in Grande Prairie.
+          We are a 3D printing and design startup revitalizing local manufacturing
+          through a collaborative, accessible, and scalable model.
         </p>
-        <a href="#get-started" className="hero-button">
-          Get Started <span className="arrow">→</span>
+        <a href="#services" className="hero-button">
+          Explore Our Services <span className="arrow">→</span>
         </a>
-      </div>
-      <div className="hero-image-container">
-        {/* Aquí irá tu imagen con la animación */}
-        {/* Por ahora, usaremos un div placeholder para el efecto de animación */}
-        <div className="hero-animated-image"></div>
-        {/* Si ya tienes una imagen:
-        <img src={heroImage} alt="Knemco products" className="hero-animated-image" />
-        */}
       </div>
     </section>
   );

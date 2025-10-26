@@ -30,18 +30,22 @@ const Navbar = () => {
             {/* La lista de navegación ahora usa una clase condicional */}
             <ul className={`navbar-nav ${isOpen ? 'open' : ''}`}>
                 <li className="nav-item">
-                    <a href="#work" className="nav-link" onClick={() => setIsOpen(false)}>Work</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About</a>
-                </li>
-                <li className="nav-item">
                     <a href="#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#products" className="nav-link" onClick={() => setIsOpen(false)}>Products</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#investment" className="nav-link" onClick={() => setIsOpen(false)}>Investment</a>
+                </li>
+                <li className="nav-item">
+                    <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About Us</a>
                 </li>
                 <li className="nav-item">
                     <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</a>
                 </li>
             </ul>
+
         </nav>
     );
 };

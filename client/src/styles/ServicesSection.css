@@ -1,0 +1,56 @@
+/* client/src/styles/ServicesSection.css */
+
+.services-section {
+    padding: 6rem 3rem;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Dos columnas por defecto */
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        /* Una columna en tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .services-section {
+        padding: 3rem 1.5rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
