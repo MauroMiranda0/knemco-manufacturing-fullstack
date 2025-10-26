@@ -1,17 +1,19 @@
 // client/src/App.jsx
 import React from 'react';
 import Navbar from './components/Navbar';
-import Hero from './sections/Hero'; // Importa el componente Hero
-import ProductsSection from './sections/ProductsSection'; // Importa la nueva sección
-import WorksSection from './sections/WorksSection'; // Importa la nueva sección
+import Hero from './sections/Hero';
+import WorksSection from './sections/WorksSection';
+import ProductsSection from './sections/ProductsSection';
+// Más adelante importaremos los nuevos componentes aquí
 
 function App() {
   return (
     <div>
       <Navbar />
       <Hero />
-      <ProductsSection /> {/* Renderiza la sección de productos */}
-      <WorksSection /> {/* Renderiza la sección de works */}
+      <WorksSection /> {/* Lo renombraremos a "Servicios" */}
+      <ProductsSection /> {/* Lo renombraremos a "Productos Destacados" */}
+      {/* Aquí irán las nuevas secciones: Inversión, Fundadores, Footer */}
     </div>
   );
 }
