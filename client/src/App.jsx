@@ -6,7 +6,8 @@ import ServicesSection from './sections/ServicesSection';
 import ProductsSection from './sections/ProductsSection';
 import CTASection from './sections/CTASection';
 import AboutSection from './sections/AboutSection';
-import ContactSection from './sections/ContactSection'; // Importa la nueva sección
+import ContactSection from './sections/ContactSection';
+import Footer from './components/Footer'; // Importa el Footer
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
       <ProductsSection />
       <CTASection />
       <AboutSection />
-      <ContactSection /> {/* Añade la nueva sección */}
-      {/* ¡Ahora sí, solo nos queda el Footer! */}
+      <ContactSection />
+      <Footer /> {/* Añade el Footer al final */}
     </div>
   );
 }

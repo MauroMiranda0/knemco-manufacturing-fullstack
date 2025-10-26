@@ -1,0 +1,111 @@
+/* client/src/styles/Footer.css */
+
+.footer {
+    background-color: #1a1a1a;
+    /* Fondo oscuro, consistente con el CTA */
+    color: #e0e0e0;
+    padding: 4rem 3rem 0;
+    /* No hay padding abajo, lo maneja el footer-bottom */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las columnas se reorganicen */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    /* Ancho mínimo para cada columna antes de que se envuelva */
+}
+
+.footer-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-tagline {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #38b15a;
+    /* Verde de la marca */
+    transform: scale(1.1);
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a,
+.contact-column a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.contact-column a:hover {
+    color: #38b15a;
+}
+
+.contact-column p {
+    margin-bottom: 0.8rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
+/* --- Responsive Design --- */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
