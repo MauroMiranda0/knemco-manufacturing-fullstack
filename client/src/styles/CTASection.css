@@ -1,0 +1,138 @@
+/* client/src/styles/CTASection.css */
+
+.cta-section {
+    padding: 6rem 3rem;
+    background-color: #f8f8f8;
+    /* Mismo fondo que otras secciones */
+}
+
+.cta-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    /* Fondo negro para el panel derecho */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Panel Gráfico (Izquierdo) */
+
+.cta-graphic-panel {
+    flex-basis: 50%;
+    /* Ocupa el 50% del ancho */
+    background-color: #f05e23;
+    /* Naranja vibrante de la imagen */
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-graphic-title {
+    font-family: 'Courier New', Courier, monospace;
+    /* Tipografía de estilo máquina de escribir */
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Panel de Contenido (Derecho) */
+
+.cta-content-panel {
+    flex-basis: 50%;
+    padding: 4rem;
+    color: #e0e0e0;
+    /* Un blanco no tan puro */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-eyebrow {
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    color: #f0e68c;
+    /* Color crema/amarillo claro */
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.cta-text {
+    font-family: serif;
+    /* Fuente con serifa como en la imagen */
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.cta-email-link {
+    color: #f0e68c;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cta-email-link:hover {
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #f0e68c;
+    /* Mismo color crema */
+    color: #1a1a1a;
+    /* Texto negro */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    /* Alinea el botón a la izquierda */
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+}
+
+
+/* --- Responsive Design --- */
+
+@media (max-width: 992px) {
+    .cta-container {
+        flex-direction: column;
+        /* Apila los paneles */
+    }
+    .cta-graphic-panel,
+    .cta-content-panel {
+        flex-basis: auto;
+        /* Resetea la base del flex */
+    }
+    .cta-graphic-panel {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-section {
+        padding: 3rem 1rem;
+    }
+    .cta-graphic-panel,
+    .cta-content-panel {
+        padding: 2.5rem;
+    }
+    .cta-graphic-title {
+        font-size: 2rem;
+    }
+    .cta-text {
+        font-size: 1.2rem;
+    }
+}
