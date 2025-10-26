@@ -5,7 +5,8 @@ import Hero from './sections/Hero';
 import ServicesSection from './sections/ServicesSection';
 import ProductsSection from './sections/ProductsSection';
 import CTASection from './sections/CTASection';
-import AboutSection from './sections/AboutSection'; // Importa la nueva sección
+import AboutSection from './sections/AboutSection';
+import ContactSection from './sections/ContactSection'; // Importa la nueva sección
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <ServicesSection />
       <ProductsSection />
       <CTASection />
-      <AboutSection /> {/* Añade la nueva sección */}
-      {/* Solo nos queda el Footer! */}
+      <AboutSection />
+      <ContactSection /> {/* Añade la nueva sección */}
+      {/* ¡Ahora sí, solo nos queda el Footer! */}
     </div>
   );
 }
