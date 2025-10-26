@@ -12,7 +12,7 @@ function App() {
       <Hero />
       <ServicesSection /> {/* Usa la NUEVA sección */}
       <ProductsSection />
-      {/* Aquí irán las futuras secciones */}
+      {/* Aquí irán las nuevas secciones: Inversión, Fundadores, Footer */}
     </div>
   );
 }

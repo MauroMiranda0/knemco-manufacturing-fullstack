@@ -4,38 +4,34 @@
     background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     /* Asegura que todas las cards en una fila tengan la misma altura */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.card-header {
-    margin-bottom: 1rem;
-}
-
-.service-icon {
+.card-icon {
     font-size: 3rem;
-    color: #38b15a;
-    /* Color principal de la marca */
-    margin-bottom: 1rem;
+    /* Tamaño del emoji/ícono */
+    margin-bottom: 1.5rem;
 }
 
-.service-title {
+.card-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333;
-    margin: 0;
+    margin-bottom: 1rem;
 }
 
-.service-description {
+.card-description {
     font-size: 1rem;
     color: #666;
     line-height: 1.6;
@@ -45,9 +41,8 @@
 .features-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem 0;
-    flex-grow: 1;
-    /* Empuja el enlace "Learn More" hacia abajo */
+    margin: 0;
+    margin-bottom: 2rem;
 }
 
 .feature-item {
@@ -55,34 +50,40 @@
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 0.8rem;
-    font-size: 1rem;
     color: #555;
 }
 
 .feature-icon {
     color: #38b15a;
-    /* Color de los checkmarks */
+    /* Verde consistente con la marca */
     font-size: 1.2rem;
-    flex-shrink: 0;
 }
 
-.learn-more-link {
-    color: #333;
+.learn-more-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
     text-decoration: none;
+    color: #333;
     font-weight: 600;
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
+    text-align: center;
     margin-top: auto;
-    /* Se alinea en la parte inferior */
-    border-top: 1px solid #e0e0e0;
-    padding-top: 1rem;
+    /* Empuja el botón al fondo de la card */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.learn-more-link .arrow {
+.learn-more-button:hover {
+    background-color: #f8f8f8;
+    border-color: #333;
+}
+
+.learn-more-button .arrow {
     margin-left: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
-.learn-more-link:hover .arrow {
-    transform: translateX(5px);
+.learn-more-button:hover .arrow {
+    transform: translateX(4px);
 }

@@ -1,16 +1,14 @@
 // client/src/components/ServiceCard.jsx
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa'; // Icono para la lista de características
+import { FaCheckCircle } from 'react-icons/fa'; // Importamos el ícono de check
 import '../styles/ServiceCard.css';
 
-const ServiceCard = ({ icon: Icon, title, description, features }) => {
+const ServiceCard = ({ icon, title, description, features }) => {
   return (
     <div className="service-card">
-      <div className="card-header">
-        {Icon && <Icon className="service-icon" />}
-        <h3 className="service-title">{title}</h3>
-      </div>
-      <p className="service-description">{description}</p>
+      <div className="card-icon">{icon}</div>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-description">{description}</p>
       <ul className="features-list">
         {features.map((feature, index) => (
           <li key={index} className="feature-item">
@@ -19,7 +17,7 @@ const ServiceCard = ({ icon: Icon, title, description, features }) => {
           </li>
         ))}
       </ul>
-      <a href="#contact" className="learn-more-link">
+      <a href="#contact" className="learn-more-button">
         Learn More <span className="arrow">→</span>
       </a>
     </div>

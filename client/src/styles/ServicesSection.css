@@ -2,7 +2,7 @@
 
 .services-section {
     padding: 6rem 3rem;
-    background-color: #fff;
+    background-color: #f8f8f8;
 }
 
 .section-header {
@@ -15,7 +15,7 @@
     font-size: 2.8rem;
     font-weight: 700;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .section-subtitle {
@@ -27,9 +27,9 @@
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Dos columnas por defecto */
-    gap: 2rem;
-    max-width: 1400px;
+    /* Dos columnas en desktop */
+    gap: 2.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -37,18 +37,22 @@
 /* --- Responsive Design --- */
 
 @media (max-width: 992px) {
+    .services-section {
+        padding: 4rem 1.5rem;
+    }
     .services-grid {
         grid-template-columns: 1fr;
         /* Una columna en tablets */
+        gap: 2rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 576px) {
-    .services-section {
-        padding: 3rem 1.5rem;
-    }
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .section-subtitle {
         font-size: 1rem;
