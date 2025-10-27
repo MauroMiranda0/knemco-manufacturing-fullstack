@@ -1,158 +1,239 @@
-/* client/src/styles/Hero.css */
+/*
+ * CÓDIGO CSS UNIFICADO PARA COMPONENTE HERO Y ESTILOS DE BOTONES
+ */
+
+
+/* ==================================== */
+
+
+/* 1. Estilos del Componente Hero (Fragmento 1) */
+
+
+/* ==================================== */
 
 .hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 3rem; /* Espaciado interno */
-  background-color: #f8f8f8; /* Un fondo muy ligero */
-  min-height: 80vh; /* Para que ocupe gran parte de la pantalla */
-  gap: 3rem; /* Espacio entre el contenido y la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 6rem 3rem; */
+    /* Espaciado interno */
+    background-color: #f8f8f8;
+    /* Un fondo muy ligero */
+    min-height: 80vh;
+    /* Para que ocupe gran parte de la pantalla */
+    gap: 3rem;
+    /* Espacio entre el contenido y la imagen */
 }
 
 .hero-content {
-  flex: 1; /* Ocupa el espacio disponible */
-  max-width: 600px; /* Ancho máximo para el contenido de texto */
+    flex: 1;
+    /* Ocupa el espacio disponible */
+    max-width: 600px;
+    /* Ancho máximo para el contenido de texto */
 }
 
 .hero-title {
-  font-size: 3.5rem; /* Tamaño del título */
-  font-weight: 700;
-  color: #333; /* Color oscuro */
-  margin-bottom: 1.5rem;
-  line-height: 1.2; /* Espaciado entre líneas */
+    font-size: 2.5rem;
+    /* Tamaño del título */
+    font-weight: 700;
+    color: #333;
+    /* Color oscuro */
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    /* Espaciado entre líneas */
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  color: #666; /* Color de texto más claro */
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+    color: #666;
+    /* Color de texto más claro */
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
 .hero-button {
-  display: inline-flex; /* Para que el texto y la flecha estén en línea */
-  align-items: center;
-  background-color: #38b15a; /* Fondo verde como el logo */
-  color: #fff; /* Texto blanco */
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    /* Para que el texto y la flecha estén en línea */
+    align-items: center;
+    background-color: #38b15a;
+    /* Fondo verde como el logo */
+    color: #fff;
+    /* Texto blanco */
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-button:hover {
-  background-color: #2e8b4e; /* Tono de verde más oscuro al pasar el ratón */
-  transform: translateY(-2px); /* Pequeño efecto de elevación */
+    background-color: #2e8b4e;
+    /* Tono de verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+    /* Pequeño efecto de elevación */
 }
 
 .hero-button .arrow {
-  margin-left: 0.8rem;
-  font-size: 1.3rem; /* Tamaño de la flecha */
-  transition: transform 0.3s ease;
+    margin-left: 0.8rem;
+    font-size: 1.3rem;
+    /* Tamaño de la flecha */
+    transition: transform 0.3s ease;
 }
 
 .hero-button:hover .arrow {
-  transform: translateX(5px); /* La flecha se mueve un poco al pasar el ratón */
+    transform: translateX(5px);
+    /* La flecha se mueve un poco al pasar el ratón */
 }
 
+
 /* --- Imagen y Animación --- */
+
 .hero-image-container {
-  flex: 1; /* Ocupa el otro espacio disponible */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px; /* Altura mínima para el contenedor de la imagen */
-  max-width: 600px; /* Ancho máximo para el contenedor de la imagen */
+    flex: 1;
+    /* Ocupa el otro espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    /* Altura mínima para el contenedor de la imagen */
+    max-width: 600px;
+    /* Ancho máximo para el contenedor de la imagen */
 }
 
 .hero-animated-image {
-  /* Estilos para el div placeholder. Si usas un <img>, estos serían para el <img> */
-  width: 80%; /* Empieza un poco más pequeño */
-  height: 400px;
-  background-color: #ccc; /* Color gris de placeholder */
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-  background-image: url('../assets/hero-placeholder.png');
-  background-size: cover;
-  background-position: center;
-  /* Si usas una imagen real, podrías añadir:
-  */
-
-  /* Animación de escala de pequeño a grande al cargar */
-  transform: scale(0.8); /* Inicia más pequeño */
-  opacity: 0; /* Inicia invisible */
-  animation: scaleIn 1s ease-out forwards; /* Aplica la animación */
-  animation-delay: 0.5s; /* Retraso para que el resto del contenido cargue */
+    /* Estilos para el div placeholder. Si usas un <img>, estos serían para el <img> */
+    width: 80%;
+    /* Empieza un poco más pequeño */
+    height: 400px;
+    background-color: #ccc;
+    /* Color gris de placeholder */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra para darle profundidad */
+    background-image: url('../assets/hero-placeholder.png');
+    background-size: cover;
+    background-position: center;
+    /* Animación de escala de pequeño a grande al cargar */
+    transform: scale(0.8);
+    /* Inicia más pequeño */
+    opacity: 0;
+    /* Inicia invisible */
+    animation: scaleIn 1s ease-out forwards;
+    /* Aplica la animación */
+    animation-delay: 0.5s;
+    /* Retraso para que el resto del contenido cargue */
 }
 
+
 /* Definición de la animación */
+
 @keyframes scaleIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 
 /* --- Responsive Design --- */
+
 @media (max-width: 992px) {
-  .hero-section {
-    flex-direction: column; /* Apila el contenido y la imagen en columnas */
-    text-align: center; /* Centra el texto */
-    padding: 4rem 1.5rem;
-  }
-
-  .hero-content {
-    margin-bottom: 3rem; /* Espacio entre el contenido y la imagen apilados */
-    max-width: 100%; /* Ocupa todo el ancho disponible */
-  }
-
-  .hero-title {
-    font-size: 2.5rem; /* Título más pequeño en pantallas medianas */
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-image-container {
-    min-height: 300px; /* Altura mínima más pequeña */
-    width: 100%; /* Ocupa todo el ancho */
-  }
-
-  .hero-animated-image {
-    height: 300px; /* Altura de la imagen más pequeña */
-    width: 90%; /* Ajuste de ancho */
-  }
+    .hero-section {
+        flex-direction: column;
+        /* Apila el contenido y la imagen en columnas */
+        text-align: center;
+        /* Centra el texto */
+        padding: 4rem 1.5rem;
+    }
+    .hero-content {
+        margin-bottom: 3rem;
+        /* Espacio entre el contenido y la imagen apilados */
+        max-width: 100%;
+        /* Ocupa todo el ancho disponible */
+    }
+    .hero-title {
+        font-size: 2.5rem;
+        /* Título más pequeño en pantallas medianas */
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-image-container {
+        min-height: 300px;
+        /* Altura mínima más pequeña */
+        width: 100%;
+        /* Ocupa todo el ancho */
+    }
+    .hero-animated-image {
+        height: 300px;
+        /* Altura de la imagen más pequeña */
+        width: 90%;
+        /* Ajuste de ancho */
+    }
 }
 
 @media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem; /* Título aún más pequeño en móviles */
-  }
+    .hero-title {
+        font-size: 2rem;
+        /* Título aún más pequeño en móviles */
+    }
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    .hero-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    .hero-image-container {
+        min-height: 250px;
+    }
+    .hero-animated-image {
+        height: 250px;
+        width: 95%;
+        /* Ajuste de ancho */
+    }
+}
 
-  .hero-description {
-    font-size: 0.9rem;
-  }
 
-  .hero-button {
-    padding: 0.8rem 1.5rem;
+/* ==================================== */
+
+
+/* 2. Estilos Globales para Botones (Fragmento 2) */
+
+
+/* ==================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    /* Requiere var(--font-primary) */
+    font-family: var(--font-primary);
+    font-weight: 600;
     font-size: 1rem;
-  }
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
 
-  .hero-image-container {
-    min-height: 250px;
-  }
+.btn-primary {
+    /* Requiere var(--color-orange-knemco) y var(--color-white-snow) */
+    background-color: var(--color-orange-knemco);
+    color: var(--color-white-snow);
+}
 
-  .hero-animated-image {
-    height: 250px;
-    width: 95%; /* Ajuste de ancho */
-  }
+.btn-primary:hover {
+    background-color: #D95A3B;
+    /* Un tono de naranja ligeramente más oscuro */
+    color: var(--color-white-snow);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
