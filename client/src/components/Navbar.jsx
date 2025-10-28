@@ -1,5 +1,6 @@
 // client/src/components/Navbar.jsx
 import React, { useState } from 'react'; // Importa useState
+import { Link } from 'react-router-dom';
 import Logo from '../assets/images/logo.png';
 
 import '../styles/Navbar.css';
@@ -14,9 +15,9 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                <a href="/knemco-manufacturing-fullstack/" className="navbar-logo">
+                <Link to="/" className="navbar-logo">
                     <img src={Logo} alt="imagen logo" />
-                </a>
+                </Link>
             </div>
 
             {/* Botón de hamburguesa */}
