@@ -1,24 +1,30 @@
 // client/src/sections/AboutSection.jsx
+// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import FounderProfile from '../components/FounderProfile';
 import '../styles/AboutSection.css';
+
+// --- NUEVO CÓDIGO: Importamos las imágenes de los fundadores ---
+import leonardoImg from '../assets/images/founder-leonardo-yanez.jpg';
+import mariuszImg from '../assets/images/founder-mariusz-szczepan.jpg';
 
 const foundersData = [
   {
     name: 'Leonardo Yanez',
     title: 'Field Engineer & Product Designer',
-    description: 'With comprehensive experience across the oil and gas sector, Leonardo brings rigorous problem-solving discipline and a relentless passion for learning. He’s the driving force behind designing functional mechanisms and robust products, ensuring every idea is grounded in real-world applicability and structural integrity.',
+    description: 'With comprehensive experience across the oil and gas sector, Leonardo brings rigorous problem-solving discipline and a relentless passion for learning...',
     quote: 'Engineering isn’t just about solving problems—it’s about creating possibilities.',
-    imageColor: '#f39c12' // Naranja
+    imageUrl: leonardoImg // Usamos la imagen importada
   },
   {
     name: 'Mariusz Szczepan',
     title: 'Dental Technician & Community Builder',
-    description: 'Operating at the intersection of art, science, and technology, Mariusz brings expertise in 3D scanning, digital modeling, 3D printing, and advanced post-processing. His true magic lies in his ability to translate complex technical concepts into exciting possibilities and make everyone feel heard and valued.',
+    description: 'Operating at the intersection of art, science, and technology, Mariusz brings expertise in 3D scanning, digital modeling, 3D printing, and advanced post-processing...',
     quote: 'The best products are made with precision and heart.',
-    imageColor: '#8e44ad' // Morado
+    imageUrl: mariuszImg // Usamos la imagen importada
   }
 ];
+// --- FIN DEL NUEVO CÓDIGO ---
 
 const AboutSection = () => {
   return (
@@ -34,9 +40,7 @@ const AboutSection = () => {
       <div className="synergy-box">
         <h3 className="synergy-title">The Synergy</h3>
         <p className="synergy-text">
-          Leonardo builds robust, functional systems and dives into new skills to expand capabilities.
-          Mariusz ensures the final product is perfectly finished and the client’s journey is exceptional.
-          Together, they cover the entire spectrum—from technical backbone to customer-centric heart.
+          Leonardo builds robust, functional systems... Mariusz ensures the final product is perfectly finished... Together, they cover the entire spectrum—from technical backbone to customer-centric heart.
         </p>
       </div>
     </section>

@@ -1,56 +1,60 @@
 // client/src/sections/ProductsSection.jsx
+// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
-import ProductCard from '../components/ProductCard'; // Reutilizamos el mismo componente de card
-import '../styles/ProductsSection.css'; // Reutilizamos los mismos estilos de la sección
+import ProductCard from '../components/ProductCard';
+import '../styles/ProductsSection.css';
 
-// NUEVOS DATOS: Alineados con Knemco y en inglés
+// --- NUEVO CÓDIGO: Importamos las imágenes ---
+import catFountainImg from '../assets/images/product-cat-fountain.jpg';
+import lightingImg from '../assets/images/product-sculptural-lighting.jpg';
+import plantersImg from '../assets/images/product-designer-planters.jpg';
+import giftsImg from '../assets/images/product-personalized-gifts.jpg';
+
 const productsData = [
   {
     id: 'cat-fountains',
     title: 'Designer Cat Fountains',
     description: 'Stylish and functional water fountains that encourage your pets to stay hydrated.',
-    color: '#42a5f5', // Placeholder color, we can replace with an image later
+    imageUrl: catFountainImg, // Usamos la imagen importada
   },
   {
     id: 'sculptural-lighting',
     title: 'Sculptural Lighting',
     description: 'Artistic lighting fixtures that serve as both a light source and a centerpiece for any room.',
-    color: '#ffc107',
+    imageUrl: lightingImg,
   },
   {
     id: 'designer-planters',
     title: 'Modern Designer Planters',
     description: 'Elevate your indoor and outdoor green spaces with our unique, 3D-printed planters.',
-    color: '#66bb6a',
+    imageUrl: plantersImg,
   },
   {
     id: 'personalized-gifts',
     title: 'Personalized Gifts',
     description: 'Create one-of-a-kind gifts for any occasion, from custom names to unique designs.',
-    color: '#ab47bc',
+    imageUrl: giftsImg,
   },
 ];
+// --- FIN DEL NUEVO CÓDIGO ---
 
 const ProductsSection = () => {
   return (
-    // Añadimos un 'id' para que el enlace del Navbar funcione
     <section id="products" className="products-section">
-      {/* Título y subtítulo actualizados */}
       <div className="section-header">
         <h2 className="section-title">From Our Workshop</h2>
         <p className="section-subtitle">
           Discover a selection of our in-house designed products, all locally manufactured in Grande Prairie.
         </p>
       </div>
-
       <div className="products-grid">
         {productsData.map((product) => (
           <ProductCard
             key={product.id}
             title={product.title}
             description={product.description}
-            imageUrl={product.imageUrl} // Podemos añadir URLs de imágenes aquí en el futuro
-            color={product.color}
+            imageUrl={product.imageUrl}
+            // La prop 'color' ya no es necesaria si todas las cards tienen imagen
           />
         ))}
       </div>
@@ -59,8 +63,3 @@ const ProductsSection = () => {
 };
 
 export default ProductsSection;
-
-// **¿Qué hemos cambiado?**
-// *   **Datos Actualizados:** El array `productsData` ahora contiene los productos mencionados en la descripción de la empresa, todo en inglés.
-// *   **Título de la Sección:** Hemos añadido un encabezado (`.section-header`) similar al de la sección de servicios para mantener la consistencia, con un nuevo título ("From Our Workshop") y un subtítulo.
-// *   **ID de Sección:** Añadimos `id="products"` a la etiqueta `<section>`, lo que permitirá que el enlace "Products" de nuestro Navbar nos lleve directamente aquí cuando hagamos clic.
