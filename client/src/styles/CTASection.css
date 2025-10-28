@@ -1,138 +1,110 @@
 /* client/src/styles/CTASection.css */
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .cta-section {
-    padding: 6rem 3rem;
-    background-color: #f8f8f8;
-    /* Mismo fondo que otras secciones */
+  padding: 0; /* Eliminamos el padding para que el contenedor ocupe todo el espacio */
+  background-color: var(--color-white-snow);
 }
 
 .cta-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #1a1a1a;
-    /* Fondo negro para el panel derecho */
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-width: 1400px; /* Hacemos el contenedor un poco más ancho */
+  margin: 6rem auto; /* Le damos margen vertical para separarlo de otras secciones */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-
 /* Panel Gráfico (Izquierdo) */
-
 .cta-graphic-panel {
-    flex-basis: 50%;
-    /* Ocupa el 50% del ancho */
-    background-color: #f05e23;
-    /* Naranja vibrante de la imagen */
-    padding: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex-basis: 50%;
+  background-color: var(--color-orange-knemco); /* Naranja de la marca */
+  padding: 5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-graphic-title {
-    font-family: 'Courier New', Courier, monospace;
-    /* Tipografía de estilo máquina de escribir */
-    color: #fff;
-    font-size: 2.5rem;
-    text-align: center;
-    line-height: 1.4;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  font-family: var(--font-primary);
+  color: var(--color-white-snow);
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-
 /* Panel de Contenido (Derecho) */
-
 .cta-content-panel {
-    flex-basis: 50%;
-    padding: 4rem;
-    color: #e0e0e0;
-    /* Un blanco no tan puro */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  flex-basis: 50%;
+  padding: 5rem 4rem;
+  background-color: var(--color-blue-slate); /* Azul Pizarra para un look profesional */
+  color: var(--color-gray-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cta-eyebrow {
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    color: #f0e68c;
-    /* Color crema/amarillo claro */
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  color: var(--color-amber-gold); /* Ámbar Dorado para el acento */
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .cta-text {
-    font-family: serif;
-    /* Fuente con serifa como en la imagen */
-    font-size: 1.5rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 500px; /* Limitamos el ancho para mejor legibilidad */
 }
 
-.cta-email-link {
-    color: #f0e68c;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.cta-email-link:hover {
-    color: #fff;
-}
-
-.cta-button {
-    background-color: #f0e68c;
-    /* Mismo color crema */
-    color: #1a1a1a;
-    /* Texto negro */
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    align-self: flex-start;
-    /* Alinea el botón a la izquierda */
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #fff;
+/* El botón primario ya tiene estilos globales, no necesitamos redefinirlo */
+.cta-content-panel .btn-primary {
+  align-self: flex-start; /* Alinea el botón a la izquierda */
 }
 
 
 /* --- Responsive Design --- */
-
 @media (max-width: 992px) {
-    .cta-container {
-        flex-direction: column;
-        /* Apila los paneles */
-    }
-    .cta-graphic-panel,
-    .cta-content-panel {
-        flex-basis: auto;
-        /* Resetea la base del flex */
-    }
-    .cta-graphic-panel {
-        min-height: 250px;
-    }
+  .cta-container {
+    flex-direction: column;
+    margin: 4rem auto;
+  }
+  .cta-graphic-panel {
+    min-height: 250px;
+    padding: 4rem 2rem;
+  }
+  .cta-content-panel {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .cta-content-panel .btn-primary {
+    align-self: center; /* Centramos el botón en móvil */
+  }
+  .cta-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 576px) {
-    .cta-section {
-        padding: 3rem 1rem;
-    }
-    .cta-graphic-panel,
-    .cta-content-panel {
-        padding: 2.5rem;
-    }
-    .cta-graphic-title {
-        font-size: 2rem;
-    }
-    .cta-text {
-        font-size: 1.2rem;
-    }
+  .cta-section {
+    padding: 0 1rem;
+  }
+  .cta-container {
+    margin: 3rem auto;
+  }
+  .cta-graphic-title {
+    font-size: 2.2rem;
+  }
+  .cta-text {
+    font-size: 1.1rem;
+  }
 }

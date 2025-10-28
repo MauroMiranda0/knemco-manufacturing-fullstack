@@ -1,28 +1,31 @@
 // client/src/sections/CTASection.jsx
+// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import '../styles/CTASection.css';
 
 const CTASection = () => {
   return (
-    // Añadimos el id 'investment' para el enlace del Navbar
     <section id="investment" className="cta-section">
       <div className="cta-container">
         {/* Panel Gráfico Izquierdo */}
         <div className="cta-graphic-panel">
           <h2 className="cta-graphic-title">
-            OWN A PIECE OF THE FACTORY
+            Invest in Local
+            <br />
+            Manufacturing
           </h2>
         </div>
 
         {/* Panel de Contenido Derecho */}
         <div className="cta-content-panel">
-          <h4 className="cta-eyebrow">GET INVOLVED</h4>
+          <h4 className="cta-eyebrow">Community Investment</h4>
           <p className="cta-text">
-            Interested in learning more about our Community Investment model?
-            Please contact us at: <a href="mailto:info@knemcomfg.com" className="cta-email-link">info@knemcomfg.com</a>
+            Become a part of Grande Prairie's manufacturing future. Invest in a 3D printer
+            on our farm and earn passive income while empowering local creators.
           </p>
-          <a href="#subscribe" className="cta-button">
-            SUBSCRIBE TO OUR NEWSLETTER
+          {/* Usamos las clases globales de botón */}
+          <a href="#contact" className="btn btn-primary">
+            Learn About Investing
           </a>
         </div>
       </div>
