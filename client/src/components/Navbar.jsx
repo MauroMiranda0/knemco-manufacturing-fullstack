@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                <a href="/" className="navbar-logo">
+                <a href="/knemco-manufacturing-fullstack/" className="navbar-logo">
                     <img src={Logo} alt="imagen logo" />
                 </a>
             </div>
