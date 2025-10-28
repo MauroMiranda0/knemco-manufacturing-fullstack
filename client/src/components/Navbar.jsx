@@ -1,6 +1,6 @@
 // client/src/components/Navbar.jsx
 import React, { useState } from 'react'; // Importa useState
-import Logo from '../assets/logo.png';
+import Logo from '../assets/images/logo.png';
 
 import '../styles/Navbar.css';
 
@@ -16,7 +16,6 @@ const Navbar = () => {
             <div className="navbar-brand">
                 <a href="/" className="navbar-logo">
                     <img src={Logo} alt="imagen logo" />
-                    {/* <span className='title'>KNEMCO Manufacturing</span> */}
                 </a>
             </div>
 
