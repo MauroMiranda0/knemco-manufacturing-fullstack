@@ -1,9 +1,7 @@
 /* client/src/styles/ServicesSection.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
-
 .services-section {
   padding: 6rem 3rem;
-  background-color: var(--color-blue-slate); /* Fondo Azul Pizarra */
+  background-color: var(--color-blue-slate);
 }
 
 .section-header {
@@ -12,7 +10,6 @@
   margin: 0 auto 4rem auto;
 }
 
-/* Colores de texto ajustados para el fondo oscuro */
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
@@ -26,13 +23,15 @@
   line-height: 1.6;
 }
 
+/* --- TU CÓDIGO MEJORADO --- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tu mejora */
   gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
+/* --- FIN DE TU CÓDIGO --- */
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
@@ -40,7 +39,6 @@
     padding: 4rem 1.5rem;
   }
   .services-grid {
-    grid-template-columns: 1fr;
     gap: 2rem;
   }
   .section-title {
@@ -49,6 +47,7 @@
 }
 
 @media (max-width: 576px) {
+    /* Aquí la grilla ya se comporta como una sola columna gracias a tu 'minmax' */
   .section-title {
     font-size: 1.8rem;
   }

@@ -1,73 +1,72 @@
 /* client/src/styles/ProductCard.css */
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .product-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra base */
-  overflow: hidden; /* Asegura que la imagen no se salga del borde redondeado */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos hover */
-  cursor: pointer; /* Indica que es interactivo */
-  display: flex; /* Para que el contenido se apile verticalmente */
+  background-color: var(--color-white-snow);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden; /* Muy importante para que la imagen no se salga al hacer zoom */
+  display: flex;
   flex-direction: column;
-  height: 100%; /* Ocupa la altura completa de su contenedor en la grilla */
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-8px); /* Efecto de elevación al pasar el ratón */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.card-image-placeholder {
-  width: 100%;
-  height: 200px; /* Altura fija para el área de la imagen */
-  background-color: #ccc; /* Color por defecto si no se especifica */
-  background-size: cover; /* Cubre todo el espacio */
-  background-position: center; /* Centra la imagen */
-  display: flex; /* Para centrar el texto si no hay imagen */
+.product-card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease-out; /* Transición para el efecto de zoom */
+  display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; /* Color de texto para el placeholder */
-  font-weight: bold;
-  font-size: 1.5rem;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separador sutil */
 }
 
-.card-placeholder-text {
-    padding: 1rem; /* Espaciado interno para el texto del placeholder */
-    max-width: 90%; /* Asegura que el texto no se desborde */
+/* Efecto de zoom en la imagen al pasar el cursor por la tarjeta */
+.product-card:hover .product-card-image {
+  transform: scale(1.05);
 }
 
-.card-content {
+.placeholder-text {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+}
+
+.product-card-content {
   padding: 1.5rem;
-  flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Asegura que el contenido ocupe el espacio disponible */
 }
 
-.card-title {
+.product-card-title {
+  font-family: var(--font-primary);
   font-size: 1.4rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-gray-steel);
   margin-top: 0;
   margin-bottom: 0.8rem;
 }
 
-.card-description {
+.product-card-description {
+  font-family: var(--font-secondary);
   font-size: 1rem;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 0;
+  color: var(--color-gray-steel);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Empuja el botón hacia abajo */
 }
 
-/* Media queries para responsividad de la card si es necesario,
-   pero la grilla manejará la mayor parte de la responsividad. */
-@media (max-width: 768px) {
-    .card-image-placeholder {
-        height: 180px;
-    }
-    .card-title {
-        font-size: 1.2rem;
-    }
-    .card-description {
-        font-size: 0.9rem;
-    }
+/* El botón secundario ya tiene estilos globales */
+.product-card-content .btn-secondary {
+  align-self: flex-start; /* Alinea el botón a la izquierda */
 }

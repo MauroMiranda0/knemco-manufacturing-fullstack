@@ -1,33 +1,25 @@
 /* client/src/styles/ServiceCard.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
 .service-card {
-  background-color: #fff;
+  background-color: var(--color-white-snow);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  transition: transform 0.3s ease;
+  align-items: flex-start; /* Tu mejora */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Tu sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Añadido de vuelta para robustez */
+  box-sizing: border-box; /* Buena práctica */
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Tu efecto hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
 .card-icon {
   font-size: 2.5rem;
-  color: var(--color-orange-knemco); /* Acento Naranja */
+  color: var(--color-orange-knemco);
   margin-bottom: 1.5rem;
 }
 
@@ -62,15 +54,14 @@
 }
 
 .feature-icon {
-  color: var(--color-orange-knemco); /* Acento Naranja para consistencia */
+  color: var(--color-orange-knemco);
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
-/* El botón ahora es global, solo necesitamos alinear el de la card */
 .card-button {
-  margin-top: auto; /* Empuja el botón al fondo */
-  align-self: flex-start; /* Lo alinea a la izquierda */
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .card-button .arrow {
