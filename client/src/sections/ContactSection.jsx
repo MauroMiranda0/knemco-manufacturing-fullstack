@@ -1,32 +1,31 @@
 // client/src/sections/ContactSection.jsx
+// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React, { useState } from 'react';
-import { FaPaperPlane } from 'react-icons/fa'; // Icono para el botón de enviar
+import { FiSend } from 'react-icons/fi'; // Usamos un icono de línea
 import '../styles/ContactSection.css';
 
-// Datos para los diferentes temas de contacto
 const contactTopics = {
   project: {
     id: 'project',
     title: 'Project Inquiry',
     placeholder: 'Tell us about your project requirements, goals, and timeline...',
-    info: 'Project Inquiry: Let us know what you want to build. We’ll get back to you with a quote and timeline.'
+    info: 'Let us know what you want to build. We’ll get back to you with a quote and timeline.'
   },
   investment: {
     id: 'investment',
     title: 'Investment Interest',
     placeholder: 'Tell us about your investment interests...',
-    info: 'Investment Interest: Learn about our printer investment program and passive income opportunities. We’ll provide detailed information about returns and participation.'
+    info: 'Learn about our printer investment program and passive income opportunities. We’ll provide detailed information about returns and participation.'
   },
   partnership: {
     id: 'partnership',
     title: 'Partnership Opportunity',
     placeholder: 'Describe the partnership opportunity you have in mind...',
-    info: 'Partnership Opportunity: We are always open to collaborating with local businesses and creators. Let’s build something great together.'
+    info: 'We are always open to collaborating with local businesses and creators. Let’s build something great together.'
   }
 };
 
 const ContactSection = () => {
-  // Estado para manejar el tema activo. 'investment' es el inicial por defecto.
   const [activeTopic, setActiveTopic] = useState(contactTopics.investment);
 
   const handleTopicChange = (topicId) => {
@@ -72,7 +71,7 @@ const ContactSection = () => {
               <input type="text" id="company" name="company" placeholder="Your company name" />
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group full-width">
             <label htmlFor="message">Message *</label>
             <textarea
               id="message"
@@ -86,10 +85,16 @@ const ContactSection = () => {
           <div className="info-box">
             <p><strong>{activeTopic.title}:</strong> {activeTopic.info}</p>
           </div>
+          
+          {/* --- CÓDIGO ACTUALIZADO --- */}
+          <div className="centered-flex">
+  <button type="submit" className="btn btn-primary submit-button">
+    Send Message <FiSend />
+  </button>
+</div>
 
-          <button type="submit" className="submit-button">
-            Send Message <FaPaperPlane className="submit-icon" />
-          </button>
+          {/* --- FIN DEL CÓDIGO ACTUALIZADO --- */}
+
           <p className="response-time-notice">
             We typically respond within 24 hours during business days.
           </p>
