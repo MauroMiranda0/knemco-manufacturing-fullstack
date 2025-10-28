@@ -1,6 +1,7 @@
 // client/src/components/ServiceCard.jsx
+// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa'; // Importamos el ícono de check
+import { FiCheck } from 'react-icons/fi'; // Un icono de línea para el check
 import '../styles/ServiceCard.css';
 
 const ServiceCard = ({ icon, title, description, features }) => {
@@ -12,14 +13,16 @@ const ServiceCard = ({ icon, title, description, features }) => {
       <ul className="features-list">
         {features.map((feature, index) => (
           <li key={index} className="feature-item">
-            <FaCheckCircle className="feature-icon" />
+            <FiCheck className="feature-icon" />
             <span>{feature}</span>
           </li>
         ))}
       </ul>
-      <a href="#contact" className="learn-more-button">
+      {/* --- NUEVO CÓDIGO: Aplicamos las clases globales de botón --- */}
+      <a href="#contact" className="btn btn-secondary card-button">
         Learn More <span className="arrow">→</span>
       </a>
+      {/* --- FIN DEL NUEVO CÓDIGO --- */}
     </div>
   );
 };

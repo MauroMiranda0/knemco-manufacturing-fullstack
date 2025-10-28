@@ -59,7 +59,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     /* Grilla responsive */
-    gap: 2rem;
+    gap: 20rem;
     /* Espacio entre las cards */
     max-width: 1200px;
     /* Ancho máximo de la grilla */

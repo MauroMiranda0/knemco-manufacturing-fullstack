@@ -1,62 +1,89 @@
 /* client/src/styles/index.css */
-
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
 
 /* 1. Definición de Variables Globales (Paleta de Colores y Tipografía) */
-
 :root {
-    /* Paleta de Colores */
-    --color-white-snow: #FDFDFD;
-    --color-gray-steel: #4A4A4A;
-    --color-blue-slate: #3D5A80;
-    --color-gray-light: #E0E0E0;
-    --color-orange-knemco: #EE6C4D;
-    --color-amber-gold: #FFC107;
-    /* Tipografía */
-    --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Inter', sans-serif;
-}
+  /* Paleta de Colores */
+  --color-white-snow: #FDFDFD;
+  --color-gray-steel: #4A4A4A;
+  --color-blue-slate: #3D5A80;
+  --color-gray-light: #E0E0E0;
+  --color-orange-knemco: #EE6C4D;
+  --color-amber-gold: #FFC107;
 
+  /* Tipografía */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
 
 /* 2. Reseteo y Estilos Base para el Body */
-
 body {
-    margin: 0;
-    font-family: var(--font-secondary);
-    /* Fuente por defecto para párrafos */
-    font-size: 16px;
-    /* Tamaño base del texto */
-    background-color: var(--color-white-snow);
-    /* Blanco Nieve para fondos */
-    color: var(--color-gray-steel);
-    /* Gris Acero para el texto */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: var(--font-secondary); /* Fuente por defecto para párrafos */
+  font-size: 16px; /* Tamaño base del texto */
+  background-color: var(--color-white-snow); /* Blanco Nieve para fondos */
+  color: var(--color-gray-steel); /* Gris Acero para el texto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* 3. Estilos Base para Títulos (para mantener consistencia) */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-primary);
-    /* Fuente por defecto para títulos */
-    margin: 0 0 1rem 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary); /* Fuente por defecto para títulos */
+  margin: 0 0 1rem 0;
 }
 
-
 /* 4. Estilos Generales para Enlaces */
-
 a {
-    color: var(--color-orange-knemco);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: var(--color-orange-knemco);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--color-blue-slate);
+  color: var(--color-blue-slate);
 }
+
+/* 5. Estilos Globales para Botones */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-orange-knemco);
+  color: var(--color-white-snow);
+}
+
+.btn-primary:hover {
+  background-color: #D95A3B; /* Un tono de naranja ligeramente más oscuro */
+  color: var(--color-white-snow);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* --- NUEVO CÓDIGO --- */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-blue-slate);
+  border-color: var(--color-blue-slate);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-blue-slate);
+  color: var(--color-white-snow);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* --- FIN DEL NUEVO CÓDIGO --- */

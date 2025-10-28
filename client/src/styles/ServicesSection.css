@@ -1,60 +1,58 @@
 /* client/src/styles/ServicesSection.css */
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .services-section {
-    padding: 6rem 3rem;
-    background-color: #f8f8f8;
+  padding: 6rem 3rem;
+  background-color: var(--color-blue-slate); /* Fondo Azul Pizarra */
 }
 
 .section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
 }
 
+/* Colores de texto ajustados para el fondo oscuro */
 .section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-white-snow);
+  margin-bottom: 1.5rem;
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    line-height: 1.6;
+  font-size: 1.2rem;
+  color: var(--color-gray-light);
+  line-height: 1.6;
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Dos columnas en desktop */
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
 /* --- Responsive Design --- */
-
 @media (max-width: 992px) {
-    .services-section {
-        padding: 4rem 1.5rem;
-    }
-    .services-grid {
-        grid-template-columns: 1fr;
-        /* Una columna en tablets */
-        gap: 2rem;
-    }
-    .section-title {
-        font-size: 2.2rem;
-    }
+  .services-section {
+    padding: 4rem 1.5rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-    .section-subtitle {
-        font-size: 1rem;
-    }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
 }
