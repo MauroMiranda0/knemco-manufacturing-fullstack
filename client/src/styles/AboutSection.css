@@ -1,71 +1,64 @@
 /* client/src/styles/AboutSection.css */
-
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 .about-section {
-    padding: 6rem 3rem;
-    background-color: #fff;
-    /* Fondo blanco para esta sección */
+  padding: 6rem 3rem;
+  background-color: var(--color-white-snow);
 }
 
-
-/* Reutilizamos el estilo .section-header que ya tenemos */
-
 .about-section .section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
 }
 
 .about-section .section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #333;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-gray-steel);
 }
 
 .founders-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Dos columnas */
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto 5rem auto;
-    /* Espacio extra abajo antes de la caja de sinergia */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem auto;
 }
 
 .synergy-box {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2.5rem;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background-color: #f0f2f5; /* Un gris muy claro, casi blanco */
+  border-radius: 12px; /* Consistente con las tarjetas */
+  text-align: center;
 }
 
 .synergy-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-gray-steel);
+  margin-bottom: 1rem;
 }
 
 .synergy-text {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  color: var(--color-gray-steel);
+  line-height: 1.8;
 }
 
-
 /* --- Responsive Design --- */
-
 @media (max-width: 992px) {
-    .founders-grid {
-        grid-template-columns: 1fr;
-        /* Una columna en tablets */
-        gap: 5rem;
-    }
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .about-section {
-        padding: 3rem 1.5rem;
-    }
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
 }
