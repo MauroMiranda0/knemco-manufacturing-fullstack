@@ -1,6 +1,5 @@
 /* client/src/styles/index.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* 1. Definición de Variables Globales (NUEVA PALETA MENTOR) */
 :root {
@@ -15,7 +14,7 @@
   --color-gray-light: #E0E0E0; /* Mantendremos un gris para bordes sutiles */
 
   /* Tipografía (la mantenemos, es excelente) */
-  --font-primary: 'Poppins', sans-serif;
+  --font-primary: 'Montserrat', sans-serif; /* Cambiamos Poppins por Montserrat */
   --font-secondary: 'Inter', sans-serif;
 
   /* --- Variables antiguas que reemplazamos (para referencia) --- */
