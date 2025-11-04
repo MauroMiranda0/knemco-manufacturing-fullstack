@@ -15,18 +15,32 @@ import {
   TfiPackage
 } from 'react-icons/tfi'; // Feather Icons, como sugiere la guía
 
+// --- NUEVO CONTENIDO DEL ARQUETIPO MENTOR ---
 const servicesData = [
   {
-    icon: <TfiPrinter />, // Usamos el componente del icono
-    title: 'Print-on-Demand Manufacturing',
-    description: 'Scalable production for your designs without minimum order quantities. Perfect for testing market demand and iterating quickly.',
-    features: ['No minimum order quantities', 'Fast turnaround times', 'Multiple material options', 'Quality assurance included', 'Competitive pricing']
+    icon: <TfiPrinter />,
+    title: 'Your On-Demand Manufacturing Partner',
+    description: 'Test, iterate, and grow without risk.',
+    features: [
+      'Start with just one unit',
+      'No minimums holding you back',
+      'Quick turns, faster learning',
+      'The perfect material for your vision',
+      'Every part checked with care',
+      'Fair rates for every stage of your journey'
+    ]
   },
   {
-    icon: <TfiRocket />,
-    title: 'Product Launch Package',
-    description: 'Complete end-to-end service for entrepreneurs and businesses. From concept to market, we handle design, engineering, and strategy.',
-    features: ['Product design & engineering', 'Prototype development', 'Manufacturing optimization', 'Market consulting', 'Branding support']
+    icon: <FaBookOpen />, // Usamos el ícono de 'aprender' para esta sección
+    title: 'Product Launching & Workshops',
+    description: "From your first print to designing your own products, we're here to guide you.",
+    features: [
+      'Your First Print: Master the essentials',
+      'Next-Level Skills: Learn advanced techniques',
+      'Design for Reality: Get hands-on with pro software',
+      'Materials, Decoded: Understand which filament is right',
+      'Project-Based Learning: Build something real'
+    ]
   },
   {
     icon: <FaTools />,
@@ -41,11 +55,12 @@ const servicesData = [
     features: ['3D modeling & CAD', 'Material recommendations', 'Design for manufacturability', 'Feasibility analysis', 'Cost optimization']
   },
   {
-    icon: <FaBookOpen />,
-    title: 'Workshops & Training',
-    description: 'Learn the fundamentals of 3D printing, design, and product development. Programs for everyone from beginners to advanced users.',
-    features: ['3D printing basics', 'Advanced techniques', 'Design software training', 'Material science', 'Hands-on projects']
+    icon: <TfiRocket />,
+    title: 'Full Product Launch Package',
+    description: 'Our most comprehensive service for entrepreneurs. We become your strategic partner from concept to market.',
+    features: ['Product design & engineering', 'Prototype development', 'Manufacturing optimization', 'Market consulting', 'Branding support']
   },
+
   {
     icon: <TfiPackage />,
     title: 'Materials & Supplies',
@@ -53,17 +68,18 @@ const servicesData = [
     features: ['Multiple material types', 'Bulk discounts available', 'Quality guaranteed', 'Expert recommendations', 'Fast shipping']
   }
 ];
-// --- FIN DEL NUEVO CÓDIGO ---
+// --- FIN DEL NUEVO CONTENIDO ---
 
 const ServicesSection = () => {
   return (
     <section id="services" className="services-section">
       <div className="section-header">
-        <h2 className="section-title">Services Designed for Creators and Businesses</h2>
+        {/* --- NUEVO TÍTULO Y SUBTÍTULO --- */}
+        <h2 className="section-title">The Right Tools & Team for Your Big Idea.</h2>
         <p className="section-subtitle">
-          Whether you need a single custom part or a complete product launch strategy, Knemco provides
-          comprehensive manufacturing and consulting services tailored to your needs.
+          From a single custom piece to a full product line, we're with you at every step.
         </p>
+        {/* --- FIN DEL NUEVO TÍTULO Y SUBTÍTULO --- */}
       </div>
       <div className="services-grid">
         {servicesData.map((service, index) => (

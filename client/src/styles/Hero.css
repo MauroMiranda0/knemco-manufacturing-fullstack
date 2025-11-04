@@ -1,16 +1,18 @@
-css
 /* client/src/styles/Hero.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
+/* --- CÓDIGO COMPLETO Y CORREGIDO --- */
 
 .hero-section {
   position: relative;
   height: 90vh;
+  /* Usamos flexbox para centrar el contenido vertical y horizontalmente */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
   text-align: center;
-  color: var(--color-white); /* El texto será blanco para contrastar */
+  color: var(--color-white);
   overflow: hidden;
+  /* --- SOLUCIÓN Z-INDEX --- */
+  z-index: 1; /* Establece un contexto de apilamiento para esta sección */
 }
 
 .hero-background-image {
@@ -22,8 +24,8 @@ css
   background-image: url('../assets/images/hero-background.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1;
-  /* Animación sutil de "Ken Burns" para darle vida a la imagen */
+  /* Lo ponemos detrás del contenido y del overlay */
+  z-index: -2;
   animation: kenBurns 20s ease-in-out infinite;
 }
 
@@ -33,16 +35,17 @@ css
   left: 0;
   width: 100%;
   height: 100%;
-  /* Usamos el verde oscuro para el overlay. El '0.7' controla la opacidad. */
-  background-color: rgba(19, 42, 37, 0.7);
-  /* Un gradiente sutil para dirigir la mirada */
   background-image: linear-gradient(to bottom, rgba(19, 42, 37, 0.5), rgba(19, 42, 37, 0.8));
+  /* Lo ponemos entre la imagen y el contenido */
+  z-index: -1;
 }
 
 .hero-content {
   max-width: 800px;
   padding: 2rem;
   animation: fadeInText 1s ease-out forwards;
+  /* --- SOLUCIÓN DE POSICIONAMIENTO --- */
+  /* Ya no necesitamos posicionamiento adicional porque flexbox en .hero-section lo centra */
 }
 
 .hero-title {
@@ -50,7 +53,7 @@ css
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--color-white); /* Aseguramos que el título sea blanco */
+  color: var(--color-white);
 }
 
 .hero-description {
@@ -58,45 +61,22 @@ css
   font-family: var(--font-secondary);
   max-width: 600px;
   margin: 0 auto 2.5rem auto;
-  line-height: 1.7; /* Más espacio entre líneas para un look más "aireado" */
-  color: #E0E0E0; /* Un blanco no tan puro para el subtítulo */
+  line-height: 1.7;
+  color: #E0E0E0;
 }
 
-/* El botón ya usa las variables correctas de .btn-primary */
-
-
-/* Animación de entrada para el texto */
 @keyframes fadeInText {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- NUEVO CÓDIGO: Animación Ken Burns --- */
 @keyframes kenBurns {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(1deg);
-  }
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(1deg); }
 }
-/* --- FIN DEL NUEVO CÓDIGO --- */
-
 
 @media (max-width: 768px) {
-  .hero-section {
-    height: 80vh;
-  }
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .hero-description {
-    font-size: 1rem;
-  }
+  .hero-section { height: 80vh; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-description { font-size: 1rem; }
 }
