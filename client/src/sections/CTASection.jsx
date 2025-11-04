@@ -7,23 +7,23 @@ const CTASection = () => {
   return (
     <section id="investment" className="cta-section">
       <div className="cta-container">
-        {/* Panel Gráfico Izquierdo */}
-        <div className="cta-graphic-panel">
-          <h2 className="cta-graphic-title">
-            Invest in Local
+        {/* Columna Izquierda: Título Principal */}
+        <div className="cta-column cta-title-column">
+          <h2 className="cta-title">
+            OWN A PIECE
             <br />
-            Manufacturing
+            OF THE SHOP.
           </h2>
         </div>
 
-        {/* Panel de Contenido Derecho */}
-        <div className="cta-content-panel">
-          <h4 className="cta-eyebrow">Community Investment</h4>
+        {/* Columna Derecha: Contenido y Botón */}
+        <div className="cta-column cta-content-column">
+          <h4 className="cta-eyebrow">COMMUNITY INVESTMENT</h4>
           <p className="cta-text">
-            Become a part of Grande Prairie's manufacturing future. Invest in a 3D printer
-            on our farm and earn passive income while empowering local creators.
+            Become a part of Grande Prairie's manufacturing
+            future. Invest in a 3D printer on our farm and earn
+            passive income while empowering local creators.
           </p>
-          {/* Usamos las clases globales de botón */}
           <a href="#contact" className="btn btn-primary">
             Learn About Investing
           </a>
