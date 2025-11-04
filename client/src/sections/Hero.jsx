@@ -2,24 +2,25 @@
 // --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import '../styles/Hero.css';
-// No necesitamos importar la imagen aquí, la manejaremos con CSS
+// Mantenemos la estructura actual, solo cambiamos el contenido
 
 const Hero = () => {
   return (
     <section id="home" className="hero-section">
-      <div className="hero-background-image"></div> {/* Contenedor para la imagen de fondo */}
-      <div className="video-overlay"></div> {/* Mantenemos la superposición oscura */}
+      <div className="hero-background-image"></div>
+      <div className="video-overlay"></div>
 
       <div className="hero-content">
+        {/* --- NUEVO CONTENIDO --- */}
         <h1 className="hero-title">
-          Manufacture Your Ideas.
-          <br />
-          Grow With Your Community.
+          Let's Build It Together.
         </h1>
         <p className="hero-description">
-          We empower creators and entrepreneurs by making the means of production accessible to everyone.
-          Locally designed, prototyped, and manufactured in Grande Prairie.
+          Your vision, made real right here in Grande Prairie. We're your partners in creation.
+          We provide the tools, the expertise, and the community support to turn your idea
+          into a product you can hold and your neighbours can buy.
         </p>
+        {/* --- FIN DEL NUEVO CONTENIDO --- */}
         <a href="#services" className="btn btn-primary">
           Explore the Ecosystem
         </a>

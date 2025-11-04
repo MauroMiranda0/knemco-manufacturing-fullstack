@@ -2,63 +2,96 @@
 /* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 .about-section {
   padding: 6rem 3rem;
-  background-color: var(--color-white-snow);
+  background-color: var(--color-bg); /* Fondo Mint Cream */
 }
 
-.about-section .section-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem auto;
-}
-
-.about-section .section-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--color-gray-steel);
-}
-
-.founders-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.about-container {
+  display: flex;
+  align-items: center;
   gap: 4rem;
-  max-width: 1200px;
-  margin: 0 auto 5rem auto;
-}
-
-.synergy-box {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem;
-  background-color: #f0f2f5; /* Un gris muy claro, casi blanco */
-  border-radius: 12px; /* Consistente con las tarjetas */
-  text-align: center;
 }
 
-.synergy-title {
-  font-family: var(--font-primary);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--color-gray-steel);
-  margin-bottom: 1rem;
+/* Columna de Imágenes */
+.about-images-column {
+  flex: 1;
+  display: flex;
+  gap: 1.5rem;
 }
 
-.synergy-text {
+.about-image-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4; /* Proporción de retrato para las fotos */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(19, 42, 37, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.03);
+}
+
+/* Posicionamos los nombres sobre las imágenes */
+.image-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: rgba(19, 42, 37, 0.7); /* Dark Green semitransparente */
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+}
+
+
+/* Columna de Contenido */
+.about-content-column {
+  flex: 1.2; /* Damos un poco más de espacio al texto */
+}
+
+.about-content-column .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+
+.about-text {
   font-family: var(--font-secondary);
   font-size: 1.1rem;
-  color: var(--color-gray-steel);
   line-height: 1.8;
+  color: var(--color-text);
+  opacity: 0.9;
 }
+
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-  .founders-grid {
-    grid-template-columns: 1fr;
-    gap: 5rem;
+  .about-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .about-images-column {
+      width: 100%;
+      max-width: 500px; /* Evita que las imágenes sean demasiado grandes en tablets */
+  }
+  .about-content-column {
+      text-align: center;
   }
 }
 
 @media (max-width: 576px) {
   .about-section {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
+  }
+  .about-images-column {
+      flex-direction: column;
   }
 }

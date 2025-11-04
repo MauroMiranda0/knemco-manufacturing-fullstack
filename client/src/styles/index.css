@@ -1,48 +1,59 @@
 /* client/src/styles/index.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* 1. Definición de Variables Globales (Paleta de Colores y Tipografía) */
+/* 1. Definición de Variables Globales (NUEVA PALETA MENTOR) */
 :root {
-  /* Paleta de Colores */
-  --color-white-snow: #FDFDFD;
-  --color-gray-steel: #4A4A4A;
-  --color-blue-slate: #3D5A80;
-  --color-gray-light: #E0E0E0;
-  --color-orange-knemco: #EE6C4D;
-  --color-amber-gold: #FFC107;
+  /* Nueva Paleta de Colores */
+  --color-bg: #F0F9F7;               /* Mint cream */
+  --color-text: #132A25;             /* Dark green */
+  --color-primary-accent: #ED4845;   /* Imperial red */
+  --color-secondary-bg: #9ED4E5;     /* Non Photo blue */
+  --color-secondary-accent: #E4B363; /* Earth yellow */
+  
+  --color-white: #FFFFFF;
+  --color-gray-light: #E0E0E0; /* Mantendremos un gris para bordes sutiles */
 
-  /* Tipografía */
-  --font-primary: 'Poppins', sans-serif;
+  /* Tipografía (la mantenemos, es excelente) */
+  --font-primary: 'Montserrat', sans-serif; /* Cambiamos Poppins por Montserrat */
   --font-secondary: 'Inter', sans-serif;
+
+  /* --- Variables antiguas que reemplazamos (para referencia) --- */
+  /*
+    --color-white: #FDFDFD;
+    --color-text: #4A4A4A;
+    --color-secondary-bg: #3D5A80;
+    --color-primary-accent: #EE6C4D;
+    --color-secondary-accent: #FFC107;
+  */
 }
 
 /* 2. Reseteo y Estilos Base para el Body */
 body {
   margin: 0;
-  font-family: var(--font-secondary); /* Fuente por defecto para párrafos */
-  font-size: 16px; /* Tamaño base del texto */
-  background-color: var(--color-white-snow); /* Blanco Nieve para fondos */
-  color: var(--color-gray-steel); /* Gris Acero para el texto */
+  font-family: var(--font-secondary);
+  font-size: 16px;
+  background-color: var(--color-bg); /* Nuevo color de fondo */
+  color: var(--color-text); /* Nuevo color de texto */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 3. Estilos Base para Títulos (para mantener consistencia) */
+/* 3. Estilos Base para Títulos */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary); /* Fuente por defecto para títulos */
+  font-family: var(--font-primary);
+  color: var(--color-text); /* Aseguramos que los títulos también usen el nuevo color */
   margin: 0 0 1rem 0;
 }
 
 /* 4. Estilos Generales para Enlaces */
 a {
-  color: var(--color-orange-knemco);
+  color: var(--color-primary-accent); /* Nuevo color de acento */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-blue-slate);
+  color: var(--color-text);
 }
 
 /* 5. Estilos Globales para Botones */
@@ -62,28 +73,26 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--color-orange-knemco);
-  color: var(--color-white-snow);
+  background-color: var(--color-primary-accent); /* Nuevo acento */
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background-color: #D95A3B; /* Un tono de naranja ligeramente más oscuro */
-  color: var(--color-white-snow);
+  background-color: #C13A38; /* Un rojo ligeramente más oscuro */
+  color: var(--color-white);
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* --- NUEVO CÓDIGO --- */
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-blue-slate);
-  border-color: var(--color-blue-slate);
+  color: var(--color-text); /* Botón secundario con texto oscuro */
+  border-color: var(--color-text);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-blue-slate);
-  color: var(--color-white-snow);
+  background-color: var(--color-text);
+  color: var(--color-white);
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-/* --- FIN DEL NUEVO CÓDIGO --- */
