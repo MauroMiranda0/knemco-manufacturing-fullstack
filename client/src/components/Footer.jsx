@@ -1,9 +1,7 @@
 // client/src/components/Footer.jsx
 // --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
-// Usamos iconos de línea de Feather Icons para consistencia
 import { FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
-import Logo from '../assets/images/logo.png';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -12,12 +10,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Columna 1: Marca y Redes Sociales */}
         <div className="footer-column brand-column">
-          <div className="navbar-brand">
-            <a href="/" className="navbar-logo">
-              <img src={Logo} alt="imagen logo" />
-            </a>
-          </div>
-          {/* <h3 className="footer-logo">Knemco</h3> */}
+          <h3 className="footer-logo">Knemco</h3>
           <p className="footer-tagline">Manufacture Your Ideas. Grow With Your Community.</p>
           <div className="social-icons">
             <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
@@ -39,12 +32,22 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Columna 3: Contacto */}
+        {/* Columna 3: Contacto (con los nuevos datos) */}
         <div className="footer-column contact-column">
           <h4 className="footer-heading">Get in Touch</h4>
-          <p>Grande Prairie, Alberta<br />Canada</p>
-          <p><a href="mailto:info@knemcomfg.com">info@knemcomfg.com</a></p>
-          <p><a href="#contact">Contact Form</a></p> {/* Enlace al formulario de la página */}
+          {/* --- NUEVOS DATOS --- */}
+          <p>
+            9804 100 Ave., Grande Prairie
+            <br />
+            Alberta, Canada. T8V 0T8
+          </p>
+          <p><a href="mailto:letsprint@knemco.ca">letsprint@knemco.ca</a></p>
+          <p>
+            <a href="https://knemco.ca" target="_blank" rel="noopener noreferrer">knemco.ca</a>
+            {' | '}
+            <a href="https://knemco.co" target="_blank" rel="noopener noreferrer">knemco.co</a>
+          </p>
+          {/* --- FIN DE NUEVOS DATOS --- */}
         </div>
       </div>
       <div className="footer-bottom">
