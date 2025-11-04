@@ -1,8 +1,8 @@
 /* client/src/styles/ContactSection.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
+/* --- CÓDIGO COMPLETO Y CORREGIDO --- */
 .contact-section {
   padding: 6rem 3rem;
-  background-color: var(--color-white-snow);
+  background-color: var(--color-bg); /* Fondo Mint Cream */
 }
 
 .contact-section .section-header {
@@ -14,23 +14,24 @@
 .contact-section .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-gray-steel);
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
 .contact-section .section-subtitle {
   font-size: 1.2rem;
-  color: var(--color-gray-steel);
+  color: var(--color-text);
+  opacity: 0.8;
   line-height: 1.6;
 }
 
 .contact-form-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--color-white); /* Contenedor blanco */
   padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(19, 42, 37, 0.08);
 }
 
 .topic-buttons {
@@ -46,7 +47,7 @@
   border-radius: 50px;
   border: 2px solid var(--color-gray-light);
   background-color: transparent;
-  color: var(--color-gray-steel);
+  color: var(--color-text);
   font-family: var(--font-primary);
   font-weight: 600;
   cursor: pointer;
@@ -54,14 +55,14 @@
 }
 
 .topic-btn:hover {
-  background-color: #f0f2f5;
-  border-color: var(--color-gray-steel);
+  background-color: #f7f9f9;
+  border-color: var(--color-text);
 }
 
 .topic-btn.active {
-  background-color: var(--color-orange-knemco);
-  color: var(--color-white-snow);
-  border-color: var(--color-orange-knemco);
+  background-color: var(--color-text); /* Dark Green para el activo */
+  color: var(--color-white);
+  border-color: var(--color-text);
 }
 
 .form-grid {
@@ -77,21 +78,22 @@
 }
 
 .form-group.full-width {
-  grid-column: 1 / -1; /* Hace que el campo de mensaje ocupe todo el ancho */
+  grid-column: 1 / -1;
 }
 
 .form-group label {
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--color-gray-steel);
-  font-family: var(--font-secondary);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid var(--color-gray-light);
+  border: 1px solid #dde2e1;
   border-radius: 8px;
   font-size: 1rem;
   font-family: var(--font-secondary);
@@ -101,8 +103,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-orange-knemco);
-  box-shadow: 0 0 0 3px rgba(238, 108, 77, 0.25);
+  border-color: var(--color-text); /* Foco verde */
+  box-shadow: 0 0 0 3px rgba(19, 42, 37, 0.15);
 }
 
 .form-group textarea {
@@ -110,38 +112,23 @@
 }
 
 .info-box {
-  background-color: #f0f2f5;
+  background-color: #f7f9f9; /* Un gris-verdoso muy claro */
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1rem 0 2rem 0;
-  color: var(--color-gray-steel);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
 .info-box strong {
-  color: var(--color-blue-slate);
-}
-
-/* El botón de envío ahora usa estilos globales */
-.centered-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* opcional si quieres centrar también verticalmente */
-  padding: 1rem 0;      /* espacio vertical opcional */
+  color: var(--color-text);
 }
 
 .submit-button {
-  width: 40%;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   gap: 0.8rem;
+  /* El botón primario ahora es Imperial Red, perfecto */
 }
-
-
 
 .response-time-notice {
   text-align: center;
@@ -155,12 +142,9 @@
   .form-grid {
     grid-template-columns: 1fr;
   }
-  .submit-button {
-  width: 100%;
-}
 }
 
 @media (max-width: 576px) {
-  .contact-section { padding: 3rem 1rem; }
+  .contact-section { padding: 4rem 1rem; }
   .contact-form-container { padding: 2rem 1.5rem; }
 }

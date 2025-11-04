@@ -1,7 +1,7 @@
 // client/src/sections/ContactSection.jsx
 // --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React, { useState } from 'react';
-import { FiSend } from 'react-icons/fi'; // Usamos un icono de línea
+import { FiSend } from 'react-icons/fi';
 import '../styles/ContactSection.css';
 
 const contactTopics = {
@@ -86,14 +86,9 @@ const ContactSection = () => {
             <p><strong>{activeTopic.title}:</strong> {activeTopic.info}</p>
           </div>
           
-          {/* --- CÓDIGO ACTUALIZADO --- */}
-          <div className="centered-flex">
-  <button type="submit" className="btn btn-primary submit-button">
-    Send Message <FiSend />
-  </button>
-</div>
-
-          {/* --- FIN DEL CÓDIGO ACTUALIZADO --- */}
+          <button type="submit" className="btn btn-primary submit-button">
+            Send Message <FiSend />
+          </button>
 
           <p className="response-time-notice">
             We typically respond within 24 hours during business days.
