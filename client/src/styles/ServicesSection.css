@@ -1,7 +1,9 @@
 /* client/src/styles/ServicesSection.css */
+/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
+
 .services-section {
   padding: 6rem 3rem;
-  background-color: var(--color-blue-slate);
+  background-color: var(--color-bg); /* Fondo Mint Cream */
 }
 
 .section-header {
@@ -13,45 +15,38 @@
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-white-snow);
+  color: var(--color-text); /* Texto Dark Green */
   margin-bottom: 1.5rem;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: var(--color-gray-light);
+  color: var(--color-text);
+  opacity: 0.7; /* Hacemos el subtítulo un poco menos prominente */
   line-height: 1.6;
 }
 
-/* --- TU CÓDIGO MEJORADO --- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Tu mejora */
-  gap: 2.5rem;
+  /* Usaremos 3 columnas en desktop, que pasarán a 1 en móvil */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-/* --- FIN DE TU CÓDIGO --- */
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-  .services-section {
-    padding: 4rem 1.5rem;
-  }
   .services-grid {
-    gap: 2rem;
-  }
-  .section-title {
-    font-size: 2.2rem;
+    grid-template-columns: 1fr; /* Una columna en tablets y móviles */
   }
 }
 
-@media (max-width: 576px) {
-    /* Aquí la grilla ya se comporta como una sola columna gracias a tu 'minmax' */
-  .section-title {
-    font-size: 1.8rem;
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 1.5rem;
   }
-  .section-subtitle {
-    font-size: 1rem;
+  .section-title {
+    font-size: 2.2rem;
   }
 }
