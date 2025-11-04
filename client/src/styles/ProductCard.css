@@ -2,10 +2,10 @@
 /* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .product-card {
-  background-color: var(--color-white-snow);
+  background-color: var(--color-white); /* Fondo blanco puro para que resalte */
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  overflow: hidden; /* Muy importante para que la imagen no se salga al hacer zoom */
+  box-shadow: 0 8px 24px rgba(19, 42, 37, 0.05); /* Sombra sutil con el tono del texto */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -14,45 +14,32 @@
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(19, 42, 37, 0.1);
 }
 
 .product-card-image {
-  height: 220px;
+  height: 240px; /* Un poco más de altura para la imagen */
   background-size: cover;
   background-position: center;
-  transition: transform 0.4s ease-out; /* Transición para el efecto de zoom */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  transition: transform 0.4s ease-out;
 }
 
-/* Efecto de zoom en la imagen al pasar el cursor por la tarjeta */
 .product-card:hover .product-card-image {
   transform: scale(1.05);
-}
-
-.placeholder-text {
-  font-family: var(--font-primary);
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 1rem;
 }
 
 .product-card-content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Asegura que el contenido ocupe el espacio disponible */
+  flex-grow: 1;
 }
 
 .product-card-title {
   font-family: var(--font-primary);
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--color-gray-steel);
+  color: var(--color-text);
   margin-top: 0;
   margin-bottom: 0.8rem;
 }
@@ -60,13 +47,14 @@
 .product-card-description {
   font-family: var(--font-secondary);
   font-size: 1rem;
-  color: var(--color-gray-steel);
-  line-height: 1.6;
+  color: var(--color-text);
+  opacity: 0.8;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
-  flex-grow: 1; /* Empuja el botón hacia abajo */
+  flex-grow: 1;
 }
 
-/* El botón secundario ya tiene estilos globales */
 .product-card-content .btn-secondary {
-  align-self: flex-start; /* Alinea el botón a la izquierda */
+  align-self: flex-start;
+  /* El botón secundario ahora usa el color Dark Green, lo que encaja perfecto */
 }
