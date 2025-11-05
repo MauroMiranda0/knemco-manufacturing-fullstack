@@ -34,6 +34,11 @@
   box-shadow: 0 15px 40px rgba(19, 42, 37, 0.08);
 }
 
+.contact-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .topic-buttons {
   display: flex;
   justify-content: center;
@@ -91,7 +96,6 @@
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #dde2e1;
   border-radius: 8px;
@@ -125,16 +129,17 @@
 }
 
 .submit-button {
-  width: 100%;
+  width: 40%;
   gap: 0.8rem;
   /* El botón primario ahora es Imperial Red, perfecto */
+  margin-left: auto;
 }
 
 .response-time-notice {
   text-align: center;
   margin-top: 1.5rem;
   color: #888;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* --- Responsive Design --- */
@@ -142,6 +147,9 @@
   .form-grid {
     grid-template-columns: 1fr;
   }
+  .submit-button {
+  width: 100%;
+}
 }
 
 @media (max-width: 576px) {

@@ -73,25 +73,26 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--color-primary-accent); /* Nuevo acento */
+  background-color: var(--color-primary-accent); /* Imperial Red */
   color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(237, 72, 69, 0.2); /* Sombra sutil del color del botón */
 }
 
 .btn-primary:hover {
-  background-color: #C13A38; /* Un rojo ligeramente más oscuro */
+  background-color: #C13A38; /* Rojo más oscuro */
   color: var(--color-white);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: translateY(-4px); /* Elevación un poco más pronunciada */
+  box-shadow: 0 8px 25px rgba(237, 72, 69, 0.3); /* Sombra más pronunciada al hacer hover */
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-text); /* Botón secundario con texto oscuro */
-  border-color: var(--color-text);
+  color: var(--color-primary-accent); /* Botón secundario con texto oscuro */
+  border-color: var(--color-primary-accent);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-text);
+  background-color: var(--color-primary-accent);
   color: var(--color-white);
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);

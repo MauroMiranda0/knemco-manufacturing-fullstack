@@ -2,6 +2,8 @@
 // --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import { FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
+import { FaTiktok } from 'react-icons/fa';
+import Logo from '../assets/images/KnemcoLogoFooter.png';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -10,13 +12,16 @@ const Footer = () => {
       <div className="footer-container">
         {/* Columna 1: Marca y Redes Sociales */}
         <div className="footer-column brand-column">
-          <h3 className="footer-logo">Knemco</h3>
+          <a href="/" className="footer-logo">
+            <img src={Logo} alt="imagen logo" />
+          </a>
           <p className="footer-tagline">Manufacture Your Ideas. Grow With Your Community.</p>
           <div className="social-icons">
             <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
-            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
             <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
-            <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FiTwitter /></a>
+            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
+            <a href="#"aria-label="TikTok"target="_blank"rel="noopener noreferrer"><FaTiktok /></a>
+            {/* <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FiTwitter /></a> */}
           </div>
         </div>
 

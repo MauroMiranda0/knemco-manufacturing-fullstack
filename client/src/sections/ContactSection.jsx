@@ -85,16 +85,16 @@ const ContactSection = () => {
           <div className="info-box">
             <p><strong>{activeTopic.title}:</strong> {activeTopic.info}</p>
           </div>
-          
+
           <button type="submit" className="btn btn-primary submit-button">
             Send Message <FiSend />
           </button>
 
-          <p className="response-time-notice">
-            We typically respond within 24 hours during business days.
-          </p>
         </form>
       </div>
+      <p className="response-time-notice">
+        We typically respond within 24 hours during business days.
+      </p>
     </section>
   );
 };

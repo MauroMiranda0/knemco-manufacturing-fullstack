@@ -1,6 +1,6 @@
 // client/src/components/Navbar.jsx
 import React, { useState } from 'react'; // Importa useState
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/KnemcoLogo.png';
 
 import '../styles/Navbar.css';
 
@@ -50,12 +50,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
