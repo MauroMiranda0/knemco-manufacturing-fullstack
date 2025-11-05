@@ -1,6 +1,7 @@
 // client/src/sections/CTASection.jsx
 // --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
+import { Link } from 'react-scroll';
 import '../styles/CTASection.css';
 
 const CTASection = () => {
@@ -24,9 +25,16 @@ const CTASection = () => {
             future. Invest in a 3D printer on our farm and earn
             passive income while empowering local creators.
           </p>
-          <a href="#" className="btn btn-primary">
+          {/* <a href="#" className="btn btn-primary">
             Learn About Investing
-          </a>
+          </a> */}
+          <Link
+                    to="contact" // El ID de la sección a la que queremos ir
+                    smooth={true} // Activa la animación de scroll suave
+                    duration={2000} // Duración de la animación en milisegundos (0.8s)
+                    offset={-80} // Un pequeño offset para compensar la altura del navbar
+                    className="btn btn-primary">Learn About Investing
+                  </Link>
         </div>
       </div>
     </section>

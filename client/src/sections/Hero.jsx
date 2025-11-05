@@ -23,7 +23,7 @@ const Hero = () => {
         <Link
           to="services" // El ID de la sección a la que queremos ir
           smooth={true} // Activa la animación de scroll suave
-          duration={1500} // Duración de la animación en milisegundos (0.8s)
+          duration={2000} // Duración de la animación en milisegundos (0.8s)
           offset={-80} // Un pequeño offset para compensar la altura del navbar
           className="btn btn-primary">Explore the Ecosystem
         </Link>
