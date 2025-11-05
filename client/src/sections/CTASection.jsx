@@ -24,7 +24,7 @@ const CTASection = () => {
             future. Invest in a 3D printer on our farm and earn
             passive income while empowering local creators.
           </p>
-          <a href="#contact" className="btn btn-primary">
+          <a href="#" className="btn btn-primary">
             Learn About Investing
           </a>
         </div>
