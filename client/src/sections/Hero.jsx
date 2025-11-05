@@ -9,7 +9,6 @@ const Hero = () => {
     <section id="home" className="hero-section">
       <div className="hero-background-image"></div>
       <div className="video-overlay"></div>
-
       <div className="hero-content">
         {/* --- NUEVO CONTENIDO --- */}
         <h1 className="hero-title">

@@ -23,10 +23,10 @@
   height: 100%;
   background-image: url('../assets/images/hero-background.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   /* Lo ponemos detrás del contenido y del overlay */
   z-index: -2;
-  animation: kenBurns 20s ease-in-out infinite;
+  animation: kenBurns 15s ease-in-out infinite;
 }
 
 .video-overlay {
