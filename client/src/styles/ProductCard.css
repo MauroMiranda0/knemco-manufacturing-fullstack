@@ -55,6 +55,6 @@
 }
 
 .product-card-content .btn-secondary {
-  align-self: flex-start;
+  align-self: flex-center;
+  }
   /* El botón secundario ahora usa el color Dark Green, lo que encaja perfecto */
-}
