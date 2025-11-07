@@ -1,60 +1,73 @@
 /* client/src/styles/ProductCard.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
+/* --- CÓDIGO COMPLETO Y REDISEÑADO --- */
 
 .product-card {
-  background-color: var(--color-white); /* Fondo blanco puro para que resalte */
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(19, 42, 37, 0.05); /* Sombra sutil con el tono del texto */
+  position: relative; /* Contenedor para elementos absolutos */
+  height: 450px; /* Altura fija para un look de "story" */
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: flex-end; /* Alinea el contenido al final (abajo) */
+  padding: 2rem;
+  color: var(--color-white);
+  cursor: pointer;
+  
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(19, 42, 37, 0.1);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(19, 42, 37, 0.2);
 }
 
-.product-card-image {
-  height: 240px; /* Un poco más de altura para la imagen */
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease-out;
+/* Overlay de gradiente para legibilidad */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(19, 42, 37, 0.8) 0%, rgba(19, 42, 37, 0) 60%);
+  z-index: 1;
 }
 
-.product-card:hover .product-card-image {
-  transform: scale(1.05);
+/* Letra de fondo gigante */
+.card-bg-letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-primary);
+  font-size: 18rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  user-select: none; /* Evita que el texto se pueda seleccionar */
 }
 
+/* Contenido de texto */
 .product-card-content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  position: relative; /* Para que esté por encima del overlay y la letra */
+  z-index: 3;
 }
 
 .product-card-title {
   font-family: var(--font-primary);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin-top: 0;
-  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-white);
 }
 
 .product-card-description {
   font-family: var(--font-secondary);
   font-size: 1rem;
-  color: var(--color-text);
+  line-height: 1.6;
   opacity: 0.8;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
+  margin: 0;
 }
 
-.product-card-content .btn-secondary {
-  align-self: flex-center;
-  }
-  /* El botón secundario ahora usa el color Dark Green, lo que encaja perfecto */
+/* Ocultamos el botón que ya no está en el JSX de la tarjeta */
+.product-card .btn {
+  display: none;
+}
