@@ -1,15 +1,17 @@
 /* client/src/styles/ProductsSection.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
+/* --- CÓDIGO COMPLETO Y ACTUALIZADO --- */
 
 .products-section {
-  padding: 6rem 3rem;
-  background-color: var(--color-bg); /* Fondo Mint Cream */
+  padding: 6rem 0; /* Ajustamos el padding para un slider que puede desbordar */
+  background-color: var(--color-bg);
+  position: relative; /* Para posicionar flechas de navegación si es necesario */
 }
 
 .products-section .section-header {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 4rem auto;
+  padding: 0 1rem; /* Añadimos padding horizontal para que no toque los bordes */
 }
 
 .products-section .section-title {
@@ -26,19 +28,44 @@
   line-height: 1.6;
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+/* Contenedor del Slider */
+.product-slider-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem; /* Espacio para que las flechas no queden pegadas */
 }
 
-@media (max-width: 992px) {
-  .products-section { padding: 4rem 1.5rem; }
-  .products-grid { gap: 2rem; }
+/* Estilos para personalizar Swiper */
+.mySwiper {
+  padding-bottom: 4rem !important; /* Espacio extra abajo para la paginación */
 }
 
-@media (max-width: 576px) {
-  .products-section { padding: 3rem 1rem; }
+/* Estilos para las flechas de navegación */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary-accent) !important; /* Color rojo para las flechas */
+  transition: transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para la paginación (los puntos de abajo) */
+.swiper-pagination-bullet {
+  background-color: var(--color-text) !important; /* Puntos de color verde oscuro */
+  opacity: 0.5 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary-accent) !important; /* Punto activo de color rojo */
+  opacity: 1 !important;
+}
+
+/* Eliminamos la antigua grilla */
+.products-grid {
+  display: none;
 }
