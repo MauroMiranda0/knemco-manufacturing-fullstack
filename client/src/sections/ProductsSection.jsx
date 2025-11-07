@@ -6,26 +6,22 @@ import Modal from '../components/Modal';
 import '../styles/ProductsSection.css';
 import '../styles/ProductDetail.css';
 
-// --- NUEVO CÓDIGO: Importamos Swiper y sus estilos ---
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// --- FIN DEL NUEVO CÓDIGO ---
-
-import catFountainImg from '../assets/images/product-cat-fountain.jpg';
-import lightingImg from '../assets/images/product-sculptural-lighting.jpg';
-import plantersImg from '../assets/images/product-designer-planters.jpg';
-import giftsImg from '../assets/images/product-personalized-gifts.jpg';
+import catFountainImg from '../assets/images/product-cat-fountain.jpg'; // Adjust the path according to your project structure
+import lightingImg from '../assets/images/product-sculptural-lighting.jpg'; // Import lighting image
+import plantersImg from '../assets/images/product-designer-planters.jpg'; // Import planters image
+import giftsImg from '../assets/images/product-personalized-gifts.jpg'; // Import gifts image
 
 const productsData = [
-  { id: 'cat-fountains', title: 'Pet Accessories', description: "Thoughtful design and craftsmanship for our furry friends.", imageUrl: catFountainImg, bgLetter: 'P' },
-  { id: 'sculptural-lighting', title: 'Sculptural Lighting', description: 'Functional works of art designed to transform your space.', imageUrl: lightingImg, bgLetter: 'L' },
-  { id: 'designer-planters', title: 'Designer Planters', description: 'Bring nature into your home with style and modern aesthetics.', imageUrl: plantersImg, bgLetter: 'D' },
-  { id: 'personalized-gifts', title: 'Personalized Gifts', description: "Create a truly unique and memorable gift for any occasion.", imageUrl: giftsImg, bgLetter: 'G' },
-  // Podemos añadir más productos para probar el slider
-  { id: 'more-lighting', title: 'Ambient Lighting', description: 'Set the perfect mood with our custom ambient lights.', imageUrl: lightingImg, bgLetter: 'A' },
+  // ... (los datos se mantienen igual)
+  { id: 'cat-fountains', title: 'Pet Accessories', description: "Thoughtful design and craftsmanship for our furry friends.", imageUrl: catFountainImg},
+  { id: 'sculptural-lighting', title: 'Sculptural Lighting', description: 'Functional works of art designed to transform your space.', imageUrl: lightingImg},
+  { id: 'designer-planters', title: 'Designer Planters', description: 'Bring nature into your home with style and modern aesthetics.', imageUrl: plantersImg},
+  { id: 'personalized-gifts', title: 'Personalized Gifts', description: "Create a truly unique and memorable gift for any occasion.", imageUrl: giftsImg},
 ];
 
 const ProductsSection = () => {
@@ -52,24 +48,20 @@ const ProductsSection = () => {
         </p>
       </div>
 
-      {/* --- NUEVO CÓDIGO: Implementación del Slider --- */}
       <div className="product-slider-container">
         <Swiper
-          modules={[Pagination, Navigation]} // Módulos que usaremos
-          spaceBetween={30} // Espacio entre slides
-          slidesPerView={1} // Slides visibles en móvil
-          navigation // Activa las flechas de navegación
-          pagination={{ clickable: true }} // Activa la paginación con puntos
+          modules={[Pagination, Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          // --- CÓDIGO ACTUALIZADO: Le decimos a Swiper dónde están nuestros botones personalizados ---
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          pagination={{ clickable: true }}
           breakpoints={{
-            // Responsive: cuántos slides mostrar según el ancho de la pantalla
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
           className="mySwiper"
         >
@@ -82,11 +74,17 @@ const ProductsSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        
+        {/* --- NUEVO CÓDIGO: Contenedor personalizado para los botones --- */}
+        <div className="swiper-navigation-wrapper">
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+        </div>
+        {/* --- FIN DEL NUEVO CÓDIGO --- */}
       </div>
-      {/* --- FIN DEL NUEVO CÓDIGO --- */}
-
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {/* ... (el contenido del modal se mantiene igual) ... */}
         {selectedProduct && (
           <div className="product-detail">
             <img src={selectedProduct.imageUrl} alt={selectedProduct.title} className="product-detail-image" />

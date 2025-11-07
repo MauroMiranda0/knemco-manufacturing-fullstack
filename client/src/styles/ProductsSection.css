@@ -2,16 +2,16 @@
 /* --- CÓDIGO COMPLETO Y ACTUALIZADO --- */
 
 .products-section {
-  padding: 6rem 0; /* Ajustamos el padding para un slider que puede desbordar */
+  padding: 6rem 0;
   background-color: var(--color-bg);
-  position: relative; /* Para posicionar flechas de navegación si es necesario */
+  position: relative;
 }
 
 .products-section .section-header {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 4rem auto;
-  padding: 0 1rem; /* Añadimos padding horizontal para que no toque los bordes */
+  padding: 0 1rem;
 }
 
 .products-section .section-title {
@@ -32,40 +32,80 @@
 .product-slider-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* Espacio para que las flechas no queden pegadas */
+  padding: 0 2rem;
+  position: relative; /* Contenedor para los botones posicionados absolutamente */
 }
 
-/* Estilos para personalizar Swiper */
+.swiper{
+  padding-top: 3rem !important; /* Espacio para la paginación */ 
+}
+
 .mySwiper {
-  padding-bottom: 4rem !important; /* Espacio extra abajo para la paginación */
+  padding-bottom: 5rem !important; /* Más espacio para los botones y la paginación */
 }
 
-/* Estilos para las flechas de navegación */
+/* --- NUEVOS ESTILOS PARA LOS BOTONES DE NAVEGACIÓN --- */
+
+/* Contenedor de las flechas para centrarlas */
+.swiper-navigation-wrapper {
+  position: absolute;
+  bottom: 0px; /* Lo posicionamos abajo */
+  left: 50%;
+  padding: 1rem;
+  transform: translateX(-50%);
+  width: 100px; /* Ancho fijo para el contenedor de las flechas */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10; /* Asegura que esté por encima de la paginación si se solapan */
+}
+
+/* Estilos comunes para ambas flechas */
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--color-primary-accent) !important; /* Color rojo para las flechas */
-  transition: transform 0.3s ease;
+  position: static; /* Quitamos el posicionamiento absoluto por defecto de Swiper */
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  
+  color: var(--color-primary-accent) !important; /* Color verde oscuro */
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Quitamos el pseudo-elemento '::after' que Swiper usa para el icono por defecto */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 2rem !important; /* Hacemos los iconos un poco más grandes */
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
+  opacity: 1;
   transform: scale(1.1);
 }
+/* --- FIN DE NUEVOS ESTILOS --- */
 
-/* Estilos para la paginación (los puntos de abajo) */
+
+/* Estilos para la paginación (los puntos) */
+.swiper-pagination {
+  top: 0px !important; /* Alineamos la paginación abajo */
+}
+
 .swiper-pagination-bullet {
-  background-color: var(--color-text) !important; /* Puntos de color verde oscuro */
-  opacity: 0.5 !important;
+  background-color: var(--color-text) !important;
+  opacity: 0.3 !important;
   width: 10px !important;
   height: 10px !important;
+  transition: all 0.3s ease !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--color-primary-accent) !important; /* Punto activo de color rojo */
+  background-color: var(--color-primary-accent) !important;
   opacity: 1 !important;
+  transform: scale(1.2);
 }
 
-/* Eliminamos la antigua grilla */
 .products-grid {
   display: none;
 }
