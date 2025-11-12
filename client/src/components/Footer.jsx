@@ -45,6 +45,8 @@ const Footer = () => {
             9804 100 Ave., Grande Prairie
             <br />
             Alberta, Canada. T8V 0T8
+            <br />
+            +1 (780) 605-0063
           </p>
           <p><a href="mailto:letsprint@knemco.ca">letsprint@knemco.ca</a></p>
           <p>

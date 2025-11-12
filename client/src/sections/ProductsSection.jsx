@@ -11,10 +11,10 @@ import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import catFountainImg from '../assets/images/product-cat-fountain.jpg'; // Adjust the path according to your project structure
-import lightingImg from '../assets/images/product-sculptural-lighting.jpg'; // Import lighting image
-import plantersImg from '../assets/images/product-designer-planters.jpg'; // Import planters image
-import giftsImg from '../assets/images/product-personalized-gifts.jpg'; // Import gifts image
+import catFountainImg from '../assets/images/product-cat-fountain.png'; // Adjust the path according to your project structure
+import lightingImg from '../assets/images/product-sculptural-lighting.png'; // Import lighting image
+import plantersImg from '../assets/images/product-designer-planters.png'; // Import planters image
+import giftsImg from '../assets/images/product-personalized-gifts.png'; // Import gifts image
 
 const productsData = [
   // ... (los datos se mantienen igual)

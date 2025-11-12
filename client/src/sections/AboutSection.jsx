@@ -15,7 +15,7 @@ const AboutSection = () => {
         <div className="about-images-column">
           <div className="about-image-wrapper">
             <img src={leonardoImg} alt="Leonardo Yanez, Co-founder of Knemco" className="about-image" />
-            <div className="image-caption">Leonardo Yanez</div>
+            <div className="image-caption">Leonardo Yañez</div>
           </div>
           <div className="about-image-wrapper">
             <img src={mariuszImg} alt="Mariusz Szczepan, Co-founder of Knemco" className="about-image" />
@@ -25,7 +25,7 @@ const AboutSection = () => {
 
         {/* Columna de Contenido */}
         <div className="about-content-column">
-          <h2 className="section-title">Our Founders</h2>
+          <h2 className="section-title">Our founders</h2>
           <p className="about-text">
             The soul of Knemco is the powerful alliance between Leonardo's analytical mind and Mariusz's
             artistic spirit. Leonardo, a Field Engineer, brings a disciplined approach to manufacturing,
