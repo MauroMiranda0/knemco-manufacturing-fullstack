@@ -16,10 +16,10 @@ const Footer = () => {
           </a>
           <p className="footer-tagline">Manufacture your ideas. Grow with your community.</p>
           <div className="social-icons">
-            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
+            <a href="https://www.linkedin.com/company/knemco/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
             <a href="https://www.facebook.com/knemco" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
             <a href="https://www.instagram.com/knemco_ca" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
-            <a href="#"aria-label="TikTok"target="_blank"rel="noopener noreferrer"><FaTiktok /></a>
+            <a href="https://www.tiktok.com/@knemco"aria-label="TikTok"target="_blank"rel="noopener noreferrer"><FaTiktok /></a>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
           <p>
             <a href="https://knemco.ca" target="_blank" rel="noopener noreferrer">knemco.ca</a>
             {' | '}
-            <a href="https://knemco.co" target="_blank" rel="noopener noreferrer">knemco.com</a>
+            <a href="https://knemco.com" target="_blank" rel="noopener noreferrer">knemco.com</a>
           </p>
         </div>
       </div>
