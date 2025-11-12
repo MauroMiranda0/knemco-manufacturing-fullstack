@@ -154,3 +154,21 @@
   .contact-section { padding: 4rem 1rem; }
   .contact-form-container { padding: 2rem 1.5rem; }
 }
+
+.feedback-message {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.feedback-message.success {
+  background-color: #e6f7eb;
+  color: #2e8b4e;
+}
+
+.feedback-message.error {
+  background-color: #fdecea;
+  color: var(--color-primary-accent);
+}
