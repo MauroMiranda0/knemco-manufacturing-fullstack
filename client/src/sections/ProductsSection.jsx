@@ -18,10 +18,10 @@ import giftsImg from '../assets/images/product-personalized-gifts.jpg'; // Impor
 
 const productsData = [
   // ... (los datos se mantienen igual)
-  { id: 'cat-fountains', title: 'Pet Accessories', description: "Thoughtful design and craftsmanship for our furry friends.", imageUrl: catFountainImg},
-  { id: 'sculptural-lighting', title: 'Sculptural Lighting', description: 'Functional works of art designed to transform your space.', imageUrl: lightingImg},
-  { id: 'designer-planters', title: 'Designer Planters', description: 'Bring nature into your home with style and modern aesthetics.', imageUrl: plantersImg},
-  { id: 'personalized-gifts', title: 'Personalized Gifts', description: "Create a truly unique and memorable gift for any occasion.", imageUrl: giftsImg},
+  { id: 'cat-fountains', title: 'Pet accessories', description: "Thoughtful design and craftsmanship for our furry friends.", imageUrl: catFountainImg},
+  { id: 'sculptural-lighting', title: 'Sculptural lighting', description: 'Functional works of art designed to transform your space.', imageUrl: lightingImg},
+  { id: 'designer-planters', title: 'Designer planters', description: 'Bring nature into your home with style and modern aesthetics.', imageUrl: plantersImg},
+  { id: 'personalized-gifts', title: 'Personalized gifts', description: "Create a truly unique and memorable gift for any occasion.", imageUrl: giftsImg},
 ];
 
 const ProductsSection = () => {

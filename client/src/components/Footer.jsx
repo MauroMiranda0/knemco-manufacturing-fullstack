@@ -15,7 +15,7 @@ const Footer = () => {
           <a href="/" className="footer-logo">
             <img src={Logo} alt="imagen logo" />
           </a>
-          <p className="footer-tagline">Manufacture Your Ideas. Grow With Your Community.</p>
+          <p className="footer-tagline">Manufacture your ideas. Grow with your community.</p>
           <div className="social-icons">
             <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
             <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
@@ -39,7 +39,7 @@ const Footer = () => {
 
         {/* Columna 3: Contacto (con los nuevos datos) */}
         <div className="footer-column contact-column">
-          <h4 className="footer-heading">Get in Touch</h4>
+          <h4 className="footer-heading">Get in touch</h4>
           {/* --- NUEVOS DATOS --- */}
           <p>
             9804 100 Ave., Grande Prairie
@@ -50,7 +50,7 @@ const Footer = () => {
           <p>
             <a href="https://knemco.ca" target="_blank" rel="noopener noreferrer">knemco.ca</a>
             {' | '}
-            <a href="https://knemco.co" target="_blank" rel="noopener noreferrer">knemco.co</a>
+            <a href="https://knemco.co" target="_blank" rel="noopener noreferrer">knemco.com</a>
           </p>
           {/* --- FIN DE NUEVOS DATOS --- */}
         </div>

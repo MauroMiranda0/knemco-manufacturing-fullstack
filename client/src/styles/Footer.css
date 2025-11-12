@@ -52,7 +52,7 @@
 }
 
 .social-icons a:hover {
-  color: var(--color-secondary-bg); /* Non Photo Blue para el hover */
+  color: var(--color-primary-accent); /* Non Photo Blue para el hover */
   transform: translateY(-3px);
 }
 
@@ -87,7 +87,7 @@
 
 .footer-links a:hover,
 .contact-column a:hover {
-  color: var(--color-secondary-bg); /* Non Photo Blue para el hover */
+  color: var(--color-primary-accent); /* Non Photo Blue para el hover */
 }
 
 .contact-column p {
