@@ -71,9 +71,13 @@
 .hamburger-menu .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--color-text);
+    background-color: var(--color-bg);
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu .bar.open {
+  background-color: var(--color-text); /* color alternativo cuando está abierto */
 }
 
 .hamburger-menu .bar:nth-child(1).open {
@@ -99,6 +103,7 @@
 
     .hamburger-menu {
         display: block;
+        color : var(--color-text);
     }
 
     .navbar-nav {

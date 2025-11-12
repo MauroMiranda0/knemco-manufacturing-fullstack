@@ -17,8 +17,8 @@ const Footer = () => {
           <p className="footer-tagline">Manufacture your ideas. Grow with your community.</p>
           <div className="social-icons">
             <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FiLinkedin /></a>
-            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
-            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
+            <a href="https://www.facebook.com/knemco" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
+            <a href="https://www.instagram.com/knemco_ca" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
             <a href="#"aria-label="TikTok"target="_blank"rel="noopener noreferrer"><FaTiktok /></a>
           </div>
         </div>
