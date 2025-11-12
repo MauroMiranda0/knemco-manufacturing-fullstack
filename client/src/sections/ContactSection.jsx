@@ -1,5 +1,4 @@
 // client/src/sections/ContactSection.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React, { useState } from 'react';
 import { FiSend } from 'react-icons/fi';
 import '../styles/ContactSection.css';
@@ -7,19 +6,19 @@ import '../styles/ContactSection.css';
 const contactTopics = {
   project: {
     id: 'project',
-    title: 'Project Inquiry',
+    title: 'Project inquiry',
     placeholder: 'Tell us about your project requirements, goals, and timeline...',
     info: 'Let us know what you want to build. We’ll get back to you with a quote and timeline.'
   },
   investment: {
     id: 'investment',
-    title: 'Investment Interest',
+    title: 'Investment interest',
     placeholder: 'Tell us about your investment interests...',
     info: 'Learn about our printer investment program and passive income opportunities. We’ll provide detailed information about returns and participation.'
   },
   partnership: {
     id: 'partnership',
-    title: 'Partnership Opportunity',
+    title: 'Partnership opportunity',
     placeholder: 'Describe the partnership opportunity you have in mind...',
     info: 'We are always open to collaborating with local businesses and creators. Let’s build something great together.'
   }
@@ -35,7 +34,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
-        <h2 className="section-title">Get in Touch</h2>
+        <h2 className="section-title">Get in touch</h2>
         <p className="section-subtitle">Have a question or a project in mind? We’d love to hear from you.</p>
       </div>
 
@@ -55,7 +54,7 @@ const ContactSection = () => {
         <form className="contact-form">
           <div className="form-grid">
             <div className="form-group">
-              <label htmlFor="fullName">Full Name *</label>
+              <label htmlFor="fullName">Full name *</label>
               <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
             </div>
             <div className="form-group">
@@ -63,7 +62,7 @@ const ContactSection = () => {
               <input type="email" id="email" name="email" placeholder="your@email.com" required />
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
+              <label htmlFor="phone">Phone number</label>
               <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
             </div>
             <div className="form-group">

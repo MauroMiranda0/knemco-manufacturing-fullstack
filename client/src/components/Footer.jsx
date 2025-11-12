@@ -1,5 +1,4 @@
 // client/src/components/Footer.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import { FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
 import { FaTiktok } from 'react-icons/fa';
@@ -21,7 +20,6 @@ const Footer = () => {
             <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FiFacebook /></a>
             <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FiInstagram /></a>
             <a href="#"aria-label="TikTok"target="_blank"rel="noopener noreferrer"><FaTiktok /></a>
-            {/* <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FiTwitter /></a> */}
           </div>
         </div>
 
@@ -40,11 +38,12 @@ const Footer = () => {
         {/* Columna 3: Contacto (con los nuevos datos) */}
         <div className="footer-column contact-column">
           <h4 className="footer-heading">Get in touch</h4>
-          {/* --- NUEVOS DATOS --- */}
           <p>
             9804 100 Ave., Grande Prairie
             <br />
             Alberta, Canada. T8V 0T8
+            <br />
+            +1 (780) 605-0063
           </p>
           <p><a href="mailto:letsprint@knemco.ca">letsprint@knemco.ca</a></p>
           <p>
@@ -52,7 +51,6 @@ const Footer = () => {
             {' | '}
             <a href="https://knemco.co" target="_blank" rel="noopener noreferrer">knemco.com</a>
           </p>
-          {/* --- FIN DE NUEVOS DATOS --- */}
         </div>
       </div>
       <div className="footer-bottom">

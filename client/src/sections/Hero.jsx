@@ -1,9 +1,7 @@
 // client/src/sections/Hero.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import { Link } from 'react-scroll';
 import '../styles/Hero.css';
-// Mantenemos la estructura actual, solo cambiamos el contenido
 
 const Hero = () => {
   return (
@@ -11,7 +9,6 @@ const Hero = () => {
       <div className="hero-background-image"></div>
       <div className="video-overlay"></div>
       <div className="hero-content">
-        {/* --- NUEVO CONTENIDO --- */}
         <h1 className="hero-title">
           Let's build it together.
         </h1>
@@ -23,7 +20,7 @@ const Hero = () => {
         <Link
           to="services" // El ID de la sección a la que queremos ir
           smooth={true} // Activa la animación de scroll suave
-          duration={2000} // Duración de la animación en milisegundos (0.8s)
+          duration={2000} // Duración de la animación en milisegundos (2s)
           offset={-80} // Un pequeño offset para compensar la altura del navbar
           className="btn btn-primary">Explore the Ecosystem
         </Link>

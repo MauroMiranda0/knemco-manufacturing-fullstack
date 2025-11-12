@@ -1,8 +1,6 @@
 /* client/src/styles/Footer.css */
-/* --- CÓDIGO COMPLETO Y CORREGIDO --- */
 .footer {
-  /* Fondo Dark Green para máximo contraste y seriedad */
-  background-color: var(--color-text); 
+  background-color: var(--color-text); /* Fondo Dark Green para máximo contraste y seriedad */
   color: #a7b5b3; /* Un gris-verde muy claro para el texto secundario */
   padding: 5rem 3rem 0;
 }

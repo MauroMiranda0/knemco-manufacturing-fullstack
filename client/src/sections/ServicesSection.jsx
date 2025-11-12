@@ -1,5 +1,4 @@
 // client/src/sections/ServicesSection.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import ServiceCard from '../components/ServiceCard';
 import '../styles/ServicesSection.css';
@@ -9,7 +8,7 @@ import { FiTool } from 'react-icons/fi';
 import { FiCompass } from 'react-icons/fi';
 import { FaRocket } from 'react-icons/fa';
 import { FiPackage } from 'react-icons/fi';
-// Mantenemos los datos, pero solo usaremos title, icon y description
+
 const servicesData = [
   {
     icon: <FiPrinter />,

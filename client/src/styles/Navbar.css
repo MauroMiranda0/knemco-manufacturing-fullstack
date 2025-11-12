@@ -1,15 +1,12 @@
 /* client/src/styles/Navbar.css */
-/* --- CÓDIGO COMPLETO Y ACTUALIZADO --- */
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 3rem;
-    background-color: var(--color-text);
-    /* Mint Cream */
-    box-shadow: 0 4px 12px rgba(19, 42, 37, 0.05);
-    /* Sombra sutil con tono verde */
+    background-color: var(--color-text);/* Mint Cream */
+    box-shadow: 0 4px 12px rgba(19, 42, 37, 0.05);/* Sombra sutil con tono verde */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -23,15 +20,13 @@
     font-family: var(--font-primary);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-text);
-    /* Dark Green */
+    color: var(--color-text);/* Dark Green */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .navbar-brand .navbar-logo:hover {
     color: var(--color-primary-accent);
-    /* Acento Rojo al pasar el ratón */
 }
 
 .navbar-nav {
@@ -45,34 +40,25 @@
     margin-left: 2.5rem;
 }
 
-/* --- NUEVOS ESTILOS PARA EL EFECTO --- */
 .nav-link {
     font-family: var(--font-secondary);
     color: var(--color-bg);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    padding: 0.5rem 0;
-    /* Añadimos padding para dar espacio al indicador */
-    position: relative;
-    /* ¡Crucial! Para posicionar el indicador debajo */
+    padding: 0.5rem 0; /* Añadimos padding para dar espacio al indicador */
+    position: relative;/* ¡Crucial! Para posicionar el indicador debajo */
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--color-primary-accent);
-    /* Cambia el color del texto a rojo */
+    color: var(--color-primary-accent);/* Cambia el color del texto a rojo */
 }
 
-/* Cuando pasamos el cursor sobre el enlace, el indicador crece a su tamaño completo */
 .nav-link:hover::after {
     transform: scaleX(1);
 }
 
-/* --- FIN DE NUEVOS ESTILOS --- */
-
-
-/* --- El resto del CSS para el menú responsive se mantiene igual --- */
 .hamburger-menu {
     display: none;
     background: none;
@@ -118,8 +104,7 @@
     .navbar-nav {
         display: flex;
         flex-direction: column;
-        position: fixed;
-        /* 'fixed' es mejor para un menú que ocupa toda la pantalla */
+        position: fixed; /* 'fixed' es mejor para un menú que ocupa toda la pantalla */
         top: 0;
         right: 0;
         width: 100%;
