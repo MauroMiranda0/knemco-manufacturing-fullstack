@@ -39,7 +39,7 @@ const ProductsSection = () => {
   return (
     <section id="products" className="products-section">
       <div className="section-header">
-        <h2 className="section-title">From GP, To Your Home.</h2>
+        <h2 className="section-title">From GP, to your home.</h2>
         <p className="section-subtitle">
           Meet the products born in our community workshop. This is our own line of goods, designed,
           tested, and manufactured just down the road.
