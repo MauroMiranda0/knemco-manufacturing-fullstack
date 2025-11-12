@@ -13,32 +13,32 @@ import { FiPackage } from 'react-icons/fi';
 const servicesData = [
   {
     icon: <FiPrinter />,
-    title: 'Your On-Demand Manufacturing Partner',
+    title: 'Your on-demand manufacturing partner',
     description: 'Test, iterate, and grow without risk. Start with just one unit, with no minimums holding you back.',
   },
   {
     icon: <FiBookOpen />,
-    title: 'Product Launching & Workshops',
+    title: 'Product launching & workshops',
     description: "From your first print to designing your own products, we're here to guide you every step of the way.",
   },
   {
     icon: <FiTool />,
-    title: 'Custom Mechanical Parts',
+    title: 'Custom mechanical parts',
     description: 'Precision-engineered replacement and custom parts for industrial applications. Fast, flexible, and reliable.',
   },
   {
     icon: <FiCompass />,
-    title: 'Design & Engineering Consulting',
+    title: 'Design & engineering consulting',
     description: 'Expert guidance on product design, material selection, and manufacturing optimization to make better decisions.',
   },
   {
     icon: <FaRocket />,
-    title: 'Full Product Launch Package',
+    title: 'Full product launch package',
     description: 'Our most comprehensive service for entrepreneurs. We become your strategic partner from concept to market.',
   },
   {
     icon: <FiPackage />,
-    title: 'Materials & Supplies',
+    title: 'Materials & supplies',
     description: 'Premium 3D printing filaments, resins, and components. Curated selection from trusted manufacturers.',
   }
 ];
@@ -47,7 +47,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="services-section">
       <div className="section-header">
-        <h2 className="section-title">The Right Tools & Team for Your Big Idea.</h2>
+        <h2 className="section-title">The right tools & team for your big idea.</h2>
         <p className="section-subtitle">
           From a single custom piece to a full product line, we're with you at every step.
         </p>

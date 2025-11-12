@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="hero-content">
         {/* --- NUEVO CONTENIDO --- */}
         <h1 className="hero-title">
-          Let's Build It Together.
+          Let's build it together.
         </h1>
         <p className="hero-description">
           Your vision, made real right here in Grande Prairie. We're your partners in creation.

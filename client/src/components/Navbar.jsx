@@ -1,6 +1,6 @@
 // client/src/components/Navbar.jsx
 import React, { useState } from 'react'; // Importa useState
-import Logo from '../assets/images/KnemcoLogo.png';
+import Logo from '../assets/images/KnemcoLogoContorno.png';
 
 import '../styles/Navbar.css';
 

@@ -20,7 +20,7 @@
 
 .card-icon {
   font-size: 2.5rem;
-  color: var(--color-text); /* Icono con color de texto principal (Dark Green) */
+  color: var(--color-primary-accent); /* Icono con color de texto principal (Dark Green) */
   margin-bottom: 1.5rem;
   display: inline-block; /* Permite centrar el icono correctamente */
 }
