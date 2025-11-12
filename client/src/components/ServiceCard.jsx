@@ -1,5 +1,4 @@
 // client/src/components/ServiceCard.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import '../styles/ServiceCard.css';
 

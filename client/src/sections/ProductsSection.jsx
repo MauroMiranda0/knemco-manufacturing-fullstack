@@ -1,5 +1,4 @@
 // client/src/sections/ProductsSection.jsx
-// --- CÓDIGO COMPLETO Y ACTUALIZADO ---
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Modal from '../components/Modal';
@@ -17,7 +16,6 @@ import plantersImg from '../assets/images/product-designer-planters.png'; // Imp
 import giftsImg from '../assets/images/product-personalized-gifts.png'; // Import gifts image
 
 const productsData = [
-  // ... (los datos se mantienen igual)
   { id: 'cat-fountains', title: 'Pet accessories', description: "Thoughtful design and craftsmanship for our furry friends.", imageUrl: catFountainImg},
   { id: 'sculptural-lighting', title: 'Sculptural lighting', description: 'Functional works of art designed to transform your space.', imageUrl: lightingImg},
   { id: 'designer-planters', title: 'Designer planters', description: 'Bring nature into your home with style and modern aesthetics.', imageUrl: plantersImg},
@@ -53,7 +51,6 @@ const ProductsSection = () => {
           modules={[Pagination, Navigation]}
           spaceBetween={30}
           slidesPerView={1}
-          // --- CÓDIGO ACTUALIZADO: Le decimos a Swiper dónde están nuestros botones personalizados ---
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -75,16 +72,13 @@ const ProductsSection = () => {
           ))}
         </Swiper>
         
-        {/* --- NUEVO CÓDIGO: Contenedor personalizado para los botones --- */}
         <div className="swiper-navigation-wrapper">
           <div className="swiper-button-prev"></div>
           <div className="swiper-button-next"></div>
         </div>
-        {/* --- FIN DEL NUEVO CÓDIGO --- */}
       </div>
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        {/* ... (el contenido del modal se mantiene igual) ... */}
         {selectedProduct && (
           <div className="product-detail">
             <img src={selectedProduct.imageUrl} alt={selectedProduct.title} className="product-detail-image" />

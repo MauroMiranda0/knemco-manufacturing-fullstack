@@ -1,5 +1,4 @@
 /* client/src/styles/CTASection.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .cta-section {
   padding: 6rem 3rem;
@@ -62,7 +61,6 @@
 
 .cta-content-column .btn-primary {
   align-self: flex-start;
-  /* El botón primario ahora es Imperial Red, perfecto para la llamada a la acción */
 }
 
 /* --- Responsive Design --- */

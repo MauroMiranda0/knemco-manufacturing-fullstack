@@ -1,9 +1,7 @@
 // client/src/sections/AboutSection.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React from 'react';
 import '../styles/AboutSection.css';
 
-// Importamos las imágenes que ya teníamos
 import leonardoImg from '../assets/images/founder-leonardo-yanez.jpg';
 import mariuszImg from '../assets/images/founder-mariusz-szczepan.jpg';
 

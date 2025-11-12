@@ -1,5 +1,4 @@
 // client/src/sections/ContactSection.jsx
-// --- CÓDIGO COMPLETO DEL ARCHIVO ---
 import React, { useState } from 'react';
 import { FiSend } from 'react-icons/fi';
 import '../styles/ContactSection.css';

@@ -19,7 +19,7 @@ function App() {
       <CTASection />
       <AboutSection />
       <ContactSection />
-      <Footer /> {/* Añade el Footer al final */}
+      <Footer />
     </div>
   );
 }

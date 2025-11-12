@@ -1,5 +1,4 @@
 /* client/src/styles/ProductsSection.css */
-/* --- CÓDIGO COMPLETO Y ACTUALIZADO --- */
 
 .products-section {
   padding: 6rem 0;
@@ -44,8 +43,6 @@
   padding-bottom: 5rem !important; /* Más espacio para los botones y la paginación */
 }
 
-/* --- NUEVOS ESTILOS PARA LOS BOTONES DE NAVEGACIÓN --- */
-
 /* Contenedor de las flechas para centrarlas */
 .swiper-navigation-wrapper {
   position: absolute;
@@ -84,8 +81,6 @@
   opacity: 1;
   transform: scale(1.1);
 }
-/* --- FIN DE NUEVOS ESTILOS --- */
-
 
 /* Estilos para la paginación (los puntos) */
 .swiper-pagination {

@@ -1,5 +1,4 @@
 // client/src/components/ProductCard.jsx
-// --- CÓDIGO COMPLETO Y ACTUALIZADO ---
 import React from 'react';
 import '../styles/ProductCard.css';
 
@@ -16,9 +15,7 @@ const ProductCard = ({ product, onViewDetails }) => {
     // El evento onClick ahora está en toda la tarjeta
     <div className="product-card" style={cardStyle} onClick={onViewDetails}>
       <div className="card-overlay"></div> {/* Capa de gradiente */}
-      <span className="card-bg-letter">{bgLetter}</span> {/* Letra de fondo */}
-      
-      {/* Contenedor para el contenido de texto */}
+      <span className="card-bg-letter">{bgLetter}</span>
       <div className="product-card-content">
         <h3 className="product-card-title">{title}</h3>
         <p className="product-card-description">{description}</p>

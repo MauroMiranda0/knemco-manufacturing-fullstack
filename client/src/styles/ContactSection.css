@@ -1,5 +1,4 @@
 /* client/src/styles/ContactSection.css */
-/* --- CÓDIGO COMPLETO Y CORREGIDO --- */
 .contact-section {
   padding: 6rem 3rem;
   background-color: var(--color-bg); /* Fondo Mint Cream */
@@ -131,7 +130,6 @@
 .submit-button {
   width: 40%;
   gap: 0.8rem;
-  /* El botón primario ahora es Imperial Red, perfecto */
   margin-left: auto;
 }
 

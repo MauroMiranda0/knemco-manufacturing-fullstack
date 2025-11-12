@@ -17,14 +17,6 @@
   --font-primary: 'Montserrat', sans-serif; /* Cambiamos Poppins por Montserrat */
   --font-secondary: 'Inter', sans-serif;
 
-  /* --- Variables antiguas que reemplazamos (para referencia) --- */
-  /*
-    --color-white: #FDFDFD;
-    --color-text: #4A4A4A;
-    --color-secondary-bg: #3D5A80;
-    --color-primary-accent: #EE6C4D;
-    --color-secondary-accent: #FFC107;
-  */
 }
 
 /* 2. Reseteo y Estilos Base para el Body */

@@ -1,5 +1,4 @@
 /* client/src/styles/ServiceCard.css */
-/* --- CÓDIGO COMPLETO DEL ARCHIVO --- */
 
 .service-card {
   background-color: var(--color-bg); /* Mismo fondo que la sección para un look integrado */
@@ -15,8 +14,6 @@
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(19, 42, 37, 0.1);
 }
-
-/* Eliminamos el wrapper, ya no es necesario con el nuevo CSS */
 
 .card-icon {
   font-size: 2.5rem;
