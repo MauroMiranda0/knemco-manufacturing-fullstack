@@ -1,5 +1,6 @@
 // client/src/sections/ContactSection.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser'; // Importamos la librería
 import { FiSend } from 'react-icons/fi';
 import '../styles/ContactSection.css';
 
@@ -25,10 +26,50 @@ const contactTopics = {
 };
 
 const ContactSection = () => {
-  const [activeTopic, setActiveTopic] = useState(contactTopics.investment);
+  const [activeTopic, setActiveTopic] = useState(contactTopics.project);
+  const form = useRef(); // Referencia al formulario
+  const [isSending, setIsSending] = useState(false); // Estado para mostrar feedback
+  const [sendStatus, setSendStatus] = useState(''); // 'success' o 'error'
 
   const handleTopicChange = (topicId) => {
     setActiveTopic(contactTopics[topicId]);
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault(); // Prevenimos el comportamiento por defecto del formulario
+    setIsSending(true);
+    setSendStatus('');
+
+    // Preparamos los parámetros para la plantilla
+    const templateParams = {
+        activeTopicTitle: activeTopic.title,
+        fullName: form.current.fullName.value,
+        email: form.current.email.value,
+        phone: form.current.phone.value,
+        company: form.current.company.value,
+        message: form.current.message.value,
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+          setIsSending(false);
+          setSendStatus('success');
+          form.current.reset(); // Resetea el formulario
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setIsSending(false);
+          setSendStatus('error');
+        }
+      );
   };
 
   return (
@@ -51,7 +92,7 @@ const ContactSection = () => {
           ))}
         </div>
 
-        <form className="contact-form">
+        <form ref={form} onSubmit={sendEmail} className="contact-form">
           <div className="form-grid">
             <div className="form-group">
               <label htmlFor="fullName">Full name *</label>
@@ -85,9 +126,12 @@ const ContactSection = () => {
             <p><strong>{activeTopic.title}:</strong> {activeTopic.info}</p>
           </div>
 
-          <button type="submit" className="btn btn-primary submit-button">
-            Send Message <FiSend />
+          <button type="submit" className="btn btn-primary submit-button" disabled={isSending}>
+            {isSending ? 'Sending...' : <>Send Message <FiSend /></>}
           </button>
+          {/* Mensajes de feedback */}
+          {sendStatus === 'success' && <p className="feedback-message success">Message sent successfully! We'll be in touch soon.</p>}
+          {sendStatus === 'error' && <p className="feedback-message error">Something went wrong. Please try again later.</p>}
 
         </form>
       </div>
