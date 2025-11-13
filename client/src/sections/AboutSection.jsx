@@ -23,7 +23,7 @@ const AboutSection = () => {
 
         {/* Columna de Contenido */}
         <div className="about-content-column">
-          <h2 className="section-title">Our team</h2>
+          <h2 className="section-title">Our Team</h2>
           <p className="about-text">
             The soul of Knemco is the powerful alliance between Leonardo's analytical mind and Mariusz's
             artistic spirit. Leonardo, a Field Engineer, brings a disciplined approach to manufacturing,

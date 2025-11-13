@@ -26,7 +26,7 @@ const contactTopics = {
 };
 
 const ContactSection = () => {
-  const [activeTopic, setActiveTopic] = useState(contactTopics.project);
+  const [activeTopic, setActiveTopic] = useState(contactTopics.investment);
   const form = useRef(); // Referencia al formulario
   const [isSending, setIsSending] = useState(false); // Estado para mostrar feedback
   const [sendStatus, setSendStatus] = useState(''); // 'success' o 'error'
@@ -75,7 +75,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
-        <h2 className="section-title">Get in touch</h2>
+        <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">Have a question or a project in mind? We’d love to hear from you.</p>
       </div>
 
