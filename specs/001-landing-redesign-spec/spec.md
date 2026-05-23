@@ -97,7 +97,7 @@ usuarios que realizan tareas de navegacion y accion.
   tablet y mobile.
 - **FR-007**: La landing MUST cumplir criterios base de accesibilidad: contraste,
   navegacion por teclado, foco visible y texto alternativo en recursos visuales.
-- **FR-008**: La pagina MUST evitar inestabilidad visual perceptible durante carga
+- **FR-008**: La landing MUST evitar inestabilidad visual perceptible durante carga
   inicial, con un objetivo de CLS <= 0.1 en condiciones comparables de evaluacion.
 
 ### Key Entities *(include if feature involves data)*

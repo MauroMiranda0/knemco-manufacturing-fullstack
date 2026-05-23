@@ -92,7 +92,7 @@ description: "Task list for Knemco landing redesign"
 
 - [ ] T020 [US3] Simplificar estructura de items de navegacion (max 5) en `client/src/components/Navbar.jsx`
 - [ ] T021 [P] [US3] Ajustar comportamiento sticky y estados de navegacion en `client/src/styles/Navbar.css`
-- [ ] T022 [US3] Reforzar flujo de CTA hacia contacto en `client/src/sections/CTASection.jsx`
+- [ ] T022 [US3] Reforzar flujo de conversion primaria (FR-005) en `client/src/sections/CTASection.jsx`
 - [ ] T023 [P] [US3] Optimizar legibilidad y continuidad visual de secciones en `client/src/styles/CTASection.css`
 - [ ] T024 [US3] Verificar consistencia del flujo de conversion en `client/src/App.jsx`
 
@@ -127,7 +127,7 @@ description: "Task list for Knemco landing redesign"
 
 - **US1 (P1)**: Base de MVP y sin dependencia funcional de otras historias.
 - **US2 (P2)**: Depende de estructura hero de US1 para integrar mockup.
-- **US3 (P3)**: Depende de base de navegacion de Foundational e integra CTA definido en US1.
+- **US3 (P3)**: Depende de base de navegacion de Foundational y de la conversion primaria definida en FR-005.
 
 ### Parallel Opportunities
 

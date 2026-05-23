@@ -1,5 +1,33 @@
 # Research: Knemco Landing Redesign Optimization
 
+## Baseline visual y capturas de referencia (T001)
+
+### Alcance de baseline
+
+- Baseline evaluado: estado actual de la landing previo a la implementacion del rediseño.
+- Fuente normativa usada: `specs/001-landing-redesign-spec/spec.md` (FR-001 a FR-008, AC-001 a AC-009).
+- Restricciones aplicadas: `spec/constitution.md` (React 19 + Vite, CSS modular, estructura por `sections` y `styles`).
+
+### Matriz de capturas de referencia
+
+| ID | Vista requerida | Objetivo de verificacion | Criterios vinculados |
+|----|------------------|--------------------------|----------------------|
+| BR-01 | Hero desktop (primer viewport, sin scroll) | Confirmar visibilidad inmediata de propuesta de valor y CTA principal | FR-001, FR-004, AC-001 |
+| BR-02 | Hero mobile (primer viewport, sin scroll) | Confirmar visibilidad inmediata de propuesta de valor y CTA principal | FR-001, FR-004, AC-001 |
+| BR-03 | Hero con recurso visual principal cargado | Validar presencia de area de mockup en bloque principal | FR-003, AC-003 |
+| BR-04 | Navegacion principal completa (desktop/mobile) | Verificar estructura simple orientada a conversion | FR-005, AC-005 |
+| BR-05 | Estado de foco visible por teclado (nav y CTA) | Verificar accesibilidad base en interaccion | FR-007, AC-006 |
+
+### Registro de referencia
+
+| ID | Archivo de referencia | Estado |
+|----|-----------------------|--------|
+| BR-01 | No registrado en repositorio | Pendiente |
+| BR-02 | No registrado en repositorio | Pendiente |
+| BR-03 | No registrado en repositorio | Pendiente |
+| BR-04 | No registrado en repositorio | Pendiente |
+| BR-05 | No registrado en repositorio | Pendiente |
+
 ## Decision 1: Conversion primaria
 
 - Decision: Definir conversion primaria como clic en CTA hacia contacto (incluye formulario y otros medios).

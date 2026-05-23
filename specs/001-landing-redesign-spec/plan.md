@@ -45,7 +45,7 @@ optimizacion responsive y controles de accesibilidad y estabilidad visual.
 
 - **Gate 1 - Claridad inmediata**: PASS. Plan prioriza propuesta de valor y CTA en primer viewport.
 - **Gate 2 - Sin cambios de copy**: PASS. Cambios limitados a estructura visual y estilos.
-- **Gate 3 - Conversion sin friccion**: PASS. Flujo centrado en CTA de contacto como conversion principal.
+- **Gate 3 - Conversion sin friccion**: PASS. Flujo alineado a la conversion primaria definida en FR-005.
 - **Gate 4 - Responsive y accesibilidad**: PASS. Incluye criterios de contraste, foco, teclado y mobile-first.
 - **Gate 5 - Rendimiento visual**: PASS. Se fijan metas LCP/CLS y control de estabilidad de layout.
 
