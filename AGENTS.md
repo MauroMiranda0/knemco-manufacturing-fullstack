@@ -1,0 +1,33 @@
+# AGENTS
+
+## Scope and structure
+- This repo currently contains one runnable app: `client/` (React 19 + Vite 7). There is no backend service code yet.
+- Work from `client/` for all app commands; the repository root has no `package.json` scripts.
+
+## Verified dev commands
+- Install deps: `npm install` (run in `client/`).
+- Start dev server: `npm run dev` (Vite).
+- Lint: `npm run lint` (ESLint flat config in `client/eslint.config.js`).
+- Build: `npm run build`.
+- Preview production build: `npm run preview`.
+
+## Validation expectations
+- There is no test setup in this repo right now (no Jest/Vitest/Playwright/Cypress config, no `test` script).
+- For code changes, use `npm run lint` as the primary automated check; use `npm run build` when changes may affect bundling/runtime imports.
+
+## App entrypoints and key wiring
+- App bootstrap: `client/src/main.jsx`.
+- Top-level composition: `client/src/App.jsx` (single-page section stack: Navbar -> Hero -> Services -> Products -> CTA -> About -> Contact -> Footer).
+- Contact form integration uses EmailJS directly in `client/src/sections/ContactSection.jsx` via:
+  - `VITE_EMAILJS_SERVICE_ID`
+  - `VITE_EMAILJS_TEMPLATE_ID`
+  - `VITE_EMAILJS_PUBLIC_KEY`
+
+## Env and secrets
+- Keep EmailJS values in `client/.env` (already gitignored in root `.gitignore`).
+- Do not hardcode or commit credentials in JSX/CSS/config files.
+
+## Repo-specific gotchas
+- `README.md` at root is minimal and not authoritative for commands; trust `client/package.json` scripts.
+- `client/README.md` is the default Vite template; prefer actual project files over template guidance.
+- `.specify/` and `.github/` include Spec Kit scaffolding added by `specify init`; keep changes there intentional (do not edit casually during feature work).
