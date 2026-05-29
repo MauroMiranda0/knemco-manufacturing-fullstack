@@ -1,6 +1,6 @@
 # Implementation Plan: Knemco Landing Redesign Optimization
 
-**Branch**: `[001-landing-redesign-spec]` | **Date**: 2026-05-23 | **Spec**: `specs/001-landing-redesign-spec/spec.md`
+**Branch**: `001-nueva-landing` | **Date**: 2026-05-29 | **Spec**: `specs/001-landing-redesign-spec/spec.md`
 
 **Input**: Feature specification from `/specs/001-landing-redesign-spec/spec.md`
 
@@ -8,10 +8,11 @@
 
 ## Summary
 
-Redisenar la landing de Knemco para mejorar claridad visual, destacar propuesta de valor
-en el primer viewport y reducir friccion de conversion, sin cambiar copy ni storytelling.
-La estrategia combina reestructuracion de jerarquia visual, adicion de bloque de mockup,
-optimizacion responsive y controles de accesibilidad y estabilidad visual.
+Redesign the landing experience to improve immediate value clarity and increase
+conversion to contact intent, while preserving approved copy and brand voice.
+Implementation centers on hero-first information hierarchy, visible mockup in the
+initial viewport, low-friction navigation, and front-end conversion instrumentation
+for CTA click, submit attempt, and submit success events.
 
 ## Technical Context
 
@@ -21,33 +22,38 @@ optimizacion responsive y controles de accesibilidad y estabilidad visual.
   the iteration process.
 -->
 
-**Language/Version**: JavaScript (ES2023) + React 19
+**Language/Version**: JavaScript (ES2023), React 19, Vite 7
 
-**Primary Dependencies**: React, Vite, CSS modular por secciones
+**Primary Dependencies**: react, react-dom, react-scroll, react-icons, swiper, @emailjs/browser
 
-**Storage**: N/A (feature de presentacion sin persistencia nueva)
+**Storage**: N/A (front-end only; analytics events sent to existing tooling)
 
-**Testing**: Validacion manual UX/UI + Lighthouse + pruebas responsive
+**Testing**: ESLint (`npm run lint`) and production build validation (`npm run build` when runtime imports/bundling are affected)
 
-**Target Platform**: Navegadores modernos desktop y mobile
+**Target Platform**: Modern desktop and mobile browsers
 
-**Project Type**: Aplicacion web frontend (landing B2B)
+**Project Type**: Single-page web application (frontend)
 
-**Performance Goals**: LCP <= 2.5s en red movil estandar, CLS <= 0.1
+**Performance Goals**: CLS <= 0.1, LCP <= 2.5s in comparable test conditions
 
-**Constraints**: Copy intacto, CTA principal visible sin scroll, accesibilidad base obligatoria
+**Constraints**: Preserve approved copy and narrative order; keep max 5 visible nav links; no invasive pop-ups; no CRM integration in this phase; keep EmailJS secrets in `client/.env`
 
-**Scale/Scope**: 1 landing page, 6-8 secciones visuales, 1 flujo primario de conversion
+**Scale/Scope**: One landing page flow with hero, navigation, contact CTA and form states across desktop/tablet/mobile
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- **Gate 1 - Claridad inmediata**: PASS. Plan prioriza propuesta de valor y CTA en primer viewport.
-- **Gate 2 - Sin cambios de copy**: PASS. Cambios limitados a estructura visual y estilos.
-- **Gate 3 - Conversion sin friccion**: PASS. Flujo alineado a la conversion primaria definida en FR-005.
-- **Gate 4 - Responsive y accesibilidad**: PASS. Incluye criterios de contraste, foco, teclado y mobile-first.
-- **Gate 5 - Rendimiento visual**: PASS. Se fijan metas LCP/CLS y control de estabilidad de layout.
+- [x] Conversion-First Clarity: first viewport must communicate offer + primary action.
+- [x] Visual Proof Over Long Copy: mockup required in initial experience.
+- [x] Single Primary Action and Low-Friction Navigation: route to contact must remain explicit.
+- [x] Respectful Contact Experience: success/error/retry paths must remain clear and non-invasive.
+- [x] Measurable Outcomes and Verifiable Claims: conversion events and measurable outcomes are specified.
+- [x] Quality Gates: lint required; build required when import/bundling changes occur.
+- [x] Secrets Handling: EmailJS values remain environment-managed.
+
+Post-Design Re-check: PASS. Phase 1 artifacts (research, data model, contract,
+quickstart) preserve constitutional constraints with no unresolved violations.
 
 ## Project Structure
 
@@ -76,15 +82,17 @@ specs/001-landing-redesign-spec/
 client/
 ├── src/
 │   ├── App.jsx
+│   ├── main.jsx
 │   ├── components/
 │   ├── sections/
 │   ├── styles/
-│   └── assets/images/
-└── public/
+│   └── assets/
+├── eslint.config.js
+└── package.json
 ```
 
-**Structure Decision**: Se usa estructura de aplicacion web existente en `client/src`,
-con cambios en componentes de secciones, estilos y recursos visuales.
+**Structure Decision**: Single frontend application in `client/` using section-based
+composition and modular CSS files aligned with existing repository conventions.
 
 ## Complexity Tracking
 
