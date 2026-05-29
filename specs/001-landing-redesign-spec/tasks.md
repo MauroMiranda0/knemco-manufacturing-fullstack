@@ -40,7 +40,8 @@ description: "Task list for Knemco landing redesign"
 - [ ] T006 [P] Definir estilos base responsive de layout en `client/src/styles/index.css`
 - [ ] T007 [P] Implementar reglas base de accesibilidad (focus ring, contraste) en `client/src/styles/index.css`
 - [ ] T008 Configurar contenedor principal de flujo de conversion en `client/src/App.jsx`
-- [ ] T009 [P] Preparar hooks de metrica de conversion (evento CTA contacto) en `client/src/sections/CTASection.jsx`
+- [ ] T009 [P] Crear utilidad canonica de eventos de conversion (`cta_click_contact`, `contact_submit_attempt`, `contact_submit_success`) en `client/src/utils/conversionEvents.js`
+- [ ] T010 Integrar utilidad de conversion en flujo de contacto sin exponer secretos en `client/src/sections/ContactSection.jsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -54,11 +55,11 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 1
 
-- [ ] T010 [US1] Reestructurar hero above-the-fold en `client/src/sections/Hero.jsx`
-- [ ] T011 [P] [US1] Ajustar estilos del hero para jerarquia y legibilidad en `client/src/styles/Hero.css`
-- [ ] T012 [P] [US1] Ajustar navbar para priorizar accion principal en `client/src/styles/Navbar.css`
-- [ ] T013 [US1] Alinear CTA principal de hero con destino de contacto en `client/src/sections/Hero.jsx`
-- [ ] T014 [US1] Verificar preservacion total de copy en `client/src/sections/Hero.jsx`
+- [ ] T011 [US1] Reestructurar hero above-the-fold en `client/src/sections/HeroSection.jsx`
+- [ ] T012 [P] [US1] Ajustar estilos del hero para jerarquia y legibilidad en `client/src/styles/HeroSection.css`
+- [ ] T013 [P] [US1] Asegurar CTA principal visible sin scroll en desktop/mobile en `client/src/sections/HeroSection.jsx`
+- [ ] T014 [US1] Verificar preservacion total de copy aprobado en `client/src/sections/HeroSection.jsx`
+- [ ] T015 [US1] Registrar evidencia de AC-001/AC-002 en `specs/001-landing-redesign-spec/research.md`
 
 **Checkpoint**: User Story 1 funcional y validable como MVP
 
@@ -72,11 +73,11 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 2
 
-- [ ] T015 [P] [US2] Incorporar asset de mockup principal en `client/src/sections/Hero.jsx`
-- [ ] T016 [US2] Reservar dimensiones del mockup para estabilidad visual en `client/src/styles/Hero.css`
-- [ ] T017 [P] [US2] Definir texto alternativo descriptivo del mockup en `client/src/sections/Hero.jsx`
-- [ ] T018 [US2] Ajustar composicion responsive del mockup (desktop split/mobile stack) en `client/src/styles/Hero.css`
-- [ ] T019 [US2] Validar no alteracion de narrativa y foco visual en `client/src/sections/Hero.jsx`
+- [ ] T016 [P] [US2] Incorporar asset de mockup principal en `client/src/assets/`
+- [ ] T017 [US2] Integrar mockup con width/height y alt text en `client/src/sections/HeroSection.jsx`
+- [ ] T018 [P] [US2] Ajustar composicion responsive del mockup en `client/src/styles/HeroSection.css`
+- [ ] T019 [US2] Configurar prioridad de carga above-the-fold en `client/src/sections/HeroSection.jsx`
+- [ ] T020 [US2] Registrar validacion de CLS <= 0.1 en `specs/001-landing-redesign-spec/research.md`
 
 **Checkpoint**: User Story 2 funcional e independiente
 
@@ -90,11 +91,11 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 3
 
-- [ ] T020 [US3] Simplificar estructura de items de navegacion (max 5) en `client/src/components/Navbar.jsx`
-- [ ] T021 [P] [US3] Ajustar comportamiento sticky y estados de navegacion en `client/src/styles/Navbar.css`
-- [ ] T022 [US3] Reforzar flujo de conversion primaria (FR-005) en `client/src/sections/CTASection.jsx`
-- [ ] T023 [P] [US3] Optimizar legibilidad y continuidad visual de secciones en `client/src/styles/CTASection.css`
-- [ ] T024 [US3] Verificar consistencia del flujo de conversion en `client/src/App.jsx`
+- [ ] T021 [US3] Limitar navegacion visible a maximo 5 items en `client/src/components/Navbar.jsx`
+- [ ] T022 [P] [US3] Ajustar comportamiento sticky y estados en `client/src/styles/Navbar.css`
+- [ ] T023 [US3] Disparar `cta_click_contact` en CTA principal de navegacion en `client/src/components/Navbar.jsx`
+- [ ] T024 [US3] Disparar `contact_submit_attempt` y `contact_submit_success` en `client/src/sections/ContactSection.jsx`
+- [ ] T025 [US3] Validar consistencia de nombres de eventos con contrato en `specs/001-landing-redesign-spec/contracts/landing-ux-contract.md`
 
 **Checkpoint**: User Stories 1, 2 y 3 funcionales en conjunto sin perder independencia de validacion
 
@@ -104,13 +105,15 @@ description: "Task list for Knemco landing redesign"
 
 **Purpose**: Cerrar calidad visual, accesibilidad y rendimiento antes de implementacion final.
 
-- [ ] T025 [P] Ejecutar checklist de accesibilidad visual en `specs/001-landing-redesign-spec/quickstart.md`
-- [ ] T026 Ejecutar validacion de rendimiento (LCP/CLS) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
-- [ ] T027 [P] Revisar coherencia de estilos entre secciones en `client/src/styles/*.css`
-- [ ] T028 Verificar preservacion de copy global en `client/src/sections/*.jsx`
-- [ ] T029 Actualizar notas finales de implementacion en `specs/001-landing-redesign-spec/quickstart.md`
-- [ ] T030 Definir y ejecutar prueba moderada para SC-001 (tiempo de identificacion < 5s) y registrar evidencia en `specs/001-landing-redesign-spec/quickstart.md`
-- [ ] T031 Ejecutar evaluacion comparativa antes/despues para SC-004 (claridad percibida >= 85%) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
+- [ ] T026 [P] Ejecutar checklist de accesibilidad visual en `specs/001-landing-redesign-spec/quickstart.md`
+- [ ] T027 Ejecutar validacion de rendimiento (LCP/CLS) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
+- [ ] T028 [P] Ejecutar lint en `client/` con `npm run lint`
+- [ ] T029 Ejecutar build en `client/` con `npm run build`
+- [ ] T030 [P] Revisar coherencia de estilos entre secciones en `client/src/styles/*.css`
+- [ ] T031 Verificar preservacion de copy global en `client/src/sections/*.jsx`
+- [ ] T032 Actualizar notas finales de implementacion en `specs/001-landing-redesign-spec/quickstart.md`
+- [ ] T033 Definir y ejecutar prueba moderada para SC-001 (tiempo de identificacion < 5s) y registrar evidencia en `specs/001-landing-redesign-spec/quickstart.md`
+- [ ] T034 Ejecutar evaluacion comparativa antes/despues para SC-004 (claridad percibida >= 85%) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
 
 ---
 
