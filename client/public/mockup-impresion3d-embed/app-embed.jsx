@@ -25,16 +25,16 @@ const App = () => {
       <main className="stage" key={replayKey}>
         <Reveal variant="fade-up" delay={0}>
           <div className="topbar">
-            <span><span className="dot" />Sistema activo / KNEMCO PRINT LAB</span>
+            <span><span className="dot" />System active / KNEMCO PRINT LAB</span>
             <span>EXP_03 · BUILD 2026</span>
           </div>
         </Reveal>
 
         <Reveal variant="fade-up" delay={120}>
           <header className="header">
-            <h1>Impresión 3D<span className="accent">de idea a realidad.</span></h1>
+            <h1>3D Printing<span className="accent">from idea to reality.</span></h1>
             <div className="rule" />
-            <p>Tecnología, precisión y creatividad para dar vida a tus proyectos — desde el archivo CAD hasta la pieza terminada.</p>
+            <p>Technology, precision, and creativity to bring your projects to life - from CAD file to finished piece.</p>
           </header>
         </Reveal>
 
@@ -62,7 +62,7 @@ const App = () => {
       </main>
 
       <button className="replay" onClick={() => setReplayKey(k => k + 1)}>
-        <Icon name="replay" size={14} /> Reproducir
+        <Icon name="replay" size={14} /> Replay
       </button>
     </>
   );

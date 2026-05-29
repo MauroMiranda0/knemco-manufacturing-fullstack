@@ -52,10 +52,10 @@ const SpecCard = ({ icon, label, value, small, dot }) => (
 
 // --- Process steps ---
 const ProcessCard = ({ activeStep }) => {
-  const steps = ["Diseño 3D", "Laminado", "Impresión", "Acabado", "Entrega"];
+  const steps = ["3D Design", "Slicing", "Printing", "Finishing", "Delivery"];
   return (
     <div className="process">
-      <div className="head">Proceso de Impresión</div>
+      <div className="head">Printing Process</div>
       <ol>
         {steps.map((s, i) => (
           <li key={i} className={i < activeStep ? "done" : ""}>
@@ -76,7 +76,7 @@ const ProcessCard = ({ activeStep }) => {
 // --- Time card ---
 const TimeCard = ({ progress }) => (
   <div className="time-card">
-    <div className="head">Tiempo Estimado</div>
+    <div className="head">Estimated Time</div>
     <div className="time">
       <Icon name="clock" size={26} />
       <span className="val">2h 45m</span>
@@ -93,13 +93,13 @@ const TimeCard = ({ progress }) => (
 // --- Dimensions ---
 const DimCard = () => (
   <div className="dim">
-    <div className="head">Dimensiones</div>
+    <div className="head">Dimensions</div>
     <div className="body">
       <div className="icon"><Icon name="cube" size={36} /></div>
       <div className="rows">
-        <div className="row"><span>Alto</span><span>45 mm</span></div>
-        <div className="row"><span>Ancho</span><span>60 mm</span></div>
-        <div className="row"><span>Profundidad</span><span>60 mm</span></div>
+        <div className="row"><span>Height</span><span>45 mm</span></div>
+        <div className="row"><span>Width</span><span>60 mm</span></div>
+        <div className="row"><span>Depth</span><span>60 mm</span></div>
       </div>
     </div>
   </div>
@@ -108,7 +108,7 @@ const DimCard = () => (
 // --- Quality ---
 const QualCard = ({ filled }) => (
   <div className="qual">
-    <div className="head">Calidad</div>
+    <div className="head">Quality</div>
     <div className="stars">
       {[0,1,2,3,4].map(i => (
         <span key={i} style={{
@@ -121,7 +121,7 @@ const QualCard = ({ filled }) => (
         </span>
       ))}
     </div>
-    <div className="word">Excelente</div>
+    <div className="word">Excellent</div>
   </div>
 );
 
@@ -129,7 +129,7 @@ const QualCard = ({ filled }) => (
 const Banner = () => (
   <div className="banner">
     <div className="icon"><Icon name="cube" size={26} /></div>
-    <div className="text">Transformamos tus ideas <b>en objetos reales</b></div>
+    <div className="text">We turn your ideas <b>into real objects</b></div>
   </div>
 );
 
