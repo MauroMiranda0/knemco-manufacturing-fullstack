@@ -15,7 +15,8 @@ independiente de implementacion tecnica.
 ### C-002 Conversion event definition
 
 - Requirement: La conversion primaria MUST ser clic en CTA hacia contacto.
-- Verification: Evento de conversion unico y consistente en medicion.
+- Verification: Eventos canonicos y consistentes en medicion: `cta_click_contact`,
+  `contact_submit_attempt`, `contact_submit_success`, `contact_flow_abandon`.
 
 ### C-003 Copy preservation
 

@@ -37,6 +37,8 @@ objetivo y verificando que identifican propuesta de valor y CTA principal sin ap
    **Then** identifica que hace Knemco y encuentra el CTA principal sin scroll.
 2. **Given** una persona usuaria nueva en mobile, **When** carga la landing,
    **Then** identifica que hace Knemco y encuentra el CTA principal sin scroll.
+3. **Given** una persona usuaria nueva en tablet, **When** carga la landing,
+   **Then** identifica que hace Knemco y encuentra el CTA principal sin scroll.
 
 ---
 
@@ -87,16 +89,17 @@ usuarios que realizan tareas de navegacion y accion.
 ### Functional Requirements
 
 - **FR-001**: La landing MUST presentar la propuesta de valor de Knemco en el primer
-  viewport de desktop y mobile.
+  viewport de desktop, tablet y mobile.
 - **FR-002**: La landing MUST mantener el copy y storytelling actuales sin cambios de
   texto, orden narrativo base ni significado.
 - **FR-003**: El sistema MUST incorporar un area visual de mockup del
   producto/servicio en el bloque principal.
-- **FR-004**: La interfaz MUST mostrar un CTA principal visible sin scroll en desktop
-  y mobile.
+- **FR-004**: La interfaz MUST mostrar un CTA principal visible sin scroll en desktop,
+  tablet y mobile.
 - **FR-005**: La navegacion MUST reducir friccion con una estructura simple y
   consistente orientada al flujo primario de conversion definido como clic en
-  CTA hacia contacto (incluye formulario y otros medios).
+  CTA hacia contacto (incluye formulario y otros medios), con maximo 5 accesos
+  visibles de navegacion.
 - **FR-006**: La experiencia MUST conservar legibilidad y jerarquia visual en desktop,
   tablet y mobile.
 - **FR-007**: La landing MUST cumplir criterios base de accesibilidad: contraste,
@@ -106,6 +109,11 @@ usuarios que realizan tareas de navegacion y accion.
 - **FR-009**: La landing MUST instrumentar eventos front-end para conversion primaria:
   clic en CTA hacia contacto, intento de envio de formulario y envio exitoso,
   manteniendo nomenclatura consistente para analisis comparativo.
+- **FR-010**: El flujo de contacto MUST cubrir explicitamente estados de exito,
+  error de validacion, fallo de procesamiento, reintento y abandono, con
+  mensajes claros y no invasivos.
+- **FR-011**: Ante fallos recuperables, el formulario MUST preservar los datos
+  ingresados por la persona usuaria.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -125,15 +133,25 @@ usuarios que realizan tareas de navegacion y accion.
 - **SC-001**: Al menos 90% de personas usuarias de prueba identifica la propuesta de
   valor en menos de 5 segundos desde la carga inicial.
 - **SC-002**: Al menos 90% de personas usuarias de prueba identifica el CTA principal
-  sin desplazamiento en desktop y mobile.
-- **SC-003**: El flujo de accion principal mejora su tasa de finalizacion en al menos
-  20% frente a la version previa.
+  sin desplazamiento en desktop, tablet y mobile.
+- **SC-003**: La tasa de finalizacion del flujo primario (desde clic en CTA
+  hacia contacto hasta envio exitoso de formulario) mejora en al menos 20%
+  frente a la version previa en condiciones comparables.
 - **SC-004**: Al menos 85% de personas evaluadoras califica la nueva landing como mas
   clara y menos dispersa que la version anterior.
-- **SC-005**: La tasa de clic en CTA hacia contacto mejora en al menos 20% frente a la
+- **SC-005**: El CTR de CTA hacia contacto mejora en al menos 20% frente a la
   version previa en condiciones comparables de trafico.
 - **SC-006**: El 100% de sesiones de prueba registran los tres eventos de medicion
   definidos (clic CTA, submit intento, submit exito) cuando esas acciones ocurren.
+- **SC-007**: El bounce rate se mide de forma comparativa frente al baseline en
+  una ventana definida y en condiciones comparables de trafico.
+- **SC-008**: El section engagement se mide con eventos front-end consistentes
+  (por ejemplo, profundidad de scroll, vista de seccion o interacciones clave)
+  para analisis comparativo frente al baseline.
+- **SC-009**: Se define y aplica un proxy operativo de lead quality fit para
+  esta fase, basado en senales front-end y revision manual documentada, con
+  cumplimiento minimo del 80% de leads de prueba clasificados como ajuste
+  aceptable segun rubrica aprobada.
 
 ## Assumptions
 
@@ -145,7 +163,7 @@ usuarios que realizan tareas de navegacion y accion.
 
 ## Acceptance Checklist
 
-- [ ] AC-001: En desktop y mobile, la propuesta de valor y el CTA principal son visibles sin scroll.
+- [ ] AC-001: En desktop, tablet y mobile, la propuesta de valor y el CTA principal son visibles sin scroll.
 - [ ] AC-002: El copy y storytelling permanecen identicos al baseline aprobado.
 - [ ] AC-003: El mockup principal esta presente en el bloque hero y mantiene legibilidad del mensaje.
 - [ ] AC-004: La conversion primaria se mide como clic en CTA hacia contacto.

@@ -4,6 +4,7 @@
 - This repo currently contains one runnable app: `client/` (React 19 + Vite 7). There is no backend service code yet.
 - Work from `client/` for all app commands; the repository root has no `package.json` scripts.
 - The active feature docs live under `specs/001-landing-redesign-spec/` (`spec.md`, `plan.md`, `tasks.md`).
+- Treat spec artifacts as living documents for this repo; implementation expectations are currently driven by that feature folder.
 
 ## Verified dev commands
 - Install deps: `npm install` (run in `client/`).
@@ -12,6 +13,7 @@
 - Build: `npm run build`.
 - Preview production build: `npm run preview`.
 - There is no `test` script in `client/package.json`; do not assume Jest/Vitest/Playwright commands exist.
+- `npm run lint` uses `eslint .` from `client/` with flat config and ignores only `dist/` globally.
 
 ## Validation expectations
 - For code changes, use `npm run lint` as the primary automated check; use `npm run build` when changes may affect bundling/runtime imports.
@@ -34,7 +36,11 @@
 - `README.md` at root is minimal and not authoritative for commands; trust `client/package.json` scripts.
 - `client/README.md` is the default Vite template; prefer actual project files over template guidance.
 - `.specify/` and `.github/` include Spec Kit scaffolding added by `specify init`; keep changes there intentional (do not edit casually during feature work).
-- `specs/001-landing-redesign-spec/tasks.md` may reference target filenames (for example `HeroSection.jsx`) that are planned names; verify against existing files before coding renames.
+- Canonical Hero files are `client/src/sections/Hero.jsx` and `client/src/styles/Hero.css`.
+
+## Verification workflow
+- Default check for code edits: run `npm run lint` in `client/`.
+- Also run `npm run build` in `client/` when touching runtime imports, Vite wiring, or assets used by first viewport.
 
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
