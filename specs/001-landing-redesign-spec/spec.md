@@ -14,6 +14,10 @@
 
 - Q: Cual es la conversion principal a optimizar en la landing? -> A: Clic en CTA hacia contacto (incluye formulario y otros medios).
 
+### Session 2026-05-29
+
+- Q: Como se medira la conversion primaria en esta fase? -> A: Medir conversiones con eventos front-end (click CTA + submit intento + submit exito) y analisis en herramienta actual.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Claridad inmediata del valor (Priority: P1)
@@ -99,6 +103,9 @@ usuarios que realizan tareas de navegacion y accion.
   navegacion por teclado, foco visible y texto alternativo en recursos visuales.
 - **FR-008**: La landing MUST evitar inestabilidad visual perceptible durante carga
   inicial, con un objetivo de CLS <= 0.1 en condiciones comparables de evaluacion.
+- **FR-009**: La landing MUST instrumentar eventos front-end para conversion primaria:
+  clic en CTA hacia contacto, intento de envio de formulario y envio exitoso,
+  manteniendo nomenclatura consistente para analisis comparativo.
 
 ### Key Entities *(include if feature involves data)*
 
@@ -125,6 +132,8 @@ usuarios que realizan tareas de navegacion y accion.
   clara y menos dispersa que la version anterior.
 - **SC-005**: La tasa de clic en CTA hacia contacto mejora en al menos 20% frente a la
   version previa en condiciones comparables de trafico.
+- **SC-006**: El 100% de sesiones de prueba registran los tres eventos de medicion
+  definidos (clic CTA, submit intento, submit exito) cuando esas acciones ocurren.
 
 ## Assumptions
 
@@ -145,3 +154,4 @@ usuarios que realizan tareas de navegacion y accion.
 - [ ] AC-007: La landing cumple CLS <= 0.1 y mantiene estabilidad visual durante carga inicial.
 - [ ] AC-008: Al menos 90% de usuarios de prueba identifica valor y CTA principal en menos de 5 segundos.
 - [ ] AC-009: Al menos 85% de evaluadores percibe mayor claridad visual frente a la version previa.
+- [ ] AC-010: La medicion de conversion registra eventos de clic CTA, submit intento y submit exito con nombres consistentes.
