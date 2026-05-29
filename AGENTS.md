@@ -31,3 +31,8 @@
 - `README.md` at root is minimal and not authoritative for commands; trust `client/package.json` scripts.
 - `client/README.md` is the default Vite template; prefer actual project files over template guidance.
 - `.specify/` and `.github/` include Spec Kit scaffolding added by `specify init`; keep changes there intentional (do not edit casually during feature work).
+
+<!-- SPECKIT START -->
+For additional context about technologies to be used, project structure,
+shell commands, and other important information, read the current plan
+<!-- SPECKIT END -->
