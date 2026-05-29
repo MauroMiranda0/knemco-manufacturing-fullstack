@@ -2,6 +2,10 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser'; // Importamos la librería
 import { FiSend } from 'react-icons/fi';
+import {
+  trackContactSubmitAttempt,
+  trackContactSubmitSuccess,
+} from '../utils/conversionEvents';
 import '../styles/ContactSection.css';
 
 const contactTopics = {
@@ -37,6 +41,7 @@ const ContactSection = () => {
 
   const sendEmail = (e) => {
     e.preventDefault(); // Prevenimos el comportamiento por defecto del formulario
+    trackContactSubmitAttempt();
     setIsSending(true);
     setSendStatus('');
 
@@ -60,6 +65,7 @@ const ContactSection = () => {
       .then(
         (result) => {
           console.log('SUCCESS!', result.text);
+          trackContactSubmitSuccess();
           setIsSending(false);
           setSendStatus('success');
           form.current.reset(); // Resetea el formulario

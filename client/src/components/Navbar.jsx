@@ -1,6 +1,7 @@
 // client/src/components/Navbar.jsx
 import React, { useState } from 'react'; // Importa useState
 import Logo from '../assets/images/KnemcoLogoContorno.png';
+import { trackCtaClickContact } from '../utils/conversionEvents';
 
 import '../styles/Navbar.css';
 
@@ -41,7 +42,16 @@ const Navbar = () => {
                     <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About Us</a>
                 </li>
                 <li className="nav-item">
-                    <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</a>
+                    <a
+                        href="#contact"
+                        className="nav-link"
+                        onClick={() => {
+                            trackCtaClickContact('navbar_contact_link');
+                            setIsOpen(false);
+                        }}
+                    >
+                        Contact
+                    </a>
                 </li>
             </ul>
 

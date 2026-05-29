@@ -11,7 +11,7 @@ import Footer from './components/Footer'; // Importa el Footer
 
 function App() {
   return (
-    <div>
+    <div className="app-shell" id="primary-conversion-flow">
       <Navbar />
       <Hero />
       <ServicesSection />

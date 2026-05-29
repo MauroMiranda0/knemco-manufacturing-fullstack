@@ -23,10 +23,10 @@ description: "Task list for Knemco landing redesign"
 
 **Purpose**: Preparar baseline visual, recursos y criterios de QA para el rediseño.
 
-- [ ] T001 Documentar baseline visual y capturas de referencia en `specs/001-landing-redesign-spec/research.md`
-- [ ] T002 Crear tokenizacion de estilo (colores, espaciado, tipografia) en `client/src/styles/index.css`
-- [ ] T003 [P] Verificar inventario de assets para mockup en `client/src/assets/images/`
-- [ ] T004 [P] Alinear estructura de secciones objetivo en `client/src/App.jsx`
+- [X] T001 Documentar baseline visual y capturas de referencia en `specs/001-landing-redesign-spec/research.md`
+- [X] T002 Crear tokenizacion de estilo (colores, espaciado, tipografia) en `client/src/styles/index.css`
+- [X] T003 [P] Verificar inventario de assets para mockup en `client/src/assets/images/`
+- [X] T004 [P] Alinear estructura de secciones objetivo en `client/src/App.jsx`
 
 ---
 
@@ -36,12 +36,12 @@ description: "Task list for Knemco landing redesign"
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T005 Implementar estructura de navegacion sticky base en `client/src/components/Navbar.jsx`
-- [ ] T006 [P] Definir estilos base responsive de layout en `client/src/styles/index.css`
-- [ ] T007 [P] Implementar reglas base de accesibilidad (focus ring, contraste) en `client/src/styles/index.css`
-- [ ] T008 Configurar contenedor principal de flujo de conversion en `client/src/App.jsx`
-- [ ] T009 [P] Crear utilidad canonica de eventos de conversion (`cta_click_contact`, `contact_submit_attempt`, `contact_submit_success`) en `client/src/utils/conversionEvents.js`
-- [ ] T010 Integrar utilidad de conversion en flujo de contacto sin exponer secretos en `client/src/sections/ContactSection.jsx`
+- [X] T005 Implementar estructura de navegacion sticky base en `client/src/components/Navbar.jsx`
+- [X] T006 [P] Definir estilos base responsive de layout en `client/src/styles/index.css`
+- [X] T007 [P] Implementar reglas base de accesibilidad (focus ring, contraste) en `client/src/styles/index.css`
+- [X] T008 Configurar contenedor principal de flujo de conversion en `client/src/App.jsx`
+- [X] T009 [P] Crear utilidad canonica de eventos de conversion (`cta_click_contact`, `contact_submit_attempt`, `contact_submit_success`) en `client/src/utils/conversionEvents.js`
+- [X] T010 Integrar utilidad de conversion en flujo de contacto sin exponer secretos en `client/src/sections/ContactSection.jsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -55,11 +55,11 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Reestructurar hero above-the-fold en `client/src/sections/Hero.jsx`
-- [ ] T012 [P] [US1] Ajustar estilos del hero para jerarquia y legibilidad en `client/src/styles/Hero.css`
-- [ ] T013 [P] [US1] Asegurar CTA principal visible sin scroll en desktop/mobile/tablet en `client/src/sections/Hero.jsx`
-- [ ] T014 [US1] Verificar preservacion total de copy aprobado en `client/src/sections/Hero.jsx`
-- [ ] T015 [US1] Registrar evidencia de AC-001/AC-002 en `specs/001-landing-redesign-spec/research.md`
+- [X] T011 [US1] Reestructurar hero above-the-fold en `client/src/sections/Hero.jsx`
+- [X] T012 [P] [US1] Ajustar estilos del hero para jerarquia y legibilidad en `client/src/styles/Hero.css`
+- [X] T013 [P] [US1] Asegurar CTA principal visible sin scroll en desktop/mobile/tablet en `client/src/sections/Hero.jsx`
+- [X] T014 [US1] Verificar preservacion total de copy aprobado en `client/src/sections/Hero.jsx`
+- [X] T015 [US1] Registrar evidencia de AC-001/AC-002 en `specs/001-landing-redesign-spec/research.md`
 
 **Checkpoint**: User Story 1 funcional y validable como MVP
 

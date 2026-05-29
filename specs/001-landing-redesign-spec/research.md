@@ -22,11 +22,22 @@
 
 | ID | Archivo de referencia | Estado |
 |----|-----------------------|--------|
-| BR-01 | No registrado en repositorio | Pendiente |
-| BR-02 | No registrado en repositorio | Pendiente |
-| BR-03 | No registrado en repositorio | Pendiente |
-| BR-04 | No registrado en repositorio | Pendiente |
-| BR-05 | No registrado en repositorio | Pendiente |
+| BR-01 | `client/src/sections/Hero.jsx` + `client/src/styles/Hero.css` | Registrado |
+| BR-02 | `client/src/sections/Hero.jsx` + `client/src/styles/Hero.css` | Registrado |
+| BR-03 | `client/src/assets/images/product-sculptural-lighting.png` + `client/src/sections/Hero.jsx` | Registrado |
+| BR-04 | `client/src/components/Navbar.jsx` + `client/src/styles/Navbar.css` | Registrado |
+| BR-05 | `client/src/styles/index.css` (focus-visible) | Registrado |
+
+### Inventario de assets para mockup (T003)
+
+- Directorio verificado: `client/src/assets/images/`.
+- Candidato principal para mockup hero: `product-sculptural-lighting.png`.
+- Assets alternativos disponibles para pruebas visuales: `product-cat-fountain.png`, `product-designer-planters.png`, `product-personalized-gifts.png`.
+
+### Evidencia AC-001 y AC-002 (T015)
+
+- AC-001: El Hero se reestructuro para mantener propuesta de valor + CTA principal en primer viewport en desktop/tablet/mobile con layout responsivo en `client/src/styles/Hero.css`.
+- AC-002: Se preservo el copy original del bloque hero (titulo, descripcion y texto de CTA) en `client/src/sections/Hero.jsx`.
 
 ## Decision 1: Conversion primaria
 

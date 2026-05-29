@@ -17,6 +17,17 @@
   --font-primary: 'Montserrat', sans-serif; /* Cambiamos Poppins por Montserrat */
   --font-secondary: 'Inter', sans-serif;
 
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --container-max-width: 1200px;
+  --focus-ring-color: #ed4845;
+  --focus-ring-offset: 2px;
+
 }
 
 /* 2. Reseteo y Estilos Base para el Body */
@@ -88,4 +99,42 @@ a:hover {
   color: var(--color-white);
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: 100%;
+  overflow-x: clip;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --container-max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-max-width: 100%;
+  }
 }
