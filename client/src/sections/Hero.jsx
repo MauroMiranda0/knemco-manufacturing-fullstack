@@ -1,7 +1,8 @@
 // client/src/sections/Hero.jsx
 import React from 'react';
 import { Link } from 'react-scroll';
-import HeroMockup from '../assets/images/product-sculptural-lighting.png';
+import { motion as Motion } from 'framer-motion';
+import MockupImpresion3D from '../components/MockupImpresion3D';
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -29,17 +30,21 @@ const Hero = () => {
             Explore the Ecosystem
           </Link>
         </div>
-        <div className="hero-mockup-wrap" aria-hidden="true">
-          <img
-            src={HeroMockup}
-            className="hero-mockup"
-            alt="3D printed sculptural lighting sample"
-            width="680"
-            height="520"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
+        <Motion.div
+          className="hero-mockup-wrap"
+          aria-hidden="true"
+          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
+        >
+          <Motion.div
+            className="hero-mockup-embed"
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
+          >
+            <MockupImpresion3D />
+          </Motion.div>
+        </Motion.div>
       </div>
     </section>
   );

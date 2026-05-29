@@ -1,0 +1,165 @@
+/* ============================================
+   V4 — Single-image printer head animation
+   ============================================ */
+.printer-stage.photo-v4 {
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+  width: 100%; height: 620px; overflow: visible;
+}
+.printer-frame-v4 {
+  position: relative;
+  width: 100%; max-width: 480px; height: 100%;
+  display: flex; justify-content: center; align-items: flex-start;
+  padding-top: 20px;
+}
+
+/* Head layer container — only top portion so head sits at top */
+.head-layer-v4 {
+  position: absolute; top: 20px; left: 0; right: 0;
+  display: flex; justify-content: center;
+  z-index: 3;
+}
+
+/* Gear (printed piece) — sits on the build plate, doesn't move */
+.gear-layer-v4 {
+  position: absolute;
+  left: 50%; bottom: 60px;
+  transform: translateX(-50%);
+  width: 280px;
+  display: flex; justify-content: center;
+  z-index: 2;
+  filter: drop-shadow(0 14px 22px rgba(31,32,24,0.28));
+}
+.gear-img-v4 {
+  width: 100%; height: auto; display: block;
+  user-select: none; -webkit-user-drag: none;
+}
+
+/* Bed rings far below — represents the build plate */
+.bed-rings-v4 {
+  position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%);
+  width: 400px; height: 80px; pointer-events: none; z-index: 1;
+}
+.bed-rings-v4 .ring {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line); border-radius: 50%;
+}
+.bed-rings-v4 .r1 { width: 300px; height: 64px; }
+.bed-rings-v4 .r2 { width: 380px; height: 80px; border-style: dashed; opacity: 0.65; }
+.bed-rings-v4 .r3 {
+  width: 220px; height: 48px; border: none;
+  background: radial-gradient(ellipse at center, rgba(31,32,24,0.10) 0%, transparent 75%);
+}
+
+/* Head layer — full width container for horizontal sweep */
+.head-layer-old-v4 {
+  position: absolute; inset: 0;
+  display: flex; justify-content: center; align-items: flex-start;
+  z-index: 2;
+}
+
+/* Anchor that actually moves — contains image + nozzle effects in fixed relative positions */
+.head-anchor-v4 {
+  position: relative;
+  width: 380px;
+  display: flex; justify-content: center;
+  will-change: transform;
+}
+
+.printer-img-v4 {
+  width: 100%; height: auto;
+  user-select: none; -webkit-user-drag: none;
+  filter: drop-shadow(0 16px 24px rgba(31,32,24,0.22));
+  display: block;
+}
+
+/* Glow at the nozzle tip — positioned relative to the head image */
+.nozzle-glow-v4 {
+  position: absolute;
+  left: 50%; top: 100%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  background: radial-gradient(circle, rgba(220, 150, 60, 0.75) 0%, rgba(220, 150, 60, 0) 65%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Drips from the nozzle — fall straight down from tip */
+.drip-v4 {
+  position: absolute;
+  left: 50%; top: 100%;
+  width: 5px; height: 5px;
+  transform: translate(-50%, 0);
+  background: radial-gradient(circle, #f4c47a 0%, #c97a2a 70%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(220, 150, 60, 0.7);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Scan line at the build height — independent layer (sits on top of gear) */
+.scan-line-v4 {
+  position: absolute;
+  left: 50%; bottom: 130px;
+  transform: translateX(-50%);
+  width: 280px; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(220, 150, 60, 0.95) 50%, transparent 100%);
+  box-shadow: 0 0 14px rgba(220, 150, 60, 0.55);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+.scan-line-v4::before, .scan-line-v4::after {
+  content: ""; position: absolute; top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 4px; background: rgba(220, 150, 60, 0.95);
+  border-radius: 50%; box-shadow: 0 0 6px rgba(220, 150, 60, 0.8);
+}
+.scan-line-v4::before { left: -2px; }
+.scan-line-v4::after  { right: -2px; }
+
+/* ---- Animations (only when .on) ---- */
+.printer-frame-v4.on .head-anchor-v4 {
+  animation: head-sweep-v4 4.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.printer-frame-v4.on .nozzle-glow-v4 {
+  animation: glow-pulse-v4 1.1s ease-in-out infinite;
+}
+.printer-frame-v4.on .drip-v4.d1 { animation: drip-fall-v4 1.4s ease-in 0.0s infinite; }
+.printer-frame-v4.on .drip-v4.d2 { animation: drip-fall-v4 1.4s ease-in 0.45s infinite; }
+.printer-frame-v4.on .drip-v4.d3 { animation: drip-fall-v4 1.4s ease-in 0.9s infinite; }
+.printer-frame-v4.on .scan-line-v4 {
+  animation: scan-sweep-v4 4.2s ease-in-out infinite;
+}
+
+@keyframes head-sweep-v4 {
+  0%   { transform: translateX(-40px); }
+  25%  { transform: translateX(40px); }
+  50%  { transform: translateX(-36px); }
+  75%  { transform: translateX(36px); }
+  100% { transform: translateX(-40px); }
+}
+
+@keyframes glow-pulse-v4 {
+  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.9); }
+  50%      { opacity: 1;    transform: translate(-50%, -50%) scale(1.3); }
+}
+
+@keyframes drip-fall-v4 {
+  0%   { transform: translate(-50%, 0)   scale(1.1); opacity: 1; }
+  40%  { transform: translate(-50%, 26px) scale(0.85); opacity: 0.9; }
+  100% { transform: translate(-50%, 60px) scale(0.4); opacity: 0; }
+}
+
+@keyframes scan-sweep-v4 {
+  0%   { transform: translate(-44px, 0); opacity: 0; }
+  10%  { opacity: 0.9; }
+  25%  { transform: translate(44px, 0); opacity: 0.9; }
+  50%  { transform: translate(-40px, 0); opacity: 0.9; }
+  75%  { transform: translate(40px, 0); opacity: 0.9; }
+  90%  { opacity: 0.9; }
+  100% { transform: translate(-44px, 0); opacity: 0; }
+}

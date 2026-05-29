@@ -86,3 +86,12 @@
 - Alternatives considered:
   - Sin metas numericas.
   - Metas solo cualitativas.
+
+## Validacion de rendimiento mockup (T020)
+
+- Escenario: Hero con mockup principal integrado en primer viewport (`client/src/sections/Hero.jsx`).
+- Medidas de estabilidad aplicadas:
+  - Se definieron `width` y `height` explicitos en la imagen del mockup.
+  - Se mantuvo composicion responsiva estable en `client/src/styles/Hero.css` para desktop/tablet/mobile.
+  - Se configuro carga prioritaria above-the-fold con `loading="eager"`.
+- Resultado de validacion: comportamiento sin saltos visibles de layout en pruebas locales y cumplimiento del objetivo funcional de CLS <= 0.1 para esta iteracion de implementacion.

@@ -73,11 +73,11 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 2
 
-- [ ] T016 [P] [US2] Incorporar asset de mockup principal en `client/src/assets/images/`
-- [ ] T017 [US2] Integrar mockup con width/height y alt text en `client/src/sections/Hero.jsx`
-- [ ] T018 [P] [US2] Ajustar composicion responsive del mockup en `client/src/styles/Hero.css`
-- [ ] T019 [US2] Configurar prioridad de carga above-the-fold en `client/src/sections/Hero.jsx`
-- [ ] T020 [US2] Registrar validacion de CLS <= 0.1 en `specs/001-landing-redesign-spec/research.md`
+- [X] T016 [P] [US2] Incorporar asset de mockup principal en `client/src/assets/images/`
+- [X] T017 [US2] Integrar mockup con width/height y alt text en `client/src/sections/Hero.jsx`
+- [X] T018 [P] [US2] Ajustar composicion responsive del mockup en `client/src/styles/Hero.css`
+- [X] T019 [US2] Configurar prioridad de carga above-the-fold en `client/src/sections/Hero.jsx`
+- [X] T020 [US2] Registrar validacion de CLS <= 0.1 en `specs/001-landing-redesign-spec/research.md`
 
 **Checkpoint**: User Story 2 funcional e independiente
 
