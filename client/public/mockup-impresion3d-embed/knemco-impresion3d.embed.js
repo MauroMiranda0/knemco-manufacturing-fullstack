@@ -39,7 +39,7 @@
       const currentScript = document.currentScript || document.querySelector("script[" + SCRIPT_ATTR + "]");
       const base = getBaseUrl(currentScript);
 
-      const cssFiles = ["styles.css", "styles-v2.css", "styles-v4.css", "styles-v5.css"];
+      const cssFiles = ["styles.css"];
       const cssParts = await Promise.all(cssFiles.map((f) => loadText(base + f)));
       const style = document.createElement("style");
       style.textContent = cssParts.join("\n\n");
@@ -88,11 +88,10 @@
       const assetsBase = base.replace(/\/$/, "") + "/assets";
       hostWrap.style.setProperty("--knemco-assets", assetsBase);
 
-      const sources = ["icons.jsx", "printer-v4.jsx", "cards.jsx", "app-embed.jsx"];
+      const sources = ["icons.jsx", "printer.jsx", "cards.jsx", "app-embed.jsx"];
       for (const file of sources) {
         let code = await loadText(base + file);
-        code = code.replaceAll('src="assets/gear.png"', 'src="' + assetsBase + '/gear.png"');
-        code = code.replaceAll('src="assets/printer-head.png"', 'src="' + assetsBase + '/printer-head.png"');
+        code = code.replaceAll('src="assets/Impresion 3D.mp4"', 'src="' + assetsBase + '/Impresion 3D.mp4"');
         const transpiled = window.Babel.transform(code, { presets: ["react"] }).code;
         window.eval(transpiled);
       }

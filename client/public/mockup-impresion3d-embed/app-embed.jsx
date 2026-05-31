@@ -4,13 +4,13 @@ const App = () => {
   const [step, setStep] = useState(0);
   const [progress, setProgress] = useState(0);
   const [stars, setStars] = useState(0);
-  const [animated, setAnimated] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
 
   useEffect(() => {
-    setStep(0); setProgress(0); setStars(0); setAnimated(false);
+    setStep(0);
+    setProgress(0);
+    setStars(0);
     const t = [];
-    t.push(setTimeout(() => setAnimated(true), 900));
     t.push(setTimeout(() => setStep(1), 1300));
     t.push(setTimeout(() => setStep(2), 1700));
     t.push(setTimeout(() => setStep(3), 2100));
@@ -48,7 +48,7 @@ const App = () => {
           </div>
 
           <div className="center">
-            <Reveal variant="zoom-in" delay={200}><Printer animated={animated} /></Reveal>
+            <Reveal variant="zoom-in" delay={200}><Printer /></Reveal>
             <Reveal variant="fade-up" delay={900}><Banner /></Reveal>
           </div>
 
