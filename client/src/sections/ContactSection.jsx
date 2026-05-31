@@ -1,12 +1,21 @@
 // client/src/sections/ContactSection.jsx
-import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser'; // Importamos la librería
+import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { FiSend } from 'react-icons/fi';
 import {
+  trackContactFlowAbandon,
   trackContactSubmitAttempt,
   trackContactSubmitSuccess,
 } from '../utils/conversionEvents';
 import '../styles/ContactSection.css';
+
+const initialFormValues = {
+  fullName: '',
+  email: '',
+  phone: '',
+  company: '',
+  message: '',
+};
 
 const contactTopics = {
   project: {
@@ -31,28 +40,114 @@ const contactTopics = {
 
 const ContactSection = () => {
   const [activeTopic, setActiveTopic] = useState(contactTopics.investment);
-  const form = useRef(); // Referencia al formulario
-  const [isSending, setIsSending] = useState(false); // Estado para mostrar feedback
-  const [sendStatus, setSendStatus] = useState(''); // 'success' o 'error'
+  const form = useRef();
+  const fieldRefs = useRef({});
+  const hasTrackedAbandon = useRef(false);
+  const [formValues, setFormValues] = useState(initialFormValues);
+  const [errors, setErrors] = useState({});
+  const [isSending, setIsSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState('');
+
+  const hasStartedForm = Object.values(formValues).some((value) => value.trim() !== '');
+
+  useEffect(() => {
+    const trackAbandonIfNeeded = (reason) => {
+      if (!hasStartedForm || hasTrackedAbandon.current || sendStatus === 'success') {
+        return;
+      }
+
+      hasTrackedAbandon.current = true;
+      trackContactFlowAbandon({ reason, topic: activeTopic.id });
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        trackAbandonIfNeeded('visibility_hidden');
+      }
+    };
+
+    const handleBeforeUnload = () => {
+      trackAbandonIfNeeded('before_unload');
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      trackAbandonIfNeeded('unmount');
+    };
+  }, [activeTopic.id, hasStartedForm, sendStatus]);
+
+  const validateForm = () => {
+    const nextErrors = {};
+
+    if (!formValues.fullName.trim()) {
+      nextErrors.fullName = 'Please enter your full name.';
+    }
+
+    if (!formValues.email.trim()) {
+      nextErrors.email = 'Please enter your email address.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+      nextErrors.email = 'Please enter a valid email address.';
+    }
+
+    if (!formValues.message.trim()) {
+      nextErrors.message = 'Please enter a message so we can help you.';
+    }
+
+    return nextErrors;
+  };
+
+  const focusFirstError = (nextErrors) => {
+    const firstField = Object.keys(nextErrors)[0];
+    if (firstField) {
+      fieldRefs.current[firstField]?.focus();
+    }
+  };
 
   const handleTopicChange = (topicId) => {
     setActiveTopic(contactTopics[topicId]);
+    setSendStatus('');
+  };
+
+  const handleChange = ({ target: { name, value } }) => {
+    setFormValues((current) => ({ ...current, [name]: value }));
+    hasTrackedAbandon.current = false;
+
+    if (errors[name]) {
+      setErrors((current) => {
+        const nextErrors = { ...current };
+        delete nextErrors[name];
+        return nextErrors;
+      });
+    }
   };
 
   const sendEmail = (e) => {
-    e.preventDefault(); // Prevenimos el comportamiento por defecto del formulario
+    e.preventDefault();
+
+    const nextErrors = validateForm();
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      setSendStatus('validation_error');
+      focusFirstError(nextErrors);
+      return;
+    }
+
     trackContactSubmitAttempt();
     setIsSending(true);
     setSendStatus('');
+    setErrors({});
 
-    // Preparamos los parámetros para la plantilla
     const templateParams = {
         activeTopicTitle: activeTopic.title,
-        fullName: form.current.fullName.value,
-        email: form.current.email.value,
-        phone: form.current.phone.value,
-        company: form.current.company.value,
-        message: form.current.message.value,
+        fullName: formValues.fullName,
+        email: formValues.email,
+        phone: formValues.phone,
+        company: formValues.company,
+        message: formValues.message,
     };
 
     emailjs
@@ -63,19 +158,27 @@ const ContactSection = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (result) => {
-          console.log('SUCCESS!', result.text);
+        () => {
           trackContactSubmitSuccess();
+          hasTrackedAbandon.current = false;
           setIsSending(false);
           setSendStatus('success');
-          form.current.reset(); // Resetea el formulario
+          setFormValues(initialFormValues);
+          form.current?.reset();
         },
-        (error) => {
-          console.log('FAILED...', error.text);
+        () => {
           setIsSending(false);
-          setSendStatus('error');
+          setSendStatus('processing_failure');
         }
       );
+  };
+
+  const handleRetry = () => {
+    setSendStatus('');
+  };
+
+  const setFieldRef = (fieldName) => (element) => {
+    fieldRefs.current[fieldName] = element;
   };
 
   return (
@@ -100,32 +203,40 @@ const ContactSection = () => {
 
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <div className="form-grid">
-            <div className="form-group">
+            <div className={`form-group ${errors.fullName ? 'has-error' : ''}`}>
               <label htmlFor="fullName">Full name *</label>
-              <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
+              <input ref={setFieldRef('fullName')} type="text" id="fullName" name="fullName" placeholder="Your name" required value={formValues.fullName} onChange={handleChange} aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? 'fullName-error' : undefined} />
+              {errors.fullName && <p className="field-error" id="fullName-error">{errors.fullName}</p>}
             </div>
-            <div className="form-group">
+            <div className={`form-group ${errors.email ? 'has-error' : ''}`}>
               <label htmlFor="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              <input ref={setFieldRef('email')} type="email" id="email" name="email" placeholder="your@email.com" required value={formValues.email} onChange={handleChange} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} />
+              {errors.email && <p className="field-error" id="email-error">{errors.email}</p>}
             </div>
             <div className="form-group">
               <label htmlFor="phone">Phone number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" value={formValues.phone} onChange={handleChange} />
             </div>
             <div className="form-group">
               <label htmlFor="company">Company / Organization</label>
-              <input type="text" id="company" name="company" placeholder="Your company name" />
+              <input type="text" id="company" name="company" placeholder="Your company name" value={formValues.company} onChange={handleChange} />
             </div>
           </div>
-          <div className="form-group full-width">
+          <div className={`form-group full-width ${errors.message ? 'has-error' : ''}`}>
             <label htmlFor="message">Message *</label>
             <textarea
+              ref={setFieldRef('message')}
               id="message"
               name="message"
               rows="6"
               placeholder={activeTopic.placeholder}
               required
+              value={formValues.message}
+              onChange={handleChange}
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? 'message-error' : undefined}
             ></textarea>
+            {errors.message && <p className="field-error" id="message-error">{errors.message}</p>}
           </div>
 
           <div className="info-box">
@@ -135,9 +246,14 @@ const ContactSection = () => {
           <button type="submit" className="btn btn-primary submit-button" disabled={isSending}>
             {isSending ? 'Sending...' : <>Send Message <FiSend /></>}
           </button>
-          {/* Mensajes de feedback */}
           {sendStatus === 'success' && <p className="feedback-message success">Message sent successfully! We'll be in touch soon.</p>}
-          {sendStatus === 'error' && <p className="feedback-message error">Something went wrong. Please try again later.</p>}
+          {sendStatus === 'validation_error' && <p className="feedback-message error" role="alert">Please fix the highlighted fields and try again.</p>}
+          {sendStatus === 'processing_failure' && (
+            <div className="feedback-message error feedback-message-action" role="alert">
+              <p>Something went wrong while sending your message. Your details are still here, so you can retry.</p>
+              <button type="button" className="retry-button" onClick={handleRetry}>Try again</button>
+            </div>
+          )}
 
         </form>
       </div>

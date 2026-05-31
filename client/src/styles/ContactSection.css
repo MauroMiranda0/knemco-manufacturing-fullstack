@@ -114,6 +114,19 @@
   resize: vertical;
 }
 
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: var(--color-primary-accent);
+  box-shadow: 0 0 0 3px rgba(237, 72, 69, 0.12);
+}
+
+.field-error {
+  margin-top: 0.5rem;
+  color: var(--color-primary-accent);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 .info-box {
   background-color: #f7f9f9; /* Un gris-verdoso muy claro */
   border-radius: 8px;
@@ -171,4 +184,28 @@
 .feedback-message.error {
   background-color: #fdecea;
   color: var(--color-primary-accent);
+}
+
+.feedback-message-action {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.retry-button {
+  border: 1px solid var(--color-primary-accent);
+  background-color: transparent;
+  color: var(--color-primary-accent);
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: var(--color-primary-accent);
+  color: var(--color-white);
 }

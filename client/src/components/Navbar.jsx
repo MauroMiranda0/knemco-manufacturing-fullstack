@@ -1,15 +1,23 @@
 // client/src/components/Navbar.jsx
-import React, { useState } from 'react'; // Importa useState
+import React, { useState } from 'react';
 import Logo from '../assets/images/KnemcoLogoContorno.png';
 import { trackCtaClickContact } from '../utils/conversionEvents';
 
 import '../styles/Navbar.css';
 
+const navItems = [
+  { href: '#services', label: 'Services' },
+  { href: '#products', label: 'Products' },
+  { href: '#investment', label: 'Investment' },
+  { href: '#about', label: 'About Us' },
+  { href: '#contact', label: 'Contact', isPrimary: true },
+];
+
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false); // Estado para controlar el menú responsive
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen); // Cambia el estado de abierto/cerrado
+        setIsOpen(!isOpen);
     };
 
     return (
@@ -20,39 +28,29 @@ const Navbar = () => {
                 </a>
             </div>
 
-            {/* Botón de hamburguesa */}
-            <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
+            <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={isOpen} aria-controls="primary-navigation">
                 <div className={`bar ${isOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${isOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${isOpen ? 'open' : ''}`}></div>
             </button>
 
-            {/* La lista de navegación ahora usa una clase condicional */}
-            <ul className={`navbar-nav ${isOpen ? 'open' : ''}`}>
-                <li className="nav-item">
-                    <a href="#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#products" className="nav-link" onClick={() => setIsOpen(false)}>Products</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#investment" className="nav-link" onClick={() => setIsOpen(false)}>Investment</a>
-                </li>
-                <li className="nav-item">
-                    <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>About Us</a>
-                </li>
-                <li className="nav-item">
-                    <a
-                        href="#contact"
-                        className="nav-link"
-                        onClick={() => {
-                            trackCtaClickContact('navbar_contact_link');
-                            setIsOpen(false);
-                        }}
-                    >
-                        Contact
-                    </a>
-                </li>
+            <ul className={`navbar-nav ${isOpen ? 'open' : ''}`} id="primary-navigation">
+                {navItems.map((item) => (
+                    <li className="nav-item" key={item.href}>
+                        <a
+                            href={item.href}
+                            className={`nav-link ${item.isPrimary ? 'nav-link-primary' : ''}`}
+                            onClick={() => {
+                                if (item.href === '#contact') {
+                                    trackCtaClickContact('navbar_contact_link');
+                                }
+                                setIsOpen(false);
+                            }}
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))}
             </ul>
 
         </nav>

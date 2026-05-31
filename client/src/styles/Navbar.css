@@ -5,11 +5,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 3rem;
-    background-color: var(--color-text);/* Mint Cream */
-    box-shadow: 0 4px 12px rgba(19, 42, 37, 0.05);/* Sombra sutil con tono verde */
+    background-color: rgba(19, 42, 37, 0.94);
+    box-shadow: 0 4px 12px rgba(19, 42, 37, 0.12);
     position: sticky;
     top: 0;
     z-index: 1000;
+    backdrop-filter: blur(12px);
 }
 
 .navbar-logo img {
@@ -53,6 +54,22 @@
 
 .nav-link:hover {
     color: var(--color-primary-accent);/* Cambia el color del texto a rojo */
+}
+
+.nav-link-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    background-color: var(--color-primary-accent);
+    color: var(--color-white);
+    box-shadow: 0 8px 20px rgba(237, 72, 69, 0.22);
+}
+
+.nav-link-primary:hover {
+    color: var(--color-white);
+    background-color: #c13a38;
 }
 
 .nav-link:hover::after {
@@ -132,6 +149,13 @@
     .nav-link {
         font-size: 1.5rem;
         color: var(--color-text);
+    }
+
+    .nav-link-primary {
+        background-color: transparent;
+        color: var(--color-primary-accent);
+        box-shadow: none;
+        padding: 0.5rem 0;
     }
 
     /* Ocultamos el efecto de indicador en el menú móvil */

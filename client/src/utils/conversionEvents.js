@@ -25,3 +25,7 @@ export const trackContactSubmitAttempt = () => {
 export const trackContactSubmitSuccess = () => {
   emitBrowserEvent('contact_submit_success');
 };
+
+export const trackContactFlowAbandon = (detail = {}) => {
+  emitBrowserEvent('contact_flow_abandon', detail);
+};
