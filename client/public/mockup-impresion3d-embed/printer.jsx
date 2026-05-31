@@ -13,11 +13,6 @@ const Printer = () => {
           />
         </div>
       </div>
-
-      <div className="printer-status">
-        <span className="printer-status-dot" />
-        <span>X-AXIS · ACTIVE</span>
-      </div>
     </div>
   );
 };

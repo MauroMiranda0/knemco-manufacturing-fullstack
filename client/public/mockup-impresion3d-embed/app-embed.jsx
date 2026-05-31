@@ -3,68 +3,40 @@ const { useEffect, useState } = React;
 const App = () => {
   const [step, setStep] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [stars, setStars] = useState(0);
-  const [replayKey, setReplayKey] = useState(0);
 
   useEffect(() => {
     setStep(0);
     setProgress(0);
-    setStars(0);
     const t = [];
     t.push(setTimeout(() => setStep(1), 1300));
     t.push(setTimeout(() => setStep(2), 1700));
     t.push(setTimeout(() => setStep(3), 2100));
     t.push(setTimeout(() => setProgress(68), 1500));
-    t.push(setTimeout(() => setStars(5), 2400));
     return () => t.forEach(clearTimeout);
-  }, [replayKey]);
+  }, []);
 
   return (
-    <>
-      <div className="bg-grain" />
-      <main className="stage" key={replayKey}>
-        <Reveal variant="fade-up" delay={0}>
-          <div className="topbar">
-            <span><span className="dot" />System active / KNEMCO PRINT LAB</span>
-            <span>EXP_03 · BUILD 2026</span>
-          </div>
-        </Reveal>
-
-        <Reveal variant="fade-up" delay={120}>
-          <header className="header">
-            <h1>3D Printing<span className="accent">from idea to reality.</span></h1>
-            <div className="rule" />
-            <p>Technology, precision, and creativity to bring your projects to life - from CAD file to finished piece.</p>
-          </header>
-        </Reveal>
-
-        <div className="grid">
-          <div className="stack">
-            <Reveal variant="fade-left" delay={300}><SpecCard icon="precision" label="Precisión" value="± 0.2 mm" /></Reveal>
-            <Reveal variant="fade-left" delay={380}><SpecCard icon="layer" label="Altura de capa" value="0.20 mm" /></Reveal>
-            <Reveal variant="fade-left" delay={460}><SpecCard icon="speed" label="Velocidad" value="60 mm/s" /></Reveal>
-            <Reveal variant="fade-left" delay={540}><SpecCard icon="temp" label="Temperatura" small value="Extrusor: <b>210 °C</b><br/>Cama: <b>60 °C</b>" /></Reveal>
-            <Reveal variant="fade-left" delay={620}><SpecCard icon="spool" label="Material" value="PLA" dot /></Reveal>
-          </div>
-
-          <div className="center">
-            <Reveal variant="zoom-in" delay={200}><Printer /></Reveal>
-            <Reveal variant="fade-up" delay={900}><Banner /></Reveal>
-          </div>
-
-          <div className="stack">
-            <Reveal variant="fade-right" delay={300}><ProcessCard activeStep={step} /></Reveal>
-            <Reveal variant="fade-right" delay={420}><TimeCard progress={progress} /></Reveal>
-            <Reveal variant="fade-right" delay={540}><DimCard /></Reveal>
-            <Reveal variant="fade-right" delay={660}><QualCard filled={stars} /></Reveal>
-          </div>
+    <main className="stage">
+      <div className="grid">
+        <div className="stack">
+          <Reveal variant="fade-left" delay={300}><SpecCard icon="precision" label="PrecisiÃ³n" value="Â± 0.2 mm" /></Reveal>
+          <Reveal variant="fade-left" delay={380}><SpecCard icon="layer" label="Altura de capa" value="0.20 mm" /></Reveal>
+          <Reveal variant="fade-left" delay={460}><SpecCard icon="speed" label="Velocidad" value="60 mm/s" /></Reveal>
+          <Reveal variant="fade-left" delay={540}><SpecCard icon="temp" label="Temperatura" small value="Extrusor: <b>210 Â°C</b><br/>Cama: <b>60 Â°C</b>" /></Reveal>
+          <Reveal variant="fade-left" delay={620}><SpecCard icon="spool" label="Material" value="PLA" dot /></Reveal>
         </div>
-      </main>
 
-      <button className="replay" onClick={() => setReplayKey(k => k + 1)}>
-        <Icon name="replay" size={14} /> Replay
-      </button>
-    </>
+        <div className="center">
+          <Reveal variant="zoom-in" delay={200}><Printer /></Reveal>
+        </div>
+
+        <div className="stack">
+          <Reveal variant="fade-right" delay={300}><ProcessCard activeStep={step} /></Reveal>
+          <Reveal variant="fade-right" delay={420}><TimeCard progress={progress} /></Reveal>
+          <Reveal variant="fade-right" delay={540}><DimCard /></Reveal>
+        </div>
+      </div>
+    </main>
   );
 };
 

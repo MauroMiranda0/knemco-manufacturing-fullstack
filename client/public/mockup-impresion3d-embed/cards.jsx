@@ -105,32 +105,4 @@ const DimCard = () => (
   </div>
 );
 
-// --- Quality ---
-const QualCard = ({ filled }) => (
-  <div className="qual">
-    <div className="head">Quality</div>
-    <div className="stars">
-      {[0,1,2,3,4].map(i => (
-        <span key={i} style={{
-          opacity: i < filled ? 1 : 0.18,
-          transform: i < filled ? "scale(1)" : "scale(0.85)",
-          transition: `all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) ${i * 0.08}s`,
-          display: "inline-block"
-        }}>
-          <Icon name="star" size={18} />
-        </span>
-      ))}
-    </div>
-    <div className="word">Excellent</div>
-  </div>
-);
-
-// --- Banner ---
-const Banner = () => (
-  <div className="banner">
-    <div className="icon"><Icon name="cube" size={26} /></div>
-    <div className="text">We turn your ideas <b>into real objects</b></div>
-  </div>
-);
-
-Object.assign(window, { Reveal, SpecCard, ProcessCard, TimeCard, DimCard, QualCard, Banner });
+Object.assign(window, { Reveal, SpecCard, ProcessCard, TimeCard, DimCard });
