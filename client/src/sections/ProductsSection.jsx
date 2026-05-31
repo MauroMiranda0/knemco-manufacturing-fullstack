@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Modal from '../components/Modal';
+import { trackCtaClickContact } from '../utils/conversionEvents';
 import '../styles/ProductsSection.css';
 import '../styles/ProductDetail.css';
 
@@ -85,10 +86,10 @@ const ProductsSection = () => {
             <h2 className="product-detail-title">{selectedProduct.title}</h2>
             <p className="product-detail-description">{selectedProduct.description}</p>
             <p>(Aquí podría ir más información, como precio, materiales, etc.)</p>
-            <a href="#contact" className="btn btn-primary">Inquire About This Product</a>
-          </div>
-        )}
-      </Modal>
+             <a href="#contact" className="btn btn-primary" onClick={() => trackCtaClickContact('product_modal_cta')}>Inquire About This Product</a>
+           </div>
+         )}
+       </Modal>
     </section>
   );
 };

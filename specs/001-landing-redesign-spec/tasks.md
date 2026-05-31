@@ -109,18 +109,18 @@ description: "Task list for Knemco landing redesign"
 
 **Purpose**: Cerrar calidad visual, accesibilidad y rendimiento antes de implementacion final.
 
-- [ ] T026 [P] Ejecutar checklist de accesibilidad visual en `specs/001-landing-redesign-spec/quickstart.md`
-- [ ] T027 Ejecutar validacion de rendimiento (LCP/CLS) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
-- [ ] T028 [P] Ejecutar lint en `client/` con `npm run lint`
-- [ ] T029 Ejecutar build en `client/` con `npm run build`
-- [ ] T030 [P] Revisar coherencia de estilos entre secciones en `client/src/styles/*.css`
-- [ ] T031 Verificar preservacion de copy global en `client/src/sections/*.jsx`
-- [ ] T032 Actualizar notas finales de implementacion en `specs/001-landing-redesign-spec/quickstart.md`
+- [X] T026 [P] Ejecutar checklist de accesibilidad visual en `specs/001-landing-redesign-spec/quickstart.md`
+- [X] T027 Ejecutar validacion de rendimiento (LCP/CLS) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
+- [X] T028 [P] Ejecutar lint en `client/` con `npm run lint`
+- [X] T029 Ejecutar build en `client/` con `npm run build`
+- [X] T030 [P] Revisar coherencia de estilos entre secciones en `client/src/styles/*.css`
+- [X] T031 Verificar preservacion de copy global en `client/src/sections/*.jsx`
+- [X] T032 Actualizar notas finales de implementacion en `specs/001-landing-redesign-spec/quickstart.md`
 - [ ] T033 Definir y ejecutar prueba moderada para SC-001 (tiempo de identificacion < 5s) y registrar evidencia en `specs/001-landing-redesign-spec/quickstart.md`
 - [ ] T034 Ejecutar evaluacion comparativa antes/despues para SC-004 (claridad percibida >= 85%) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
 - [ ] T039 Ejecutar matriz de sesiones instrumentadas para SC-006 y verificar completitud de `cta_click_contact`, `contact_submit_attempt` y `contact_submit_success` en `specs/001-landing-redesign-spec/research.md`
-- [ ] T040 Instrumentar y validar proxy de bounce rate comparativo vs baseline en `client/src/utils/conversionEvents.js` y `specs/001-landing-redesign-spec/research.md`
-- [ ] T041 Instrumentar y validar section engagement (section view/scroll depth/interacciones clave) en `client/src/utils/conversionEvents.js` y `specs/001-landing-redesign-spec/research.md`
+- [X] T040 Instrumentar y validar proxy de bounce rate comparativo vs baseline en `client/src/utils/conversionEvents.js` y `specs/001-landing-redesign-spec/research.md`
+- [X] T041 Instrumentar y validar section engagement (section view/scroll depth/interacciones clave) en `client/src/utils/conversionEvents.js` y `specs/001-landing-redesign-spec/research.md`
 - [ ] T042 Definir y ejecutar medicion de proxy de lead-quality-fit y documentar rubrica/evidencia en `specs/001-landing-redesign-spec/quickstart.md` y `specs/001-landing-redesign-spec/research.md`
 
 ---
