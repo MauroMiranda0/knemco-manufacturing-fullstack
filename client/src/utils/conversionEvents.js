@@ -1,3 +1,10 @@
+export const CONVERSION_EVENT_NAMES = {
+  ctaClickContact: 'cta_click_contact',
+  contactSubmitAttempt: 'contact_submit_attempt',
+  contactSubmitSuccess: 'contact_submit_success',
+  contactFlowAbandon: 'contact_flow_abandon',
+};
+
 const emitBrowserEvent = (eventName, detail = {}) => {
   if (typeof window === 'undefined') {
     return;
@@ -15,19 +22,19 @@ const emitBrowserEvent = (eventName, detail = {}) => {
 };
 
 export const trackCtaClickContact = (source) => {
-  emitBrowserEvent('cta_click_contact', { source });
+  emitBrowserEvent(CONVERSION_EVENT_NAMES.ctaClickContact, { source });
 };
 
-export const trackContactSubmitAttempt = () => {
-  emitBrowserEvent('contact_submit_attempt');
+export const trackContactSubmitAttempt = (detail = {}) => {
+  emitBrowserEvent(CONVERSION_EVENT_NAMES.contactSubmitAttempt, detail);
 };
 
-export const trackContactSubmitSuccess = () => {
-  emitBrowserEvent('contact_submit_success');
+export const trackContactSubmitSuccess = (detail = {}) => {
+  emitBrowserEvent(CONVERSION_EVENT_NAMES.contactSubmitSuccess, detail);
 };
 
 export const trackContactFlowAbandon = (detail = {}) => {
-  emitBrowserEvent('contact_flow_abandon', detail);
+  emitBrowserEvent(CONVERSION_EVENT_NAMES.contactFlowAbandon, detail);
 };
 
 export const trackBounceRateProxy = (detail = {}) => {

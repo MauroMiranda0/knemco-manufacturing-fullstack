@@ -11,6 +11,14 @@
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
+    transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.navbar.navbar-scrolled {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    background-color: rgba(19, 42, 37, 0.98);
+    box-shadow: 0 10px 24px rgba(19, 42, 37, 0.18);
 }
 
 .navbar-logo img {
@@ -70,6 +78,10 @@
 .nav-link-primary:hover {
     color: var(--color-white);
     background-color: #c13a38;
+}
+
+.nav-link-primary:focus-visible {
+    color: var(--color-white);
 }
 
 .nav-link:hover::after {
@@ -140,6 +152,10 @@
 
     .navbar-nav.open {
         transform: translateX(0);
+    }
+
+    .navbar.navbar-menu-open {
+        background-color: rgba(247, 249, 249, 0.98);
     }
 
     .nav-item {

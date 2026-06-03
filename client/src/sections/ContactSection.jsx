@@ -127,6 +127,7 @@ const ContactSection = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    trackContactSubmitAttempt({ topic: activeTopic.id });
 
     const nextErrors = validateForm();
     if (Object.keys(nextErrors).length > 0) {
@@ -136,7 +137,6 @@ const ContactSection = () => {
       return;
     }
 
-    trackContactSubmitAttempt();
     setIsSending(true);
     setSendStatus('');
     setErrors({});
@@ -159,7 +159,7 @@ const ContactSection = () => {
       )
       .then(
         () => {
-          trackContactSubmitSuccess();
+          trackContactSubmitSuccess({ topic: activeTopic.id });
           hasTrackedAbandon.current = false;
           setIsSending(false);
           setSendStatus('success');
@@ -246,10 +246,10 @@ const ContactSection = () => {
           <button type="submit" className="btn btn-primary submit-button" disabled={isSending}>
             {isSending ? 'Sending...' : <>Send Message <FiSend /></>}
           </button>
-          {sendStatus === 'success' && <p className="feedback-message success">Message sent successfully! We'll be in touch soon.</p>}
-          {sendStatus === 'validation_error' && <p className="feedback-message error" role="alert">Please fix the highlighted fields and try again.</p>}
+          {sendStatus === 'success' && <p className="feedback-message success" role="status" aria-live="polite">Message sent successfully! We'll be in touch soon.</p>}
+          {sendStatus === 'validation_error' && <p className="feedback-message error" role="alert" aria-live="assertive">Please fix the highlighted fields and try again.</p>}
           {sendStatus === 'processing_failure' && (
-            <div className="feedback-message error feedback-message-action" role="alert">
+            <div className="feedback-message error feedback-message-action" role="alert" aria-live="assertive">
               <p>Something went wrong while sending your message. Your details are still here, so you can retry.</p>
               <button type="button" className="retry-button" onClick={handleRetry}>Try again</button>
             </div>
