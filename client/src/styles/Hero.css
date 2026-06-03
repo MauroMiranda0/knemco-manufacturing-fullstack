@@ -15,11 +15,16 @@
 .hero-background-image {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/hero-background.jpg');
-  background-size: cover;
-  background-position: top center;
   z-index: -2;
+  overflow: hidden;
   animation: kenBurns 15s ease-in-out infinite;
+}
+
+.hero-background-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-overlay {
@@ -34,15 +39,15 @@
 
 .hero-content {
   width: min(var(--container-max-width), 100%);
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: var(--space-6);
-  align-items: center;
+  display: block;
   animation: fadeInText 1s ease-out forwards;
 }
 
 .hero-copy {
-  text-align: left;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-6);
+  align-items: center;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 32px;
@@ -92,10 +97,11 @@
   overflow: hidden;
 }
 
-.hero-mockup-embed knemco-impresion3d {
+.hero-mockup-image {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -126,12 +132,13 @@
   }
 
   .hero-content {
-    grid-template-columns: 1fr;
-    gap: var(--space-5);
+    display: block;
   }
 
   .hero-copy {
     text-align: center;
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
     padding: 1.5rem;
   }
 
