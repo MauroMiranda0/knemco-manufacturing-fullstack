@@ -3,7 +3,8 @@
 .product-card {
   position: relative; /* Contenedor para elementos absolutos */
   height: 450px; /* Altura fija para un look de "story" */
-  border-radius: 16px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -14,19 +15,23 @@
   
   background-size: cover;
   background-position: center;
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border-color 0.4s ease-out;
 }
 
 .product-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(19, 42, 37, 0.2);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: rgba(255, 255, 255, 0.42);
 }
 
 /* Overlay de gradiente para legibilidad */
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(19, 42, 37, 0.8) 0%, rgba(19, 42, 37, 0) 60%);
+  background:
+    linear-gradient(to top, rgba(7, 16, 24, 0.9) 0%, rgba(7, 16, 24, 0.24) 56%, rgba(255, 255, 255, 0.08) 100%),
+    linear-gradient(145deg, rgba(158, 212, 229, 0.1), rgba(237, 72, 69, 0.08));
   z-index: 1;
 }
 
@@ -34,6 +39,12 @@
 .product-card-content {
   position: relative; /* Para que esté por encima del overlay y la letra */
   z-index: 3;
+  padding: 1.2rem 1.15rem;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .product-card-title {
@@ -42,13 +53,14 @@
   font-weight: 700;
   margin: 0 0 0.5rem 0;
   color: var(--color-white);
+  letter-spacing: -0.03em;
 }
 
 .product-card-description {
   font-family: var(--font-secondary);
   font-size: 1rem;
   line-height: 1.6;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.86);
   margin: 0;
 }
 

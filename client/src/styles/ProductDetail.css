@@ -2,27 +2,28 @@
 
 .product-detail {
   text-align: center;
+  color: var(--text-on-glass);
 }
 
 .product-detail-image {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 2rem;
 }
 
 .product-detail-title {
   font-family: var(--font-primary);
   font-size: 2rem;
-  color: var(--color-text);
+  color: var(--text-on-glass);
   margin-bottom: 1rem;
 }
 
 .product-detail-description {
   font-family: var(--font-secondary);
-  color: var(--color-text);
-  opacity: 0.8;
+  color: var(--text-on-glass-muted);
   line-height: 1.7;
   margin-bottom: 2rem;
 }

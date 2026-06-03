@@ -1,7 +1,6 @@
 /* client/src/styles/ContactSection.css */
 .contact-section {
   padding: 6rem 3rem;
-  background-color: var(--color-bg); /* Fondo Mint Cream */
 }
 
 .contact-section .section-header {
@@ -13,24 +12,26 @@
 .contact-section .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--text-on-glass);
   margin-bottom: 1.5rem;
 }
 
 .contact-section .section-subtitle {
   font-size: 1.2rem;
-  color: var(--color-text);
-  opacity: 0.8;
+  color: var(--text-on-glass-muted);
   line-height: 1.6;
 }
 
 .contact-form-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: var(--color-white); /* Contenedor blanco */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
   padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(19, 42, 37, 0.08);
+  border-radius: 32px;
+  box-shadow: var(--glass-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
 }
 
 .contact-form{
@@ -49,9 +50,9 @@
 .topic-btn {
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
-  border: 2px solid var(--color-gray-light);
-  background-color: transparent;
-  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-on-glass);
   font-family: var(--font-primary);
   font-weight: 600;
   cursor: pointer;
@@ -59,14 +60,14 @@
 }
 
 .topic-btn:hover {
-  background-color: #f7f9f9;
-  border-color: var(--color-text);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.34);
 }
 
 .topic-btn.active {
-  background-color: var(--color-text); /* Dark Green para el activo */
+  background: linear-gradient(135deg, rgba(237, 72, 69, 0.88), rgba(228, 179, 99, 0.78));
   color: var(--color-white);
-  border-color: var(--color-text);
+  border-color: rgba(255, 255, 255, 0.32);
 }
 
 .form-grid {
@@ -88,7 +89,7 @@
 .form-group label {
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--text-on-glass);
   font-family: var(--font-primary);
   font-size: 0.9rem;
 }
@@ -96,18 +97,25 @@
 .form-group input,
 .form-group textarea {
   padding: 0.8rem 1rem;
-  border: 1px solid #dde2e1;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
   font-size: 1rem;
   font-family: var(--font-secondary);
+  background: rgba(8, 23, 35, 0.34);
+  color: var(--text-on-glass);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(248, 255, 253, 0.6);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-text); /* Foco verde */
-  box-shadow: 0 0 0 3px rgba(19, 42, 37, 0.15);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow: 0 0 0 3px rgba(158, 212, 229, 0.18);
 }
 
 .form-group textarea {
@@ -128,16 +136,17 @@
 }
 
 .info-box {
-  background-color: #f7f9f9; /* Un gris-verdoso muy claro */
-  border-radius: 8px;
+  background: rgba(7, 19, 28, 0.34);
+  border-radius: 22px;
   padding: 1.5rem;
   margin: 1rem 0 2rem 0;
-  color: var(--color-text);
+  color: var(--text-on-glass-muted);
   line-height: 1.6;
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .info-box strong {
-  color: var(--color-text);
+  color: var(--text-on-glass);
 }
 
 .submit-button {
@@ -149,7 +158,7 @@
 .response-time-notice {
   text-align: center;
   margin-top: 1.5rem;
-  color: #888;
+  color: rgba(248, 255, 253, 0.7);
   font-size: 1rem;
 }
 
@@ -178,13 +187,13 @@
 }
 
 .feedback-message.success {
-  background-color: #e6f7eb;
-  color: #2e8b4e;
+  background-color: rgba(84, 196, 122, 0.18);
+  color: #d9ffe7;
 }
 
 .feedback-message.error {
-  background-color: #fdecea;
-  color: var(--color-primary-accent);
+  background-color: rgba(237, 72, 69, 0.18);
+  color: #ffe0df;
 }
 
 .feedback-message-action {

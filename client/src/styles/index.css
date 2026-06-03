@@ -27,6 +27,15 @@
   --container-max-width: 1200px;
   --focus-ring-color: #ed4845;
   --focus-ring-offset: 2px;
+  --glass-surface: rgba(255, 255, 255, 0.16);
+  --glass-surface-strong: rgba(255, 255, 255, 0.22);
+  --glass-border: rgba(255, 255, 255, 0.34);
+  --glass-shadow: 0 24px 70px rgba(8, 21, 31, 0.22);
+  --glass-shadow-hover: 0 28px 82px rgba(8, 21, 31, 0.3);
+  --deep-bg: #09151f;
+  --deep-bg-soft: #123446;
+  --text-on-glass: #f8fffd;
+  --text-on-glass-muted: rgba(248, 255, 253, 0.82);
 
 }
 
@@ -35,10 +44,41 @@ body {
   margin: 0;
   font-family: var(--font-secondary);
   font-size: 16px;
-  background-color: var(--color-bg); /* Nuevo color de fondo */
+  background-color: var(--deep-bg);
+  background-image:
+    radial-gradient(circle at top left, rgba(158, 212, 229, 0.34), transparent 34%),
+    radial-gradient(circle at 82% 18%, rgba(237, 72, 69, 0.26), transparent 28%),
+    radial-gradient(circle at 50% 78%, rgba(228, 179, 99, 0.18), transparent 24%),
+    linear-gradient(180deg, #08131d 0%, #102738 42%, #0c1f2d 100%);
   color: var(--color-text); /* Nuevo color de texto */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: auto;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+body::before {
+  top: -8rem;
+  left: -10rem;
+  background: rgba(158, 212, 229, 0.3);
+}
+
+body::after {
+  right: -12rem;
+  bottom: 8rem;
+  background: rgba(237, 72, 69, 0.22);
 }
 
 /* 3. Estilos Base para Títulos */
@@ -114,8 +154,22 @@ a:hover {
   overflow-x: clip;
 }
 
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 20%, transparent 78%, rgba(255, 255, 255, 0.05));
+  z-index: -1;
+}
+
 section {
   scroll-margin-top: 6rem;
+}
+
+.btn {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 a:focus-visible,
@@ -136,5 +190,11 @@ select:focus-visible {
 @media (max-width: 768px) {
   :root {
     --container-max-width: 100%;
+  }
+
+  body::before,
+  body::after {
+    width: 24rem;
+    height: 24rem;
   }
 }

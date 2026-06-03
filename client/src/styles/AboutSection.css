@@ -1,7 +1,6 @@
 /* client/src/styles/AboutSection.css */
 .about-section {
   padding: 6rem 3rem;
-  background-color: var(--color-bg); /* Fondo Mint Cream */
 }
 
 .about-container {
@@ -29,8 +28,9 @@
   height: auto;
   aspect-ratio: 3 / 4; /* Proporción de retrato para las fotos */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(19, 42, 37, 0.1);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: var(--glass-shadow);
   transition: transform 0.3s ease;
 }
 
@@ -43,31 +43,41 @@
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    background-color: rgba(19, 42, 37, 0.7); /* Dark Green semitransparente */
-    color: var(--color-white);
+    background: rgba(8, 23, 35, 0.48);
+    color: var(--text-on-glass);
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
     font-family: var(--font-primary);
     font-weight: 600;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 }
 
 
 /* Columna de Contenido */
 .about-content-column {
   flex: 1.2; /* Damos un poco más de espacio al texto */
+  padding: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 
 .about-content-column .section-title {
   font-size: 2.8rem;
   margin-bottom: 2rem;
+  color: var(--text-on-glass);
 }
 
 .about-text {
   font-family: var(--font-secondary);
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--color-text);
-  opacity: 0.9;
+  color: var(--text-on-glass-muted);
 }
 
 

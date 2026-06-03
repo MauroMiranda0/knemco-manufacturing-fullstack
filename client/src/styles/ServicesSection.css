@@ -2,7 +2,7 @@
 
 .services-section {
   padding: 6rem 3rem;
-  background-color: var(--color-bg); /* Fondo Mint Cream */
+  position: relative;
 }
 
 .section-header {
@@ -14,14 +14,14 @@
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: var(--color-text); /* Texto Dark Green */
+  color: var(--text-on-glass);
   margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: var(--color-text);
-  opacity: 0.7; /* Hacemos el subtítulo un poco menos prominente */
+  color: var(--text-on-glass-muted);
   line-height: 1.6;
 }
 
