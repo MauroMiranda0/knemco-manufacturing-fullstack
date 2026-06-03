@@ -12,31 +12,37 @@ import { FiPackage } from 'react-icons/fi';
 const servicesData = [
   {
     icon: <FiPrinter />,
+    tone: 'manufacturing',
     title: 'Your on-demand manufacturing partner',
     description: 'Test, iterate, and grow without risk. Start with just one unit, with no minimums holding you back.',
   },
   {
     icon: <FiBookOpen />,
+    tone: 'education',
     title: 'Product launching & workshops',
     description: "From your first print to designing your own products, we're here to guide you every step of the way.",
   },
   {
     icon: <FiTool />,
+    tone: 'mechanical',
     title: 'Custom mechanical parts',
     description: 'Precision-engineered replacement and custom parts for industrial applications. Fast, flexible, and reliable.',
   },
   {
     icon: <FiCompass />,
+    tone: 'consulting',
     title: 'Design & engineering consulting',
     description: 'Expert guidance on product design, material selection, and manufacturing optimization to make better decisions.',
   },
   {
     icon: <FaRocket />,
+    tone: 'launch',
     title: 'Full product launch package',
     description: 'Our most comprehensive service for entrepreneurs. We become your strategic partner from concept to market.',
   },
   {
     icon: <FiPackage />,
+    tone: 'supplies',
     title: 'Materials & supplies',
     description: 'Premium 3D printing filaments, resins, and components. Curated selection from trusted manufacturers.',
   }
@@ -55,6 +61,7 @@ const ServicesSection = () => {
         {servicesData.map((service, index) => (
           <ServiceCard
             key={index}
+            tone={service.tone}
             icon={service.icon}
             title={service.title}
             description={service.description}
