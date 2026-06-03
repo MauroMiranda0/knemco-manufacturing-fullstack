@@ -3,12 +3,11 @@
 .service-card {
   --mouse-x: 50%;
   --mouse-y: 50%;
-  --card-glow: rgba(237, 72, 69, 0.68);
-  --card-glow-soft: rgba(158, 212, 229, 0.28);
+  --card-glow: 348 80% 60%;
   position: relative;
   min-height: 20rem;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.12);
   overflow: hidden;
   box-shadow: var(--glass-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -17,24 +16,29 @@
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--glass-shadow-hover);
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--card-glow) / 1),
+    rgba(255, 255, 255, 0.12) 40%
+  );
 }
 
 .service-card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   border-radius: inherit;
   background: radial-gradient(
-    190px circle at var(--mouse-x) var(--mouse-y),
-    var(--card-glow) 0%,
-    rgba(255, 255, 255, 0.34) 8%,
-    var(--card-glow-soft) 18%,
-    rgba(255, 255, 255, 0.1) 26%,
-    transparent 46%
+    500px circle at var(--mouse-x) var(--mouse-y),
+    hsl(var(--card-glow) / 0.35),
+    transparent 40%
   );
   opacity: 0;
-  transition: opacity 0.2s ease;
-  filter: saturate(130%);
+  z-index: 2;
+  transition: opacity 0.25s ease;
 }
 
 .service-card::after {
@@ -42,40 +46,31 @@
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background:
-    linear-gradient(180deg, rgba(13, 22, 31, 0.92), rgba(8, 16, 24, 0.96)),
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #131315;
 }
 
 .service-card-tone-manufacturing {
-  --card-glow: rgba(237, 72, 69, 0.72);
-  --card-glow-soft: rgba(255, 163, 160, 0.32);
+  --card-glow: 348 80% 60%;
 }
 
 .service-card-tone-education {
-  --card-glow: rgba(158, 212, 229, 0.76);
-  --card-glow-soft: rgba(112, 189, 214, 0.34);
+  --card-glow: 198 59% 76%;
 }
 
 .service-card-tone-mechanical {
-  --card-glow: rgba(228, 179, 99, 0.72);
-  --card-glow-soft: rgba(255, 215, 142, 0.3);
+  --card-glow: 38 70% 64%;
 }
 
 .service-card-tone-consulting {
-  --card-glow: rgba(237, 72, 69, 0.62);
-  --card-glow-soft: rgba(158, 212, 229, 0.28);
+  --card-glow: 170 42% 48%;
 }
 
 .service-card-tone-launch {
-  --card-glow: rgba(177, 226, 239, 0.76);
-  --card-glow-soft: rgba(237, 72, 69, 0.24);
+  --card-glow: 8 82% 58%;
 }
 
 .service-card-tone-supplies {
-  --card-glow: rgba(244, 199, 123, 0.74);
-  --card-glow-soft: rgba(255, 255, 255, 0.24);
+  --card-glow: 44 71% 64%;
 }
 
 .service-card:hover::before {
@@ -94,6 +89,7 @@
   padding: 2.5rem 2rem;
   text-align: center;
   border-radius: inherit;
+  background-color: #131315;
 }
 
 .card-icon-wrapper {
@@ -102,22 +98,19 @@
   display: grid;
   place-items: center;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .service-card:hover .card-icon-wrapper {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 0 18px color-mix(in srgb, var(--card-glow) 58%, transparent),
-    0 0 36px color-mix(in srgb, var(--card-glow-soft) 28%, transparent);
+  border: none;
+  box-shadow: none;
 }
 
 .card-icon {
-  font-size: 2.5rem;
-  color: #ffd2d1;
+  font-size: 4.5rem;
+  color: rgba(255, 255, 255, 0.5);
   display: inline-block;
 }
 
@@ -133,7 +126,7 @@
 .card-description {
   font-family: var(--font-secondary);
   font-size: 1rem;
-  color: var(--text-on-glass-muted);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.7;
   margin: 0;
 }
