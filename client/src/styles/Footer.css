@@ -114,10 +114,19 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
+  .footer {
+    padding: 4rem 1.5rem 0;
+  }
+
   .footer-container {
     flex-direction: column;
     text-align: center;
   }
+
+  .footer-column {
+    min-width: 0;
+  }
+
   .social-icons {
     justify-content: center;
   }
