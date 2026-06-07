@@ -38,9 +38,45 @@
   overflow: visible;
 }
 
+.products-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 1rem 2rem;
+}
+
+.products-pagination-dot {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.products-pagination-dot:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.products-pagination-dot.is-active {
+  background-color: var(--color-primary-accent);
+  transform: scale(1.2);
+}
+
+.products-pagination-dot:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(237, 72, 69, 0.2);
+}
+
 @media (max-width: 768px) {
   .products-grid {
     padding: 7rem 1rem 1rem;
     gap: 90px 24px;
+  }
+
+  .products-pagination {
+    padding-bottom: 1rem;
   }
 }

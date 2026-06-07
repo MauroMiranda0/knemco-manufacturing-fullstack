@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/ProductCard.css';
 
 const ProductCard = ({ product, onViewDetails }) => {
-  const { title, description, imageUrl } = product;
+  const { title, description, imageUrl, expandedHeight, contentHeight } = product;
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -17,6 +17,10 @@ const ProductCard = ({ product, onViewDetails }) => {
       className="product-card"
       onKeyDown={handleKeyDown}
       tabIndex={0}
+      style={{
+        '--product-card-expanded-height': expandedHeight,
+        '--product-card-content-height': contentHeight,
+      }}
     >
       <div className="product-card-image-box">
         <img className="product-card-image" src={imageUrl} alt={title} />
