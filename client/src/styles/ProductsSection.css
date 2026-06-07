@@ -30,15 +30,27 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  position: relative; /* Contenedor para los botones posicionados absolutamente */
+  position: relative;
 }
 
-.swiper{
-  padding-top: 3rem !important; /* Espacio para la paginación */ 
+.swiper {
+  overflow: visible !important;
+  padding-top: 7.5rem !important;
 }
 
 .mySwiper {
-  padding-bottom: 5rem !important; /* Más espacio para los botones y la paginación */
+  padding-bottom: 8rem !important;
+}
+
+.mySwiper .swiper-wrapper,
+.mySwiper .swiper-slide {
+  overflow: visible;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
 /* Contenedor de las flechas para centrarlas */

@@ -3,24 +3,36 @@ import React from 'react';
 import '../styles/ProductCard.css';
 
 const ProductCard = ({ product, onViewDetails }) => {
-  // Extraemos las propiedades del objeto product
-  const { title, description, imageUrl, bgLetter } = product;
+  const { title, description, imageUrl } = product;
 
-  // El estilo de la imagen de fondo se aplicará al contenedor principal
-  const cardStyle = {
-    backgroundImage: `url(${imageUrl})`,
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      event.currentTarget.focus();
+    }
   };
 
   return (
-    // El evento onClick ahora está en toda la tarjeta
-    <div className="product-card" style={cardStyle} onClick={onViewDetails}>
-      <div className="card-overlay"></div> {/* Capa de gradiente */}
-      <span className="card-bg-letter">{bgLetter}</span>
+    <article
+      className="product-card"
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+    >
+      <div className="product-card-image-box">
+        <img className="product-card-image" src={imageUrl} alt={title} />
+      </div>
       <div className="product-card-content">
         <h3 className="product-card-title">{title}</h3>
         <p className="product-card-description">{description}</p>
+        <button
+          type="button"
+          className="product-card-action"
+          onClick={onViewDetails}
+        >
+          Read More
+        </button>
       </div>
-    </div>
+    </article>
   );
 };
 
