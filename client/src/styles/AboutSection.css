@@ -5,7 +5,7 @@
 
 .about-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 4rem;
   max-width: 1100px;
   margin: 0 auto;
@@ -20,6 +20,7 @@
 
 .about-image-wrapper {
   flex: 1;
+  height: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 24px;
@@ -27,8 +28,7 @@
 
 .about-image {
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4; /* Proporción de retrato para las fotos */
+  height: 100%;
   object-fit: cover;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -143,6 +143,9 @@
       width: 100%;
       max-width: 500px; /* Evita que las imágenes sean demasiado grandes en tablets */
   }
+  .about-image-wrapper {
+      height: auto;
+  }
   .about-content-column {
       text-align: center;
   }
@@ -154,5 +157,8 @@
   }
   .about-images-column {
       flex-direction: column;
+  }
+  .about-image {
+      aspect-ratio: 3 / 4;
   }
 }
