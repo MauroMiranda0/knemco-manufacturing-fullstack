@@ -13,10 +13,18 @@ const AboutSection = () => {
         <div className="about-images-column">
           <div className="about-image-wrapper">
             <img src={leonardoImg} alt="Leonardo Yanez, Co-founder of Knemco" className="about-image" />
+            <div className="about-image-overlay about-image-overlay-1"></div>
+            <div className="about-image-overlay about-image-overlay-2"></div>
+            <div className="about-image-overlay about-image-overlay-3"></div>
+            <div className="about-image-overlay about-image-overlay-4"></div>
             <div className="image-caption">Leonardo Yañez</div>
           </div>
           <div className="about-image-wrapper">
             <img src={mariuszImg} alt="Mariusz Szczepan, Co-founder of Knemco" className="about-image" />
+            <div className="about-image-overlay about-image-overlay-1"></div>
+            <div className="about-image-overlay about-image-overlay-2"></div>
+            <div className="about-image-overlay about-image-overlay-3"></div>
+            <div className="about-image-overlay about-image-overlay-4"></div>
             <div className="image-caption">Mariusz Szczepan</div>
           </div>
         </div>

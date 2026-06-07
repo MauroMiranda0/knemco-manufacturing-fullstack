@@ -21,6 +21,8 @@
 .about-image-wrapper {
   flex: 1;
   position: relative;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
 .about-image {
@@ -34,8 +36,57 @@
   transition: transform 0.3s ease;
 }
 
+.about-image-overlay {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+    rgba(8, 23, 35, 0.16);
+  backdrop-filter: blur(2px) saturate(108%);
+  -webkit-backdrop-filter: blur(2px) saturate(108%);
+  transition: transform 0.45s ease;
+  z-index: 1;
+}
+
+.about-image-overlay-1 {
+  top: 0;
+  left: 0;
+}
+
+.about-image-overlay-2 {
+  top: 0;
+  right: 0;
+}
+
+.about-image-overlay-3 {
+  bottom: 0;
+  left: 0;
+}
+
+.about-image-overlay-4 {
+  bottom: 0;
+  right: 0;
+}
+
 .about-image-wrapper:hover .about-image {
     transform: scale(1.03);
+}
+
+.about-image-wrapper:hover .about-image-overlay-1 {
+  transform: translate(-100%, -100%);
+}
+
+.about-image-wrapper:hover .about-image-overlay-2 {
+  transform: translate(100%, -100%);
+}
+
+.about-image-wrapper:hover .about-image-overlay-3 {
+  transform: translate(-100%, 100%);
+}
+
+.about-image-wrapper:hover .about-image-overlay-4 {
+  transform: translate(100%, 100%);
 }
 
 /* Posicionamos los nombres sobre las imágenes */
@@ -43,6 +94,7 @@
     position: absolute;
     bottom: 1rem;
     left: 1rem;
+    z-index: 2;
     background: rgba(8, 23, 35, 0.48);
     color: var(--text-on-glass);
     padding: 0.5rem 1rem;
