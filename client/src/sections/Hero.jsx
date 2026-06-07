@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { motion as Motion } from 'framer-motion';
+import { trackCtaClickContact } from '../utils/conversionEvents';
+import heroMockup from '../assets/images/product-sculptural-lighting.png';
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -21,13 +23,14 @@ const Hero = () => {
               into a product you can hold and your neighbours can buy.
             </p>
             <Link
-              to="services"
+              to="contact"
               smooth={true}
               duration={1200}
               offset={-80}
               className="btn btn-primary hero-cta"
+              onClick={() => trackCtaClickContact('hero_primary_cta')}
             >
-              Explore the Ecosystem
+              Start Your Project
             </Link>
           </div>
           <Motion.div
@@ -45,6 +48,7 @@ const Hero = () => {
               <video
                 className="hero-mockup-video"
                 src="/lamp-animation.mp4"
+                poster={heroMockup}
                 autoPlay
                 muted
                 loop
