@@ -4,16 +4,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(calc(100% - 2rem), 1280px);
-    margin: 1rem auto 0;
-    padding: 0.75rem 1.5rem;
+    width: 100%;
+    margin: 0;
+    padding: 0.85rem 2.25rem;
     background: rgba(11, 29, 41, 0.58);
-    border: 1px solid var(--glass-border);
+    border: none;
     box-shadow: var(--glass-shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-radius: 24px;
+    border-radius: 0;
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
     transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
@@ -45,6 +45,7 @@
 
 .navbar-nav {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -56,6 +57,8 @@
 
 .nav-link {
     font-family: var(--font-secondary);
+    display: inline-flex;
+    align-items: center;
     color: var(--text-on-glass);
     text-decoration: none;
     font-size: 1rem;
@@ -130,9 +133,8 @@
 
 @media (max-width: 768px) {
     .navbar {
-        width: calc(100% - 1rem);
+        width: 100%;
         padding: 0.85rem 1rem;
-        margin-top: 0.5rem;
     }
 
     .navbar-brand .navbar-logo {
