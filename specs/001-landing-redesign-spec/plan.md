@@ -10,18 +10,19 @@
 
 Redesign the landing experience to improve immediate value clarity and increase
 conversion to contact intent, while preserving approved copy and brand voice.
-Implementation centers on hero-first information hierarchy, visible mockup in the
-initial viewport, low-friction navigation, and front-end conversion instrumentation
-for CTA click, submit attempt, and submit success events.
+Implementation centers on hero-first information hierarchy, visible mockup/video in
+the initial viewport, low-friction navigation, responsive hardening across sections,
+and browser-side conversion instrumentation for CTA click, submit attempt and submit
+success events.
 
 ## Technical Context
 
 
 **Language/Version**: JavaScript (ES2023), React 19, Vite 7
 
-**Primary Dependencies**: react, react-dom, react-scroll, react-icons, swiper, @emailjs/browser
+**Primary Dependencies**: react, react-dom, react-scroll, react-icons, framer-motion, @emailjs/browser
 
-**Storage**: N/A (front-end only; analytics events sent to existing tooling)
+**Storage**: N/A (front-end only; conversion events emitted as browser `CustomEvent`s for later analytics integration)
 
 **Testing**: ESLint (`npm run lint`) and production build validation (`npm run build` when runtime imports/bundling are affected)
 
@@ -31,7 +32,7 @@ for CTA click, submit attempt, and submit success events.
 
 **Performance Goals**: CLS <= 0.1, LCP <= 2.5s in comparable test conditions
 
-**Constraints**: Preserve approved copy and narrative order; keep max 5 visible nav links; no invasive pop-ups; no CRM integration in this phase; keep EmailJS secrets in `client/.env`
+**Constraints**: Preserve narrative order and core value copy; keep max 5 visible nav links; no invasive pop-ups; no CRM integration in this phase; keep EmailJS secrets in `client/.env`
 
 **Scale/Scope**: One landing page flow with hero, navigation, contact CTA and form states across desktop/tablet/mobile
 

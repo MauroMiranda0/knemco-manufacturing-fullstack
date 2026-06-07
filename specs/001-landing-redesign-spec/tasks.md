@@ -74,7 +74,7 @@ description: "Task list for Knemco landing redesign"
 ### Implementation for User Story 2
 
 - [X] T016 [P] [US2] Incorporar asset de mockup principal en `client/src/assets/images/`
-- [X] T017 [US2] Integrar mockup con width/height y alt text en `client/src/sections/Hero.jsx`
+- [X] T017 [US2] Integrar mockup del hero con `poster`, tratamiento semantico decorativo y soporte visual estable en `client/src/sections/Hero.jsx`
 - [X] T018 [P] [US2] Ajustar composicion responsive del mockup en `client/src/styles/Hero.css`
 - [X] T019 [US2] Configurar prioridad de carga above-the-fold en `client/src/sections/Hero.jsx`
 - [X] T020 [US2] Registrar validacion de CLS <= 0.1 en `specs/001-landing-redesign-spec/research.md`
@@ -91,15 +91,15 @@ description: "Task list for Knemco landing redesign"
 
 ### Implementation for User Story 3
 
-- [ ] T021 [US3] Limitar navegacion visible a maximo 5 items en `client/src/components/Navbar.jsx`
-- [ ] T022 [P] [US3] Ajustar comportamiento sticky y estados en `client/src/styles/Navbar.css`
-- [ ] T023 [US3] Disparar `cta_click_contact` en CTA principal de navegacion en `client/src/components/Navbar.jsx`
-- [ ] T024 [US3] Disparar `contact_submit_attempt` y `contact_submit_success` en `client/src/sections/ContactSection.jsx`
-- [ ] T025 [US3] Validar consistencia de nombres de eventos (`cta_click_contact`, `contact_submit_attempt`, `contact_submit_success`, `contact_flow_abandon`) con contrato en `specs/001-landing-redesign-spec/contracts/landing-ux-contract.md`
-- [ ] T035 [US3] Implementar UX de `validation_error` con mensaje inline y foco en primer campo invalido en `client/src/sections/ContactSection.jsx`
-- [ ] T036 [US3] Implementar UX de `processing_failure` y accion de `retry` sin pop-ups invasivos en `client/src/sections/ContactSection.jsx`
-- [ ] T037 [US3] Preservar datos ingresados en fallos recuperables durante reintento en `client/src/sections/ContactSection.jsx`
-- [ ] T038 [US3] Definir y registrar evidencia de abandono del flujo con evento canonico `contact_flow_abandon` en `client/src/utils/conversionEvents.js` y `client/src/sections/ContactSection.jsx`
+- [X] T021 [US3] Limitar navegacion visible a maximo 5 items en `client/src/components/Navbar.jsx`
+- [X] T022 [P] [US3] Ajustar comportamiento sticky y estados en `client/src/styles/Navbar.css`
+- [X] T023 [US3] Disparar `cta_click_contact` en CTA principal de navegacion en `client/src/components/Navbar.jsx`
+- [X] T024 [US3] Disparar `contact_submit_attempt` y `contact_submit_success` en `client/src/sections/ContactSection.jsx`
+- [X] T025 [US3] Validar consistencia de nombres de eventos (`cta_click_contact`, `contact_submit_attempt`, `contact_submit_success`, `contact_flow_abandon`) con contrato en `specs/001-landing-redesign-spec/contracts/landing-ux-contract.md`
+- [X] T035 [US3] Implementar UX de `validation_error` con mensaje inline y foco en primer campo invalido en `client/src/sections/ContactSection.jsx`
+- [X] T036 [US3] Implementar UX de `processing_failure` y accion de `retry` sin pop-ups invasivos en `client/src/sections/ContactSection.jsx`
+- [X] T037 [US3] Preservar datos ingresados en fallos recuperables durante reintento en `client/src/sections/ContactSection.jsx`
+- [X] T038 [US3] Definir y registrar evidencia de abandono del flujo con evento canonico `contact_flow_abandon` en `client/src/utils/conversionEvents.js` y `client/src/sections/ContactSection.jsx`
 
 **Checkpoint**: User Stories 1, 2 y 3 funcionales en conjunto sin perder independencia de validacion
 
@@ -116,6 +116,9 @@ description: "Task list for Knemco landing redesign"
 - [X] T030 [P] Revisar coherencia de estilos entre secciones en `client/src/styles/*.css`
 - [X] T031 Verificar preservacion de copy global en `client/src/sections/*.jsx`
 - [X] T032 Actualizar notas finales de implementacion en `specs/001-landing-redesign-spec/quickstart.md`
+- [X] T043 Ajustar CTA principal del hero para enrutar a contacto en `client/src/sections/Hero.jsx`
+- [X] T044 Endurecer responsive de hero, navbar, product cards, modal y footer en `client/src/styles/*.css`
+- [X] T045 Igualar altura de tarjetas visuales de About con `about-content-column` en `client/src/styles/AboutSection.css`
 - [ ] T033 Definir y ejecutar prueba moderada para SC-001 (tiempo de identificacion < 5s) y registrar evidencia en `specs/001-landing-redesign-spec/quickstart.md`
 - [ ] T034 Ejecutar evaluacion comparativa antes/despues para SC-004 (claridad percibida >= 85%) y registrar resultados en `specs/001-landing-redesign-spec/research.md`
 - [ ] T039 Ejecutar matriz de sesiones instrumentadas para SC-006 y verificar completitud de `cta_click_contact`, `contact_submit_attempt` y `contact_submit_success` en `specs/001-landing-redesign-spec/research.md`

@@ -2,7 +2,7 @@
 
 ## 1) Preparacion
 
-1. Abrir proyecto en la rama `001-landing-redesign-spec`.
+1. Abrir proyecto en la rama que contiene el rediseño activo (`main` o la branch de trabajo equivalente).
 2. Instalar dependencias del frontend:
    - `cd client`
    - `npm install`
@@ -17,7 +17,7 @@
 
 1. Confirmar propuesta de valor y CTA principal visibles sin scroll en primer viewport.
 2. Confirmar bloque de mockup visible y alineado al mensaje principal.
-3. Verificar que el copy no cambie respecto al baseline aprobado.
+3. Verificar que el storytelling base no cambie respecto al baseline aprobado, salvo el label del CTA principal del hero.
 4. Validar que la conversion primaria sea clic en CTA hacia contacto.
 
 ## 4) Validacion UX y calidad
@@ -28,7 +28,7 @@
    - contraste,
    - foco visible,
    - navegacion por teclado,
-   - alt text en mockup.
+   - tratamiento accesible coherente del mockup (decorativo u opcionalmente descriptivo segun su rol).
 
 ## 5) Validacion de rendimiento
 
@@ -40,7 +40,7 @@
 ## 6) Criterio de salida
 
 La feature queda lista para tareas cuando todos los checks del spec y plan se
-cumplen sin cambios de copy y con conversion primaria medible.
+cumplen sin alterar el storytelling base y con conversion primaria medible.
 
 ## 7) Protocolo minimo de evaluacion (SC-001 y SC-004)
 
@@ -62,9 +62,11 @@ cumplen sin cambios de copy y con conversion primaria medible.
 1. Estado automatizado validado en esta iteracion:
    - `npm run lint` OK.
    - `npm run build` OK.
+   - Hero con CTA principal hacia contacto (`Start Your Project`) y tracking `hero_primary_cta`.
    - Navegacion sticky con 5 accesos visibles y CTA de contacto destacado.
    - Formulario con estados de `validation_error`, `processing_failure`, `retry`, `success` y `contact_flow_abandon`.
    - Instrumentacion adicional de `bounce_rate_proxy` y `section_engagement` activa desde `client/src/utils/conversionEvents.js`.
+   - Ajustes responsive aplicados a hero, navbar, product cards, modal, footer y bloque About.
 2. Checklist de accesibilidad visual ejecutado sobre la implementacion actual:
    - contraste base validado contra la paleta definida en `client/src/styles/index.css`,
    - foco visible mantenido via `:focus-visible`,

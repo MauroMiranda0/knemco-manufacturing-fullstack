@@ -31,13 +31,13 @@
 ### Inventario de assets para mockup (T003)
 
 - Directorio verificado: `client/src/assets/images/`.
-- Candidato principal para mockup hero: `product-sculptural-lighting.png`.
+- Candidato principal para poster del mockup hero: `product-sculptural-lighting.png`.
 - Assets alternativos disponibles para pruebas visuales: `product-cat-fountain.png`, `product-designer-planters.png`, `product-personalized-gifts.png`.
 
 ### Evidencia AC-001 y AC-002 (T015)
 
 - AC-001: El Hero se reestructuro para mantener propuesta de valor + CTA principal en primer viewport en desktop/tablet/mobile con layout responsivo en `client/src/styles/Hero.css`.
-- AC-002: Se preservo el copy original del bloque hero (titulo, descripcion y texto de CTA) en `client/src/sections/Hero.jsx`.
+- AC-002: Se preservaron titulo y descripcion del hero; el texto del CTA cambio de `Explore the Ecosystem` a `Start Your Project` para alinear mejor la accion principal hacia contacto en `client/src/sections/Hero.jsx`.
 
 ## Decision 1: Conversion primaria
 
@@ -57,8 +57,8 @@
 
 ## Decision 3: Estrategia de mockup
 
-- Decision: Usar mockup principal optimizado, con dimensiones reservadas y prioridad de carga controlada.
-- Rationale: Refuerza comprension del servicio evitando inestabilidad visual y bloqueos de render.
+- Decision: Usar video de mockup en el hero con `poster` estatico de respaldo y dimensiones reservadas.
+- Rationale: Refuerza comprension del servicio con una pieza visual mas expresiva, manteniendo un fallback visual inmediato durante la carga.
 - Alternatives considered:
   - Galeria de mockups en carrusel.
   - Video auto-play como pieza principal.
@@ -73,7 +73,7 @@
 
 ## Decision 5: Accesibilidad y calidad visual
 
-- Decision: Establecer criterios minimos de contraste, foco visible, teclado y alt text como gate obligatorio.
+- Decision: Establecer criterios minimos de contraste, foco visible, teclado y tratamiento accesible coherente de recursos visuales como gate obligatorio.
 - Rationale: Garantiza uso inclusivo y consistencia funcional en desktop/mobile.
 - Alternatives considered:
   - Validacion parcial solo de contraste.
@@ -89,12 +89,12 @@
 
 ## Validacion de rendimiento mockup (T020)
 
-- Escenario: Hero con mockup principal integrado en primer viewport (`client/src/sections/Hero.jsx`).
+- Escenario: Hero con mockup principal en video integrado en primer viewport (`client/src/sections/Hero.jsx`).
 - Medidas de estabilidad aplicadas:
-  - Se definieron `width` y `height` explicitos en la imagen del mockup.
+  - Se definio `poster` de respaldo para el video usando `product-sculptural-lighting.png`.
   - Se mantuvo composicion responsiva estable en `client/src/styles/Hero.css` para desktop/tablet/mobile.
-  - Se configuro carga prioritaria above-the-fold con `loading="eager"`.
-- Resultado de validacion: comportamiento sin saltos visibles de layout en pruebas locales y cumplimiento del objetivo funcional de CLS <= 0.1 para esta iteracion de implementacion.
+  - Se reservaron proporciones del mockup con `aspect-ratio` en la iteracion responsive final.
+- Resultado de validacion: comportamiento sin saltos visibles de layout en pruebas locales; el cierre cuantitativo fino de CLS/LCP sigue pendiente de auditoria manual.
 
 ## Phase 6 - Polish y cross-cutting
 
@@ -105,7 +105,7 @@
   - foco visible activo en enlaces, botones, inputs, textarea y select via `:focus-visible`,
   - contraste base alineado con la paleta Mentor (`#132A25`, `#ED4845`, `#9ED4E5`, `#E4B363`),
   - navegacion por teclado cubierta en navbar responsive y flujo de contacto,
-  - recursos decorativos del mockup marcados con `aria-hidden` y fotografias/founders con `alt` descriptivo.
+  - mockup del hero tratado como recurso decorativo con `aria-hidden` en su contenedor animado y fotografias/founders con `alt` descriptivo.
 
 ### Rendimiento y quality gates (T027, T028, T029)
 
@@ -131,8 +131,19 @@
 - Verificacion realizada sobre `client/src/sections/*.jsx`.
 - Resultado:
   - no se modifico el storytelling base aprobado del hero,
+  - se actualizo el label del CTA principal del hero a `Start Your Project` para explicitar la ruta a contacto,
   - se mantuvo el copy existente de servicios, productos, inversion, about y contacto,
   - los cambios de esta iteracion se limitaron a UX, estilos e instrumentacion.
+
+### Ajustes finales de implementacion de branch
+
+- `client/src/sections/Hero.jsx`
+  - CTA principal actualizado para navegar a `#contact` y emitir `hero_primary_cta`.
+  - mockup implementado como video con `poster` estatico.
+- `client/src/styles/AboutSection.css`
+  - tarjetas visuales de founders ajustadas para igualar la altura del bloque de contenido en desktop.
+- `client/src/styles/Hero.css`, `Navbar.css`, `ProductCard.css`, `Modal.css`, `Footer.css`
+  - endurecimiento responsive para prevenir overflow, alturas rigidas y cortes en mobile/tablet.
 
 ### Instrumentacion comparativa (T040, T041)
 

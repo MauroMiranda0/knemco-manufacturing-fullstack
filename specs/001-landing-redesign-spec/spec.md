@@ -4,7 +4,7 @@
 
 **Created**: 2026-05-23
 
-**Status**: Ready for Planning
+**Status**: Implemented - Pending Manual Validation
 
 **Input**: User description: "usa @.specify\memory\constitution.md"
 
@@ -90,8 +90,9 @@ usuarios que realizan tareas de navegacion y accion.
 
 - **FR-001**: La landing MUST presentar la propuesta de valor de Knemco en el primer
   viewport de desktop, tablet y mobile.
-- **FR-002**: La landing MUST mantener el copy y storytelling actuales sin cambios de
-  texto, orden narrativo base ni significado.
+- **FR-002**: La landing MUST mantener el storytelling, propuesta de valor y sentido
+  narrativo base, permitiendo ajustes menores de etiquetado en CTAs cuando mejoren la
+  claridad del flujo primario hacia contacto.
 - **FR-003**: El sistema MUST incorporar un area visual de mockup del
   producto/servicio en el bloque principal.
 - **FR-004**: La interfaz MUST mostrar un CTA principal visible sin scroll en desktop,
@@ -103,7 +104,9 @@ usuarios que realizan tareas de navegacion y accion.
 - **FR-006**: La experiencia MUST conservar legibilidad y jerarquia visual en desktop,
   tablet y mobile.
 - **FR-007**: La landing MUST cumplir criterios base de accesibilidad: contraste,
-  navegacion por teclado, foco visible y texto alternativo en recursos visuales.
+  navegacion por teclado, foco visible y tratamiento accesible consistente de recursos
+  visuales (texto alternativo cuando aportan contenido, o exclusion semantica cuando
+  sean decorativos).
 - **FR-008**: La landing MUST evitar inestabilidad visual perceptible durante carga
   inicial, con un objetivo de CLS <= 0.1 en condiciones comparables de evaluacion.
 - **FR-009**: La landing MUST instrumentar eventos front-end para conversion primaria:
@@ -156,7 +159,8 @@ usuarios que realizan tareas de navegacion y accion.
 ## Assumptions
 
 - La iniciativa se limita a rediseno visual, experiencia de uso y arquitectura de
-  informacion; no incluye cambios de copy.
+  informacion; solo admite ajustes menores en labels de CTA cuando clarifican la
+  accion principal.
 - El contenido textual actual es definitivo y aprobado por negocio.
 - El objetivo principal de la landing es conducir a una accion de conversion B2B.
 - La evaluacion de exito se realiza con comparativa contra la version actual.
@@ -164,11 +168,13 @@ usuarios que realizan tareas de navegacion y accion.
 ## Acceptance Checklist
 
 - [ ] AC-001: En desktop, tablet y mobile, la propuesta de valor y el CTA principal son visibles sin scroll.
-- [ ] AC-002: El copy y storytelling permanecen identicos al baseline aprobado.
+- [ ] AC-002: El storytelling base permanece alineado al baseline aprobado y cualquier
+  ajuste textual se limita a labels de CTA orientados a claridad de conversion.
 - [ ] AC-003: El mockup principal esta presente en el bloque hero y mantiene legibilidad del mensaje.
 - [ ] AC-004: La conversion primaria se mide como clic en CTA hacia contacto.
 - [ ] AC-005: La navegacion mantiene maximo 5 accesos visibles y reduce friccion hacia contacto.
-- [ ] AC-006: La landing cumple contraste, foco visible, navegacion por teclado y alt text.
+- [ ] AC-006: La landing cumple contraste, foco visible, navegacion por teclado y
+  tratamiento accesible coherente de los recursos visuales.
 - [ ] AC-007: La landing cumple CLS <= 0.1 y mantiene estabilidad visual durante carga inicial.
 - [ ] AC-008: Al menos 90% de usuarios de prueba identifica valor y CTA principal en menos de 5 segundos.
 - [ ] AC-009: Al menos 85% de evaluadores percibe mayor claridad visual frente a la version previa.

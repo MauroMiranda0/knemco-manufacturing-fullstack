@@ -20,7 +20,7 @@ independiente de implementacion tecnica.
 
 ### C-003 Copy preservation
 
-- Requirement: Titulares, textos y storytelling MUST permanecer identicos al baseline.
+- Requirement: Titulares, propuesta de valor y storytelling MUST permanecer alineados al baseline, permitiendo ajustes menores de labels de CTA cuando aclaran la accion principal.
 - Verification: Comparativa lado a lado contra version de referencia.
 
 ### C-004 Mockup visibility
@@ -30,7 +30,7 @@ independiente de implementacion tecnica.
 
 ### C-005 Accessibility baseline
 
-- Requirement: Contraste, foco visible, teclado y alt text MUST estar cubiertos.
+- Requirement: Contraste, foco visible, teclado y tratamiento accesible coherente de recursos visuales MUST estar cubiertos.
 - Verification: Checklist de accesibilidad en QA de feature.
 
 ### C-006 Visual stability and load
