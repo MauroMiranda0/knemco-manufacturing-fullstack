@@ -26,98 +26,21 @@
 }
 
 /* Contenedor del Slider */
-.product-slider-container {
-  max-width: 1200px;
+.products-grid {
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 0 2rem;
-  position: relative;
-}
-
-.swiper {
-  overflow: visible !important;
-  padding-top: 7.5rem !important;
-}
-
-.mySwiper {
-  padding-bottom: 8rem !important;
-}
-
-.mySwiper .swiper-wrapper,
-.mySwiper .swiper-slide {
+  padding: 7.5rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  align-items: start;
+  gap: 100px 50px;
   overflow: visible;
 }
 
-.mySwiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 1rem;
-}
-
-/* Contenedor de las flechas para centrarlas */
-.swiper-navigation-wrapper {
-  position: absolute;
-  bottom: 0px; /* Lo posicionamos abajo */
-  left: 50%;
-  padding: 1rem;
-  transform: translateX(-50%);
-  width: 100px; /* Ancho fijo para el contenedor de las flechas */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10; /* Asegura que esté por encima de la paginación si se solapan */
-}
-
-/* Estilos comunes para ambas flechas */
-.swiper-button-next,
-.swiper-button-prev {
-  position: static; /* Quitamos el posicionamiento absoluto por defecto de Swiper */
-  width: auto;
-  height: auto;
-  margin-top: 0;
-  
-  color: var(--text-on-glass) !important;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  padding: 0.55rem;
-  box-shadow: var(--glass-shadow);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  opacity: 0.7;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Quitamos el pseudo-elemento '::after' que Swiper usa para el icono por defecto */
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 2rem !important; /* Hacemos los iconos un poco más grandes */
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* Estilos para la paginación (los puntos) */
-.swiper-pagination {
-  top: 0px !important; /* Alineamos la paginación abajo */
-}
-
-.swiper-pagination-bullet {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  opacity: 0.3 !important;
-  width: 10px !important;
-  height: 10px !important;
-  transition: all 0.3s ease !important;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--color-primary-accent) !important;
-  opacity: 1 !important;
-  transform: scale(1.2);
-}
-
-.products-grid {
-  display: none;
+@media (max-width: 768px) {
+  .products-grid {
+    padding: 7rem 1rem 1rem;
+    gap: 90px 24px;
+  }
 }

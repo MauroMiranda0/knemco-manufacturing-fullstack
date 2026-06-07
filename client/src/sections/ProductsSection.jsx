@@ -5,12 +5,6 @@ import Modal from '../components/Modal';
 import { trackCtaClickContact } from '../utils/conversionEvents';
 import '../styles/ProductsSection.css';
 import '../styles/ProductDetail.css';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import catFountainImg from '../assets/images/product-cat-fountain.png'; // Adjust the path according to your project structure
 import lightingImg from '../assets/images/product-sculptural-lighting.png'; // Import lighting image
 import plantersImg from '../assets/images/product-designer-planters.png'; // Import planters image
@@ -47,36 +41,14 @@ const ProductsSection = () => {
         </p>
       </div>
 
-      <div className="product-slider-container">
-        <Swiper
-          modules={[Pagination, Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            640: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
-          }}
-          className="mySwiper"
-        >
-          {productsData.map((product) => (
-            <SwiperSlide key={product.id}>
-              <ProductCard
-                product={product}
-                onViewDetails={() => handleOpenModal(product)}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        
-        <div className="swiper-navigation-wrapper">
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
-        </div>
+      <div className="products-grid">
+        {productsData.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onViewDetails={() => handleOpenModal(product)}
+          />
+        ))}
       </div>
 
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
