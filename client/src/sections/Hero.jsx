@@ -7,16 +7,7 @@ import '../styles/Hero.css';
 const Hero = () => {
   return (
     <section id="home" className="hero-section">
-      <div className="hero-background-image" aria-hidden="true">
-        <video
-          className="hero-background-video"
-          src="/mockup-impresion3d-embed/assets/Impresion 3D.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </div>
+      <div className="hero-background-image" aria-hidden="true"></div>
       <div className="video-overlay"></div>
       <div className="hero-content">
         <div className="hero-copy">
@@ -51,10 +42,13 @@ const Hero = () => {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 6, ease: 'easeInOut', repeat: Infinity }}
             >
-              <img
-                className="hero-mockup-image"
-                src="/mockup-impresion3d-embed/assets/impresion 3D.png"
-                alt="3D printing mockup"
+              <video
+                className="hero-mockup-video"
+                src="/lamp-animation.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </Motion.div>
           </Motion.div>
